@@ -1,5 +1,4 @@
 #include "cameraConfiguration.h"
-
 #include <iostream>
 #include<algorithm>
 

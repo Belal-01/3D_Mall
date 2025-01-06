@@ -61,5 +61,11 @@
     <Image Include="floorImg.bmp">
       <Filter>Source Files</Filter>
     </Image>
+    <Image Include="floortexture.bmp">
+      <Filter>Source Files</Filter>
+    </Image>
+    <Image Include="insidMallFloorTexture.bmp">
+      <Filter>Source Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

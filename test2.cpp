@@ -13,7 +13,7 @@
 #include "Glass.h"
 
 
-int textureID;
+int textureID ,secondFloorTexture ,RoofFloorTexture;
 
 double angle = 0.0;
 bool keys[255];
@@ -37,122 +37,7 @@ void keyReleased(unsigned char key, int x, int y) {
 
 
 
-void testLins() {
-    glPushMatrix();
-    glTranslated(1, 9, 0);
-    glRotated(-angle, 0, 0, 1);
-    glBegin(GL_LINES);
-    glVertex3i(0, 0, 0);
-    glVertex3i(3, 0, 0);
-    glEnd();
 
-    glTranslated(3, 0, 0);
-    glBegin(GL_LINES);
-    glVertex3i(0, 0, 0);
-    glVertex3i(0, -3, 0);
-    glEnd();
-
-    glTranslated(0, -3, 0);
-    glPushMatrix();
-    glBegin(GL_LINES);
-    glVertex3i(0, 0, 0);
-    glVertex3i(2, -2, 0);
-    glEnd();
-
-    glTranslated(2, -2, 0);
-    glBegin(GL_LINES);
-    glVertex3i(0, 0, 0);
-    glVertex3i(-2, -2, 0);
-    glEnd();
-
-    glPopMatrix();
-    glBegin(GL_LINES);
-    glVertex3i(0, 0, 0);
-    glVertex3i(-2, -2, 0);
-    glEnd();
-    glPopMatrix();
-
-
-}
-
-void drawSquer() {
-
-    
-   /* glBindTexture(GL_TEXTURE_2D, textureImg.textureID);*/
-    glPushMatrix();
-    glTranslated(0.0, 0.0, -1.0);
-    glRotated(45, 0, 1, 0);
-    glBegin(GL_QUADS);
-
-    glColor3f(1.0, 0.0, 0.0);
-    glVertex3f(-1.0, 1.0, 1.0);
-    glVertex3f(-1.0, -1.0, 1.0);
-    glVertex3f(1.0, -1.0, 1.0);
-    glVertex3f(1.0, 1.0, 1.0);
-    //back
-    glColor3f(0.0, 1.0, 0.0);
-    glVertex3f(1.0, 1.0, -1.0);
-    glVertex3f(1.0, -1.0, -1.0);
-    glVertex3f(-1.0, -1.0, -1.0);
-    glVertex3f(-1.0, 1.0, -1.0);
-    //right
-    glColor3f(0.0, 0.0, 1.0);
-    glVertex3f(1.0, 1.0, 1.0);
-    glVertex3f(1.0, -1.0, 1.0);
-    glVertex3f(1.0, -1.0, -1.0);
-    glVertex3f(1.0, 1.0, -1.0);
-    //left
-    glColor3f(1.0, 1.0, 0.0);
-    glVertex3f(-1.0, 1.0, -1.0);
-    glVertex3f(-1.0, -1.0, -1.0);
-    glVertex3f(-1.0, -1.0, 1.0);
-    glVertex3f(-1.0, 1.0, 1.0);
-    //top
-    glColor3f(0.0, 1.0, 1.0);
-    glVertex3f(-1.0, 1.0, -1.0);
-    glVertex3f(-1.0, 1.0, 1.0);
-    glVertex3f(1.0, 1.0, 1.0);
-    glVertex3f(1.0, 1.0, -1.0);
-    //bottom
-    glColor3f(1.0, 0.0, 1.0);
-    glVertex3f(-1.0, -1.0, -1.0);
-    glVertex3f(-1.0, -1.0, 1.0);
-    glVertex3f(1.0, -1.0, 1.0);
-    glVertex3f(1.0, -1.0, -1.0);
-
-    glEnd();
-    glPopMatrix();
-
-}
-
-void Room() {
-    // draw the floor 
-    glPushMatrix();
-    glTranslated(0, 0, -50);
-    //floor 
-    wall.floor(-40, 40, 0, 0, -40 ,textureID,10.0f);
-
-    //left wall
-    wall.sideWall(-40, 0, 20, 0, -40, 1);
-
-    //right wall
-    wall.sideWall(40, 0, 20, 0, -40, 1);
-
-    // back wall
-    wall.frontWall(-40, 40, 0, 20, -40, 1);
-
-
-
-    
-
-
-
-    // the roof 
-    wall.Roof(-40, 41, 20, 0, -41,1);
-   
-   
-    glPopMatrix();
-}
 
 void rightBuilding() {
     wall.frontWall(0, 4000, 0, 1600, -3000, 20);
@@ -161,8 +46,8 @@ void rightBuilding() {
     glass.drawWall(0, 0, 0, 1600, 5000, 0, 0.8f);
 
     wall.frontWall(0, 4000, 0, 1600, 5000, 20);
-    wall.Roof(0, 4000, 800, 5000, -3000, 20);
-    wall.Roof(0, 4000, 1600, 5000, -3000, 20);
+    wall.Roof(0, 4000, 800, 5000, -3000, 20,secondFloorTexture,40,80);
+    wall.Roof(0, 4000, 1600, 5000, -3000, 20, RoofFloorTexture, 40,80);
 
 }
 
@@ -171,8 +56,12 @@ void leftBuilding() {
     wall.frontWall(-4000,0,0,800,-3000,20);
     wall.sideWall(-4000,0,800,0,-1000,20);
     wall.sideWall(-4000, 0, 800, -2000, -3000, 20);
-    wall.Roof(-4000,0,800,0,-3000,20);
-    wall.frontWall(-4000, -800, 0, 800, 0, 20);
+
+    wall.Roof(-4000,-1000,800,0,-3000,20,RoofFloorTexture,40,30);
+    wall.Roof(-1000, 0, 800, 0, -1500, 20,RoofFloorTexture,10,15);
+   /* wall.frontWall(-4000, -800, 0, 800, 0, 20);*/
+    glass.drawfrontWall(-4000, -800, 0, 800, 0, 0.7f);
+
 
 
 
@@ -182,9 +71,17 @@ void leftBuilding() {
     glass.drawRoof(-5000, -3800, 1200, -1000, -2000, 0.7f);
 
     // 
-    
-    //glass.drawRoof(-800, -1200, 550, 300, -300, 0.7f);
-    //glass.drawTriangle(-900, -800, -1200, 0, 390, 550, -300, 0.7f);
+    // elevatore in the first building
+    wall.sideWall(-1000, 0, 2400, -1500, -3000,10);
+    wall.sideWall(0, 0, 1600, -1500, -3000, 10);
+    wall.sideWall(0, 1600, 2400, -2000, -3000, 10);
+    glass.drawfrontWall(-1000, 0, 800, 2400, -3000, 0.7f);
+    glass.drawfrontWall(-1000, 0, 1600, 2400, -1500, 0.7f);
+    glass.drawfrontWall(-600, 0, 800, 1600, -1500, 0.7f);
+
+
+    wall.Roof(-1000, 0, 2400, -1500, -3000, 20, RoofFloorTexture, 10,15);
+
 
 
     
@@ -284,7 +181,9 @@ void init() {
     char fileName[] = "floorImg.bmp";
 
 
-    textureID = LoadTexture(fileName,255.0f); // Use 255 for fully opaque
+    textureID = LoadTexture(fileName,255.0f); 
+    secondFloorTexture = LoadTexture((char*)"insidMallFloorTexture.bmp", 255.0f);
+    RoofFloorTexture = LoadTexture((char*)"floortexture.bmp", 255.0f); // Use 255 for fully opaque
     if (textureID < 0) {
         std::cerr << "Failed to load texture." << std::endl;
         exit(1);

@@ -145,6 +145,8 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="floorImg.bmp" />
+    <Image Include="floortexture.bmp" />
+    <Image Include="insidMallFloorTexture.bmp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

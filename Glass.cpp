@@ -77,4 +77,19 @@ void Glass::drawTriangle(int x1, int x2, int x3, int y1, int y2, int y3, int z1,
     glDisable(GL_BLEND);
     glDepthMask(GL_TRUE);
 }
+void Glass::drawfrontWall(int x1, int x2, int y1, int y2, int z1, float alpha) {
+    glDepthMask(GL_FALSE);
+    glEnable(GL_BLEND);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+    glColor4f(0.5f, 0.8f, 1.0f, alpha);
+    glBegin(GL_QUADS);
+    
+    glVertex3i(x1, y1, z1);
+    glVertex3i(x2, y1, z1);
+    glVertex3i(x2, y2, z1);
+    glVertex3i(x1, y2, z1);
+    glEnd();
 
+    glDisable(GL_BLEND);
+    glDepthMask(GL_TRUE);
+}

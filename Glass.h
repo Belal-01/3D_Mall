@@ -10,6 +10,7 @@ public:
     void drawWall(int x1 ,int x2 ,int y1 ,int y2 ,int z1 ,int z2, float alpha);
     void drawRoof(int x1, int x2, int y1, int z1, int z2, float alpha);
     void drawTriangle(int x1, int x2,int x3, int y1,int y2 ,int y3, int z1, float alpha);
+    void drawfrontWall(int x1, int x2, int y1, int y2, int z1, float alpha);
 
 
 
