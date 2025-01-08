@@ -127,22 +127,27 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\Downloads\Telegram Desktop\stb_image.c" />
+    <ClCompile Include="..\..\3D_Mall\BilalMain.cpp" />
+    <ClCompile Include="..\..\Downloads\Telegram Desktop\stb_image.c" />
+    <ClCompile Include="abd.cpp" />
     <ClCompile Include="cameraConfiguration.cpp" />
     <ClCompile Include="ElectronicDeviceDrawer.cpp" />
     <ClCompile Include="Glass.cpp" />
     <ClCompile Include="KeyboardConfiguration.cpp" />
-    <ClCompile Include="abdMain.cpp" />
+    <ClCompile Include="TechnicalDivecesDrawer.cpp" />
     <ClCompile Include="test2.cpp" />
     <ClCompile Include="texture.cpp" />
     <ClCompile Include="wall.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="abd.h" />
+    <ClInclude Include="abdMain.h" />
     <ClInclude Include="camera.h" />
     <ClInclude Include="cameraConfiguration.h" />
     <ClInclude Include="ElectronicDeviceDrawer.h" />
     <ClInclude Include="Glass.h" />
     <ClInclude Include="keyboardConfiguration.h" />
+    <ClInclude Include="TechnicalDivecesDrawer.h" />
     <ClInclude Include="texture.h" />
     <ClInclude Include="Wall.h" />
   </ItemGroup>
@@ -150,6 +155,11 @@
     <Image Include="floorImg.bmp" />
     <Image Include="floortexture.bmp" />
     <Image Include="insidMallFloorTexture.bmp" />
+    <Image Include="pcb.bmp" />
+    <Image Include="pcf.bmp" />
+    <Image Include="pcs.bmp" />
+    <Image Include="speaker.bmp" />
+    <Image Include="wash.bmp" />
     <Image Include="xboxb.bmp" />
     <Image Include="xboxf.bmp" />
   </ItemGroup>
