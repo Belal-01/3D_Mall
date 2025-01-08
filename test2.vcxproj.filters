@@ -39,6 +39,9 @@
     <ClCompile Include="BilalMain.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="restorant.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="camera.h">
@@ -60,6 +63,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="BilalMain.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="restorant.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
