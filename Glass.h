@@ -1,7 +1,7 @@
-#ifndef GLASS_H
-#define GLASS_H
+//#ifndef GLASS_H
+//#define GLASS_H
 
-class Glass {
+ class Glass {
 public:
     // Constructor to initialize glass dimensions
     Glass();
@@ -19,4 +19,4 @@ private:
     float r, g, b, alpha; // Color and transparency
 };
 
-#endif // GLASS_H
+//#endif // GLASS_H

@@ -23,8 +23,8 @@ void Wall::sideWall(int x1, int y1, int y2, int z1, int z2, int width){
     // back surface of the wall
     glColor3ub(150, 100, 30);
     glVertex3i(x2, y1, z1);
-    glVertex3i(x1, y1, z2);
-    glVertex3i(x1, y2, z2);
+    glVertex3i(x2, y1, z2);
+    glVertex3i(x2, y2, z2);
     glVertex3i(x2, y2, z1);
 
 
@@ -77,9 +77,7 @@ void Wall::frontWall(int x1, int x2, int y1, int y2, int z1, int width) {
 }
 
 void Wall::Roof(int x1, int x2, int y1, int z1, int z2, int width, int textureID ,int RepeatX ,int RepeatY) {
-    /*glDepthMask(GL_FALSE);*/
-   // glEnable(GL_BLEND);
-   ///* glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);*/
+
     glBindTexture(GL_TEXTURE_2D, textureID);
     int y2 = y1 + width;
     glBegin(GL_QUADS);
@@ -143,5 +141,41 @@ void Wall::floor(int x1, int x2, int y1, int z1, int z2,int textureID ,float Rep
 
     //glDisable(GL_BLEND);
     //glDepthMask(GL_TRUE);
+}
+
+
+// nozo function 
+void Wall::create(int x1, int x2, int y1, int y2, int z1, int z2) {
+    glBegin(GL_QUADS);
+
+    // First face
+    glColor3ub(250, 40, 30);
+    glVertex3i(x1, y1, z1);
+    glVertex3i(x1, y1, z2);
+    glVertex3i(x1, y2, z2);
+    glVertex3i(x1, y2, z1);
+
+    // Second face
+    glColor3ub(150, 40, 30);
+    glVertex3i(x2, y1, z1);
+    glVertex3i(x1, y1, z1);
+    glVertex3i(x1, y2, z1);
+    glVertex3i(x2, y2, z1);
+
+    // Third face
+    glColor3ub(50, 40, 30);
+    glVertex3i(x2, y1, z2);
+    glVertex3i(x1, y1, z2);
+    glVertex3i(x1, y2, z2);
+    glVertex3i(x2, y2, z2);
+
+    // Fourth face
+    glColor3ub(20, 40, 30);
+    glVertex3i(x2, y1, z1);
+    glVertex3i(x2, y1, z2);
+    glVertex3i(x2, y2, z2);
+    glVertex3i(x2, y2, z1);
+
+    glEnd();
 }
 
