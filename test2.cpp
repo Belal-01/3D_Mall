@@ -11,10 +11,11 @@
 #include "cameraConfiguration.h"
 #include "Wall.h"
 #include "Glass.h"
-
+#include "ElectronicDeviceDrawer.h"
 
 int textureID ,secondFloorTexture ,RoofFloorTexture;
-
+extern void AbdDraw();
+extern void AbdLoadPhotos();
 double angle = 0.0;
 bool keys[255];
 
@@ -142,7 +143,7 @@ void display() {
     glLoadIdentity();
     camera.updateMovement();
     camera.setupCamera();
-    
+    AbdDraw();
     glPushMatrix();
     glTranslated(0, 0, -8);
      wall.floor(-9000, 6000,0, 9000, -6000, textureID,50);
@@ -178,10 +179,12 @@ void init() {
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
 
+
     char fileName[] = "floorImg.bmp";
 
 
     textureID = LoadTexture(fileName,255.0f); 
+    AbdLoadPhotos();
     secondFloorTexture = LoadTexture((char*)"insidMallFloorTexture.bmp", 255.0f);
     RoofFloorTexture = LoadTexture((char*)"floortexture.bmp", 255.0f); // Use 255 for fully opaque
     if (textureID < 0) {

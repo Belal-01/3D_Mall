@@ -13,15 +13,21 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source Files\AbdAlrzaq">
+      <UniqueIdentifier>{ea8067b2-ae98-48d6-8210-24226d858d04}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\AbdAlrzaq">
+      <UniqueIdentifier>{14bc64c0-7908-4ecd-9fb1-e48a7d86fc5d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\AbdAlrzaq\Images">
+      <UniqueIdentifier>{cafcf061-810c-40af-9a64-fe38b21058c9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="test2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="texture.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\Downloads\stb_image.c">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="cameraConfiguration.cpp">
@@ -35,6 +41,15 @@
     </ClCompile>
     <ClCompile Include="Glass.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Downloads\Telegram Desktop\stb_image.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ElectronicDeviceDrawer.cpp">
+      <Filter>Source Files\AbdAlrzaq</Filter>
+    </ClCompile>
+    <ClCompile Include="abdMain.cpp">
+      <Filter>Source Files\AbdAlrzaq</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -56,6 +71,9 @@
     <ClInclude Include="Glass.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ElectronicDeviceDrawer.h">
+      <Filter>Header Files\AbdAlrzaq</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="floorImg.bmp">
@@ -65,6 +83,12 @@
       <Filter>Source Files</Filter>
     </Image>
     <Image Include="insidMallFloorTexture.bmp">
+      <Filter>Source Files</Filter>
+    </Image>
+    <Image Include="xboxf.bmp">
+      <Filter>Source Files</Filter>
+    </Image>
+    <Image Include="xboxb.bmp">
       <Filter>Source Files</Filter>
     </Image>
   </ItemGroup>
