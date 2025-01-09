@@ -76,6 +76,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -128,8 +129,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\3D_Mall\BilalMain.cpp" />
-    <ClCompile Include="..\..\Downloads\Telegram Desktop\stb_image.c" />
     <ClCompile Include="abd.cpp" />
+    <ClCompile Include="C:\Users\abd alrzaq\Downloads\Telegram Desktop\stb_image.c" />
     <ClCompile Include="cameraConfiguration.cpp" />
     <ClCompile Include="ElectronicDeviceDrawer.cpp" />
     <ClCompile Include="Glass.cpp" />
@@ -149,23 +150,24 @@
     <ClInclude Include="ElectronicDeviceDrawer.h" />
     <ClInclude Include="Glass.h" />
     <ClInclude Include="keyboardConfiguration.h" />
-
     <ClInclude Include="restorant.h" />
-
     <ClInclude Include="TechnicalDivecesDrawer.h" />
-
     <ClInclude Include="texture.h" />
     <ClInclude Include="Wall.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="floorImg.bmp" />
     <Image Include="floortexture.bmp" />
+    <Image Include="fridge.bmp" />
     <Image Include="insidMallFloorTexture.bmp" />
     <Image Include="pcb.bmp" />
     <Image Include="pcf.bmp" />
     <Image Include="pcs.bmp" />
     <Image Include="speaker.bmp" />
     <Image Include="wash.bmp" />
+    <Image Include="washb.bmp" />
+    <Image Include="washr.bmp" />
+    <Image Include="washw.bmp" />
     <Image Include="xboxb.bmp" />
     <Image Include="xboxf.bmp" />
   </ItemGroup>

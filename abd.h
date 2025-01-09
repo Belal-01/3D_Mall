@@ -9,7 +9,7 @@
 class Abd
 {
 public :
-    int xboxf, xboxb,wash,speaker,pcf,pcb,pcs;
+    int xboxf, xboxb,wash,speaker,pcf,pcb,pcs,washw,fridge1,washb,washr, wash2;
     
     ElectronicDeviceDrawer electronic;
     TechnicalDivecesDrawer technical;

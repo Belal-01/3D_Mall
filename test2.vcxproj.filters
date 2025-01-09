@@ -45,9 +45,6 @@
     <ClCompile Include="ElectronicDeviceDrawer.cpp">
       <Filter>Source Files\AbdAlrzaq</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Downloads\Telegram Desktop\stb_image.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\3D_Mall\BilalMain.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -58,6 +55,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="restorant.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="3D_mall.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\abd alrzaq\Downloads\Telegram Desktop\stb_image.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -125,6 +128,18 @@
       <Filter>Source Files\AbdAlrzaq\Images</Filter>
     </Image>
     <Image Include="pcs.bmp">
+      <Filter>Source Files\AbdAlrzaq\Images</Filter>
+    </Image>
+    <Image Include="washw.bmp">
+      <Filter>Source Files\AbdAlrzaq\Images</Filter>
+    </Image>
+    <Image Include="fridge.bmp">
+      <Filter>Source Files\AbdAlrzaq\Images</Filter>
+    </Image>
+    <Image Include="washb.bmp">
+      <Filter>Source Files\AbdAlrzaq\Images</Filter>
+    </Image>
+    <Image Include="washr.bmp">
       <Filter>Source Files\AbdAlrzaq\Images</Filter>
     </Image>
   </ItemGroup>
