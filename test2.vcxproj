@@ -134,6 +134,8 @@
     <ClCompile Include="ElectronicDeviceDrawer.cpp" />
     <ClCompile Include="Glass.cpp" />
     <ClCompile Include="KeyboardConfiguration.cpp" />
+    <ClCompile Include="3D_mall.cpp" />
+    <ClCompile Include="restorant.cpp" />
     <ClCompile Include="TechnicalDivecesDrawer.cpp" />
     <ClCompile Include="test2.cpp" />
     <ClCompile Include="texture.cpp" />
@@ -147,7 +149,11 @@
     <ClInclude Include="ElectronicDeviceDrawer.h" />
     <ClInclude Include="Glass.h" />
     <ClInclude Include="keyboardConfiguration.h" />
+
+    <ClInclude Include="restorant.h" />
+
     <ClInclude Include="TechnicalDivecesDrawer.h" />
+
     <ClInclude Include="texture.h" />
     <ClInclude Include="Wall.h" />
   </ItemGroup>

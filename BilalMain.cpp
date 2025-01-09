@@ -5,9 +5,11 @@
 #include "Wall.h"
 #include "Glass.h"
 #include <GL/glut.h>
+#include "restorant.h"
 
  Wall wall;
  Glass glass;
+ Resturant resturant;
  int widthofWall = 80;
  int widthofRoof = 80;
 
@@ -51,6 +53,16 @@ void BilalMain::rightBuilding() {
     wall.frontWall(0, 4000, 0, 1680, 5000, widthofWall);
     wall.Roof(0, 4080, 800, 5000, -3000, widthofRoof, RoofFloorTexture, 40, 80);
     wall.Roof(0, 4080, 1680, 5000, -3000, widthofRoof, RoofFloorTexture, 20, 40);
+
+    // split the building
+    wall.frontWall(800, 4000, 0, 1680, 1000, widthofWall);
+    glass.drawWall(800, 800, 0, 1680, -1500, -3000, 0.7);
+    glass.drawWall(800, 800, 0, 1680, 1000, -500, 0.7);
+
+    glass.drawWall(800, 800, 0, 1680, 5000, 3500, 0.7);
+    glass.drawWall(800, 800, 0, 1680, 2500, 1000, 0.7);
+
+
 }
 void BilalMain::init() {
 
@@ -70,6 +82,33 @@ void BilalMain::display() {
     wall.floor(-9000, 6000, 0, 9000, -6000, textureID, 50);
     leftBuilding();
     rightBuilding();
+
+    // first table
+    glPushMatrix();
+    glTranslated(-1500 , 0,-500);
+    resturant.drawTable(500,500,RoofFloorTexture);
+    glPopMatrix();
+
+
+    //second table
+    glPushMatrix();
+    glTranslated(-3000, 0, -500);
+    resturant.drawTable(1000,500,RoofFloorTexture);
+    glPopMatrix();
+
+    // third table
+    glPushMatrix();
+    glTranslated(-1500, 0, -1500);
+    resturant.drawTable(500,500,RoofFloorTexture);
+    glPopMatrix();
+
+
+    //forth table
+    glPushMatrix();
+    glTranslated(-3000, 0, -1500);
+    resturant.drawTable(1000,500,RoofFloorTexture);
+    glPopMatrix();
+
 
     glPopMatrix();
 
