@@ -13,26 +13,18 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-<<<<<<< HEAD
     <Filter Include="Source Files\images">
       <UniqueIdentifier>{b3fee174-f09a-4086-884e-3c7487a48753}</UniqueIdentifier>
-=======
-    <Filter Include="Source Files\AbdAlrzaq">
-      <UniqueIdentifier>{ea8067b2-ae98-48d6-8210-24226d858d04}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\AbdAlrzaq">
-      <UniqueIdentifier>{14bc64c0-7908-4ecd-9fb1-e48a7d86fc5d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\AbdAlrzaq\Images">
-      <UniqueIdentifier>{cafcf061-810c-40af-9a64-fe38b21058c9}</UniqueIdentifier>
->>>>>>> 0471c6f6f04c2b34cde4fbc348e43b143f29c6c6
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="test2.cpp">
+    <ClCompile Include="3D_mall.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="texture.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Downloads\stb_image.c">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="cameraConfiguration.cpp">
@@ -47,19 +39,7 @@
     <ClCompile Include="Glass.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ElectronicDeviceDrawer.cpp">
-      <Filter>Source Files\AbdAlrzaq</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Downloads\Telegram Desktop\stb_image.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\3D_Mall\BilalMain.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="abd.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="TechnicalDivecesDrawer.cpp">
+    <ClCompile Include="BilalMain.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="restorant.cpp">
@@ -85,16 +65,7 @@
     <ClInclude Include="Glass.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ElectronicDeviceDrawer.h">
-      <Filter>Header Files\AbdAlrzaq</Filter>
-    </ClInclude>
-    <ClInclude Include="abdMain.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="abd.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="TechnicalDivecesDrawer.h">
+    <ClInclude Include="BilalMain.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="restorant.h">
@@ -149,27 +120,6 @@
     </Image>
     <Image Include="shaurmaTable2.bmp">
       <Filter>Source Files\images</Filter>
-    </Image>
-    <Image Include="xboxf.bmp">
-      <Filter>Source Files\AbdAlrzaq\Images</Filter>
-    </Image>
-    <Image Include="xboxb.bmp">
-      <Filter>Source Files\AbdAlrzaq\Images</Filter>
-    </Image>
-    <Image Include="wash.bmp">
-      <Filter>Source Files</Filter>
-    </Image>
-    <Image Include="speaker.bmp">
-      <Filter>Source Files\AbdAlrzaq\Images</Filter>
-    </Image>
-    <Image Include="pcf.bmp">
-      <Filter>Source Files\AbdAlrzaq\Images</Filter>
-    </Image>
-    <Image Include="pcb.bmp">
-      <Filter>Source Files\AbdAlrzaq\Images</Filter>
-    </Image>
-    <Image Include="pcs.bmp">
-      <Filter>Source Files\AbdAlrzaq\Images</Filter>
     </Image>
   </ItemGroup>
 </Project>
