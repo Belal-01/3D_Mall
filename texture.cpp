@@ -4,7 +4,6 @@
 #include <windows.h>
 #include <GL/gl.h>
 #include <GL/glu.h>
-#include <GL/glaux.h>
 #include <GL/glut.h>
 #include <stb_image.h>
 #include <iostream>
