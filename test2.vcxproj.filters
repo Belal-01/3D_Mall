@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source Files\images">
+      <UniqueIdentifier>{b3fee174-f09a-4086-884e-3c7487a48753}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="3D_mall.cpp">
@@ -70,14 +73,53 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="floorImg.bmp">
-      <Filter>Source Files</Filter>
-    </Image>
     <Image Include="floortexture.bmp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="floorImg.bmp">
+      <Filter>Source Files\images</Filter>
     </Image>
     <Image Include="insidMallFloorTexture.bmp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="woodWallTexture.bmp">
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="kitchenWallTexture.bmp">
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="kitchenWallTexture2.bmp">
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="TableWoodTexture.bmp">
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="kitchenFloorWoodTexture2.bmp">
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="kitchenFloorWoodTexture.bmp">
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="phrezaFront.bmp">
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="phrezaside.bmp">
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="phreza2Front.bmp">
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="shaurma.bmp">
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="shaurmaTable.bmp">
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="sideshaurmaTable.bmp">
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="shaurmaTable2.bmp">
+      <Filter>Source Files\images</Filter>
     </Image>
   </ItemGroup>
 </Project>

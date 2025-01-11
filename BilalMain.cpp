@@ -14,9 +14,10 @@
  int widthofRoof = 80;
 
 void BilalMain::leftBuilding() {
-    wall.frontWall(-4080, 0, 0, 800, -4000, widthofWall);
-    wall.sideWall(-4080, 0, 800, 0, -1000, widthofWall);
-    wall.sideWall(-4080, 0, 800, -2000, -4000, widthofWall);
+    wall.floor(-4000, 0, 10, 0, -4000, resturant.KitchenFloorWoodTexture, 10);
+    wall.frontWall(-4080, -1000, 0, 800, -4000, widthofWall,resturant.kitchenWallTexture,1,1);
+    wall.sideWall(-4080, 0, 800, 0, -1000, widthofWall,textureID,1,1);
+    wall.sideWall(-4080, 0, 800, -2000, -4000, widthofWall,textureID,1,1);
 
     wall.Roof(-4080, -1000, 800, 0, -4000, widthofRoof, RoofFloorTexture, 30, 40);
     wall.Roof(-1000, 0, 800, 0, -2500, widthofRoof, RoofFloorTexture, 10, 25);
@@ -33,29 +34,29 @@ void BilalMain::leftBuilding() {
 
     // 
     // elevatore in the first building
-    wall.sideWall(-1000, 0, 2480, -2500, -4000, widthofWall);
-    wall.sideWall(0, 0, 1680, -2500, -4000, widthofWall);
-    wall.sideWall(0, 1600, 2480, -3000, -4000, widthofWall);
-    glass.drawfrontWall(-1000, 0, 800, 2480, -4000, 0.7f);
-    glass.drawfrontWall(-1000, 0, 1600, 2480, -2500, 0.7f);
-    glass.drawfrontWall(-600, 0, 800, 1600, -2500, 0.7f);
+    wall.sideWall(-1000, 0, 2480, -2500, -4000, widthofWall,textureID,1,1);
+    wall.sideWall(0, 0, 1680, -2500, -4000, widthofWall, textureID, 1, 1);
+    wall.sideWall(0, 1600, 2480, -3000, -4000, widthofWall, textureID, 1, 1);
+    glass.drawfrontWall(-1000, 0, 0, 2480, -3980, 0.7f);
+    glass.drawfrontWall(-1000, 0, 1600, 2480, -2520, 0.7f);
+    glass.drawfrontWall(-600, 0, 800, 1600, -2520, 0.7f);
 
 
     wall.Roof(-1000, 80, 2480, -2500, -4000, widthofRoof, RoofFloorTexture, 10, 15);
 }
 
 void BilalMain::rightBuilding() {
-    wall.frontWall(0, 4000, 0, 1680, -3000, widthofWall);
-    wall.sideWall(4000, 0, 1680, 5000, -3000, widthofWall);
+    wall.frontWall(0, 4000, 0, 1680, -3000, widthofWall,textureID,1,1);
+    wall.sideWall(4000, 0, 1680, 5000, -3000, widthofWall, textureID, 1, 1);
     /*wall.sideWall(0, 0, 1600, 5000, 0, 20);*/
-    glass.drawWall(0, 0, 0, 1600, 5000, 0, 0.8f);
+    glass.drawWall(0, 0, 0, 1680, 5000, 0, 0.8f);
 
-    wall.frontWall(0, 4000, 0, 1680, 5000, widthofWall);
+    wall.frontWall(0, 4000, 0, 1680, 5000, widthofWall,textureID,1,1);
     wall.Roof(0, 4080, 800, 5000, -3000, widthofRoof, RoofFloorTexture, 40, 80);
     wall.Roof(0, 4080, 1680, 5000, -3000, widthofRoof, RoofFloorTexture, 20, 40);
 
     // split the building
-    wall.frontWall(800, 4000, 0, 1680, 1000, widthofWall);
+    wall.frontWall(800, 4000, 0, 1680, 1000, widthofWall,textureID,1,1);
     glass.drawWall(800, 800, 0, 1680, -1500, -3000, 0.7);
     glass.drawWall(800, 800, 0, 1680, 1000, -500, 0.7);
 
@@ -70,10 +71,8 @@ void BilalMain::init() {
     BilalMain::textureID = LoadTexture((char*)"floorImg.bmp", 255.0f);
     BilalMain::secondFloorTexture = LoadTexture((char*)"insidMallFloorTexture.bmp", 255.0f);
     BilalMain::RoofFloorTexture = LoadTexture((char*)"floortexture.bmp", 255.0f); // Use 255 for fully opaque
-  /*  if (textureID < 0) {
-        std::cerr << "Failed to load texture." << std::endl;
-        exit(1);
-    }*/
+    resturant.resturantInit();
+
 }
 
 void BilalMain::display() {
@@ -83,32 +82,8 @@ void BilalMain::display() {
     leftBuilding();
     rightBuilding();
 
-    // first table
-    glPushMatrix();
-    glTranslated(-1500 , 0,-500);
-    resturant.drawTable(500,500,RoofFloorTexture);
-    glPopMatrix();
-
-
-    //second table
-    glPushMatrix();
-    glTranslated(-3000, 0, -500);
-    resturant.drawTable(1000,500,RoofFloorTexture);
-    glPopMatrix();
-
-    // third table
-    glPushMatrix();
-    glTranslated(-1500, 0, -1500);
-    resturant.drawTable(500,500,RoofFloorTexture);
-    glPopMatrix();
-
-
-    //forth table
-    glPushMatrix();
-    glTranslated(-3000, 0, -1500);
-    resturant.drawTable(1000,500,RoofFloorTexture);
-    glPopMatrix();
-
+    resturant.resturantRoom();
+    
 
     glPopMatrix();
 

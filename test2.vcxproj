@@ -152,6 +152,19 @@
     <Image Include="floorImg.bmp" />
     <Image Include="floortexture.bmp" />
     <Image Include="insidMallFloorTexture.bmp" />
+    <Image Include="kitchenFloorWoodTexture.bmp" />
+    <Image Include="kitchenFloorWoodTexture2.bmp" />
+    <Image Include="kitchenWallTexture.bmp" />
+    <Image Include="kitchenWallTexture2.bmp" />
+    <Image Include="phreza2Front.bmp" />
+    <Image Include="phrezaFront.bmp" />
+    <Image Include="phrezaside.bmp" />
+    <Image Include="shaurma.bmp" />
+    <Image Include="shaurmaTable.bmp" />
+    <Image Include="shaurmaTable2.bmp" />
+    <Image Include="sideshaurmaTable.bmp" />
+    <Image Include="TableWoodTexture.bmp" />
+    <Image Include="woodWallTexture.bmp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
