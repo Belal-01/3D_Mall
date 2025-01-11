@@ -216,6 +216,73 @@ public:
 
         glPopMatrix();
     }
+    static void drawAirConditioner(float x, float y, float z, float angleX, float angleY, float angleZ,int texture) {
+        // ÊÚÑíİ ãÊÛíÑÇÊ ááÊÍßã İí ÇáÍÌã
+        float width = 40.0f * 3;  // ÇáÚÑÖ
+        float height = 20.0f * 3; // ÇáÇÑÊİÇÚ
+        float depth = 10.0f * 3;  // ÇáÚãŞ
+        float pipeHeight = 10.0f * 3; // ÇÑÊİÇÚ ÇáÃäÇÈíÈ
+
+        glBindTexture(GL_TEXTURE_2D, texture);
+        glPushMatrix();
+        glTranslatef(x, y, z);
+        glRotatef(angleX, 10.0f, 0.0f, 0.0f); // ÏæÑÇä Íæá ÇáãÍæÑ X
+        glRotatef(angleY, 0.0f, 10.0f, 0.0f); // ÏæÑÇä Íæá ÇáãÍæÑ Y
+        glRotatef(angleZ, 0.0f, 0.0f, 10.0f); // ÏæÑÇä Íæá ÇáãÍæÑ Z
+
+        glColor3f(0.8f, 0.8f, 0.8f); // áæä Çáãßíİ
+        glBegin(GL_QUADS);
+
+        // ÇáÌæÇäÈ ÇáÃÑÈÚÉ ááãßíİ (ãßÚÈ) ÈÇÓÊÎÏÇã ÇáãÊÛíÑÇÊ
+        glTexCoord2f(0, 0);
+        glVertex3f(0, 0, 0);
+        glTexCoord2f(1, 0);
+        glVertex3f(width, 0, 0);
+        glTexCoord2f(1, 1);
+        glVertex3f(width, height, 0);
+        glTexCoord2f(0, 1);
+        glVertex3f(0, height, 0);
+
+        glVertex3f(0, 0, 0);
+        glVertex3f(0, height, 0);
+        glVertex3f(0, height, -depth);
+        glVertex3f(0, 0, -depth);
+
+        glVertex3f(width, 0, 0);
+        glVertex3f(width, height, 0);
+        glVertex3f(width, height, -depth);
+        glVertex3f(width, 0, -depth);
+
+        glVertex3f(0, height, 0);
+        glVertex3f(width, height, 0);
+        glVertex3f(width, height, -depth);
+        glVertex3f(0, height, -depth);
+
+        glVertex3f(0, 0, -depth);
+        glVertex3f(width, 0, -depth);
+        glVertex3f(width, 0, 0);
+        glVertex3f(0, 0, 0);
+
+        glEnd();
+
+        // ÊİÇÕíá ÅÖÇİíÉ (ãËá ÇáÃäÇÈíÈ) ÈÇÓÊÎÏÇã ÇáãÊÛíÑÇÊ
+        glLineWidth(3.0f);
+        glColor3f(0.3f, 0.3f, 0.3f);
+        glBegin(GL_LINES);
+        glVertex3f(0, pipeHeight, 0);
+        glVertex3f(width, pipeHeight, 0); // ÃäÈæÈ İí ÇáÃÚáì
+        glEnd();
+
+        glLineWidth(3.0f);
+        glColor3f(0.3f, 0.3f, 0.3f);
+        glBegin(GL_LINES);
+        glVertex3f(0, pipeHeight, -depth);
+        glVertex3f(width, pipeHeight, -depth); // ÃäÈæÈ İí ÇáÃÓİá
+        glEnd();
+
+        glPopMatrix();
+    }
+
     static void drawAirConditionerWithFan(float x, float y, float z, float angleX, float angleY, float angleZ, float fanRotation) {
         // ÊÚÑíİ ãÊÛíÑÇÊ ááÊÍßã İí ÃÈÚÇÏ Çáãßíİ æÇáãÑæÍÉ
         float acWidth = 40.0f * 3;   // ÇáÚÑÖ
@@ -467,10 +534,6 @@ public:
 
         glPopMatrix();
     }
-
-
-
-    // ÑÓã ÇáÔÇÔÉ
     static void drawCeilingFanWithArm(float x, float y, float z, float angleX, float angleY, float angleZ, float fanRotation) {
         glPushMatrix();
         float scale = 4;
@@ -526,6 +589,146 @@ public:
 
         glPopMatrix();
     }
+    void drawFloorFan(float x, float y, float z, float rotationX, float rotationY, float rotationZ, float fanRotation,float r,float g,float b) {
+        glPushMatrix();
+        float scale = 300.0f;
+
+        // ÊÍÑíß ÇáãÑæÍÉ Åáì ÇáãæŞÚ ÇáãÍÏÏ
+        glColor3f(r, g, b);
+        glTranslatef(x, y, z);
+
+        // ÊÏæíÑ ÇáãÑæÍÉ Íæá ÇáãÍÇæÑ ÇáËáÇËÉ X, Y, Z
+        glRotatef(rotationX, 1.0f, 0.0f, 0.0f); // ÏæÑÇä Íæá ÇáãÍæÑ X
+        glRotatef(rotationY, 0.0f, 1.0f, 0.0f); // ÏæÑÇä Íæá ÇáãÍæÑ Y
+        glRotatef(rotationZ, 0.0f, 0.0f, 1.0f); // ÏæÑÇä Íæá ÇáãÍæÑ Z
+
+        glPushMatrix();
+        glRotatef(270, 1, 0, 0);
+        glTranslatef(0.0f, 0.0f, 0.05f * scale); // ÊÍÑíß ÇáŞÇÚÏÉ ááÃÚáì
+        glBegin(GL_POLYGON);
+        int numSegments = 100; // ÚÏÏ ÇáŞØÇÚÇÊ áÑÓã ÏÇÆÑÉ ÓáÓÉ
+        for (int i = 0; i < numSegments; ++i) {
+            float theta = 2.0f * 3.1415926f * float(i) / float(numSegments); // ÒÇæíÉ ÇáŞØÇÚ
+            float dx = 0.2f * scale * cosf(theta); // ÅÍÏÇËí X
+            float dy = 0.2f * scale * sinf(theta); // ÅÍÏÇËí Y
+            glVertex3f(dx, dy, -5);
+        }
+        glEnd();
+        glPopMatrix();
+
+        glPushMatrix();
+        glRotatef(270, 1, 0, 0);
+
+        // ÑÓã ÇáÚãæÏ
+        glPushMatrix();
+        GLUquadric* standQuad = gluNewQuadric();
+        glTranslatef(0.0f, 0.1f * scale, 0.0f); // ÊÍÑíß ÇáÚãæÏ ááÃÚáì
+        gluCylinder(standQuad, 0.05f * scale, 0.05f * scale, 0.5f * scale, 32, 32); // ÑÓã ÇáÚãæÏ ãÚ ÇáÊßÈíÑ
+        gluDeleteQuadric(standQuad);
+        glPopMatrix();
+
+        // ÑÓã ÇáãÍÑß
+        glPushMatrix();
+        glTranslatef(0.0f, 0.1f * scale, 60*3); // ÊÍÑíß ÇáãÍÑß ááÃÚáì
+        glutSolidSphere(0.1f * scale, 100, 32); // ÑÓã ÇáãÍÑß Úáì Ôßá ßÑÉ ãÚ ÇáÊßÈíÑ
+        glPopMatrix();
+
+        glPopMatrix();
+
+        // ÑÓã ÇáÔİÑÇÊ
+        glPushMatrix();
+        glColor3f(0, 0, 0);
+        glTranslatef(0.0f, 0.6f * scale, 0.0f); // ÊÍÑíß ÇáÔİÑÇÊ ááÃÚáì
+        for (int i = 0; i < 3; ++i) {
+            glPushMatrix();
+            glRotatef(fanRotation + i * 120.0f, 0.0f, 0.0f, 1.0f); // ÊÏæíÑ ÇáÔİÑÇÊ Íæá ÇáãÍæÑ Z
+            glTranslatef(0.2f * scale, 0.0f, 0.0f); // ÊÍÑíß ÇáÔİÑÇÊ ááÃãÇã
+            glScalef(0.4f * scale/2, 0.05f * scale/2, 0.1f * scale/2); // ÊßÈíÑ ÇáÔİÑÇÊ áÊßæä ÃİŞíÉ
+            glutSolidCube(1.0f); // ÑÓã ÇáÔİÑÇÊ ÈÇÓÊÎÏÇã ÇáãßÚÈÇÊ ãÚ ÇáÊßÈíÑ
+            glPopMatrix();
+        }
+        glPopMatrix();
+
+        // ÑÓã ÇáÔÈß ÇáßÑæí Íæá ÇáÔİÑÇÊ
+        glPushMatrix();
+        glTranslatef(0.0f, 0.6f * scale, 0.0f); // ÊãÑßÒ ÇáÔÈß ÚäÏ ÇáãÍÑß æÇáÔİÑÇÊ
+        GLUquadric* meshQuad = gluNewQuadric();
+        gluQuadricDrawStyle(meshQuad, GLU_LINE); // ÊÚííä äãØ ÇáÑÓã ßÔÈßÉ
+        gluSphere(meshQuad, 0.3f * scale, 32, 32); // ÑÓã ßÑÉ ßÔÈß íÍíØ ÈÇáÔİÑÇÊ
+        gluDeleteQuadric(meshQuad);
+        glPopMatrix();
+
+        glPopMatrix();
+    }
+    static void drawbrada(float x, float y, float z, float angleX, float angleY, float angleZ, int brada, float r, float g, float b) {
+        float fridgeWidth = 125.0f;
+        float fridgeHeight = 300.0f;
+        float fridgeDepth = 100.0f;
+        float doorThickness = 0.5f;
+
+        glPushMatrix();
+        glTranslatef(x, y, z);
+        glRotatef(angleX, 1.0f, 0.0f, 0.0f);
+        glRotatef(angleY, 0.0f, 1.0f, 0.0f);
+        glRotatef(angleZ, 0.0f, 0.0f, 1.0f);
+
+
+        // ÑÓã ÌÓã ÇáÈÑÇÏ
+
+        glBindTexture(GL_TEXTURE_2D, brada);
+        glColor3f(0.9f, 0.9f, 0.9f); // áæä ÇáÈÑÇÏ (ÃÈíÖ Ãæ ÑãÇÏí İÇÊÍ)
+        glBegin(GL_QUADS);
+
+        // æÌå ÃãÇãí
+
+        glTexCoord2f(0, 0);
+        glVertex3f(-fridgeWidth / 2, 0, fridgeDepth / 2);
+        glTexCoord2f(1, 0);
+
+        glVertex3f(fridgeWidth / 2, 0, fridgeDepth / 2);
+        glTexCoord2f(1, 1);
+
+        glVertex3f(fridgeWidth / 2, fridgeHeight, fridgeDepth / 2);
+        glTexCoord2f(0, 1);
+        glVertex3f(-fridgeWidth / 2, fridgeHeight, fridgeDepth / 2);
+
+        glEnd();
+
+        glColor3f(r, g, b); // áæä ÇáÈÑÇÏ (ÃÈíÖ Ãæ ÑãÇÏí İÇÊÍ)
+        glBegin(GL_QUADS);
+        // æÌå Îáİí
+        glVertex3f(-fridgeWidth / 2, 0, -fridgeDepth / 2);
+        glVertex3f(fridgeWidth / 2, 0, -fridgeDepth / 2);
+        glVertex3f(fridgeWidth / 2, fridgeHeight, -fridgeDepth / 2);
+        glVertex3f(-fridgeWidth / 2, fridgeHeight, -fridgeDepth / 2);
+
+        // ÇáÍæÇİ ÇáÌÇäÈíÉ
+        glVertex3f(-fridgeWidth / 2, 0, -fridgeDepth / 2);
+        glVertex3f(-fridgeWidth / 2, 0, fridgeDepth / 2);
+        glVertex3f(-fridgeWidth / 2, fridgeHeight, fridgeDepth / 2);
+        glVertex3f(-fridgeWidth / 2, fridgeHeight, -fridgeDepth / 2);
+
+        glVertex3f(fridgeWidth / 2, 0, -fridgeDepth / 2);
+        glVertex3f(fridgeWidth / 2, 0, fridgeDepth / 2);
+        glVertex3f(fridgeWidth / 2, fridgeHeight, fridgeDepth / 2);
+        glVertex3f(fridgeWidth / 2, fridgeHeight, -fridgeDepth / 2);
+
+        // ÇáÓŞİ æÇáŞÇÚÏÉ
+        glVertex3f(-fridgeWidth / 2, 0, -fridgeDepth / 2);
+        glVertex3f(fridgeWidth / 2, 0, -fridgeDepth / 2);
+        glVertex3f(fridgeWidth / 2, 0, fridgeDepth / 2);
+        glVertex3f(-fridgeWidth / 2, 0, fridgeDepth / 2);
+
+        glVertex3f(-fridgeWidth / 2, fridgeHeight, -fridgeDepth / 2);
+        glVertex3f(fridgeWidth / 2, fridgeHeight, -fridgeDepth / 2);
+        glVertex3f(fridgeWidth / 2, fridgeHeight, fridgeDepth / 2);
+        glVertex3f(-fridgeWidth / 2, fridgeHeight, fridgeDepth / 2);
+
+        glEnd();
+
+        glPopMatrix();
+    }
+
 };
 
 
