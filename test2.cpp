@@ -52,7 +52,7 @@ void display() {
 
     //here put ur display
     bilal.display();
-    abd.AbdDraw();
+    abd.AbdDraw(camera.cameraX,camera.cameraY,camera.cameraZ);
 
     glFlush(); // Render the line
     glutSwapBuffers();

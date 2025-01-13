@@ -1,8 +1,11 @@
 #include "cameraConfiguration.h"
 #include <iostream>
 #include<algorithm>
+#include "Glass.h"
 
 
+float doorX = 100.0f; // X position of the door
+float doorZ = 100.0f;
 float clamp(float value, float min, float max) {
     if (value < min) return min;
     if (value > max) return max;
@@ -85,4 +88,5 @@ void CameraConfiguration::updateMovement() {
     if (keys[keyboardConfig.downKey]) moveDown();
     if (keys[keyboardConfig.jumpKey]) startJump();
     if (keys[keyboardConfig.exitKey]) exit(0);
+    
 }

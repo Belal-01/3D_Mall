@@ -18,7 +18,6 @@ void Abd::init()
    fridge2 = LoadTexture((char*)"fridge2.bmp", 255);
    fridge3 = LoadTexture((char*)"fridge3.bmp", 255);
    fridge4 = LoadTexture((char*)"fridge4.bmp", 255);
-   ///not finished
    aircondition= LoadTexture((char*)"aircondition.bmp", 255);
    airconditionfan = LoadTexture((char*)"airconditionfan.bmp", 255);
    brada1 = LoadTexture((char*)"brada1.bmp", 255);
@@ -28,13 +27,18 @@ void Abd::init()
    s7ana = LoadTexture((char*)"s7ana.bmp", 255);
 }
 
-void Abd::AbdDraw()
+void Abd::AbdDraw(float CameraX,float CameraY,float CameraZ)
 {
-    fanRotation += 10.0f; // “Ì«œ… «·“«ÊÌ… »„ﬁœ«— 1 œ—Ã… ›Ì ﬂ· „—…
+    cameraX= CameraX, cameraZ= CameraZ, cameraY = CameraY;
+    fanRotation += 10.0f;
     if (fanRotation >= 360.0f) {
-        fanRotation = 0.0f; // ≈⁄«œ…  ⁄ÌÌ‰ «·“«ÊÌ… ≈·Ï 0 ⁄‰œ «·Ê’Ê· ≈·Ï 360 œ—Ã…
+        fanRotation = 0.0f; 
     }
-   
+    for (auto& door : doors) {
+        door.updateState(cameraX,cameraY, cameraZ);
+        door.draw();
+    }
+
     electronic.drawFridge(900, 890, 200, 0,270, 0);
     electronic.drawFridge(900, 890, -300, 0, 270, 0, fridge1, 0.2, 0.2, 0.2);
     electronic.drawFridge(900, 890, -50, 0, 270, 0);

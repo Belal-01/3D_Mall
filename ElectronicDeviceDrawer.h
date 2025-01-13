@@ -25,14 +25,14 @@ public:
         glRotatef(angleZ, 0.0f, 0.0f, 1.0f);
 
         // —”„ Œÿ ›«’· · ﬁ”Ì„ «·»—«œ ≈·Ï »«»Ì‰
-        glColor3f(0.0f, 0.0f, 0.0f); // ·Ê‰ «·Œÿ «·√”Êœ
+        glColor3f(0.0f, 0.0f, 0.0f); 
         glBegin(GL_LINES);
         glVertex3f(-fridgeWidth / 2, 400, fridgeDepth / 2);
         glVertex3f(fridgeWidth / 2, 400, fridgeDepth / 2);
         glEnd();
 
         // —”„ «·„ﬁ«»÷
-        glColor3f(0.7f, 0.7f, 0.7f); // ·Ê‰ «·„ﬁ«»÷ (—„«œÌ ›« Õ)
+        glColor3f(0.7f, 0.7f, 0.7f); 
         glBegin(GL_QUADS);
         glVertex3f(-100 + 15, 200, fridgeDepth / 2 + 0.1f);
         glVertex3f(-100 + 5, 200, fridgeDepth / 2 + 0.1f);
@@ -45,7 +45,7 @@ public:
         glEnd();
 
         // —”„ Ã”„ «·»—«œ
-        glColor3f(0.9f, 0.9f, 0.9f); // ·Ê‰ «·»—«œ (√»Ì÷ √Ê —„«œÌ ›« Õ)
+        glColor3f(0.9f, 0.9f, 0.9f); 
         glBegin(GL_QUADS);
 
         // ÊÃÂ √„«„Ì
@@ -103,11 +103,10 @@ public:
         // —”„ Ã”„ «·»—«œ
 
         glBindTexture(GL_TEXTURE_2D, fridge);
-        glColor3f(0.9f, 0.9f, 0.9f); // ·Ê‰ «·»—«œ (√»Ì÷ √Ê —„«œÌ ›« Õ)
+        glColor3f(0.9f, 0.9f, 0.9f); 
         glBegin(GL_QUADS);
 
             // ÊÃÂ √„«„Ì
-       
         glTexCoord2f(1, 0);
         glVertex3f(-fridgeWidth / 2, 0, fridgeDepth / 2);
         glTexCoord2f(0, 0);
@@ -121,7 +120,7 @@ public:
 
         glEnd();
 
-        glColor3f(r, g, b); // ·Ê‰ «·»—«œ (√»Ì÷ √Ê —„«œÌ ›« Õ)
+        glColor3f(r, g, b); 
         glBegin(GL_QUADS);
         // ÊÃÂ Œ·›Ì
         glVertex3f(-fridgeWidth / 2, 0, -fridgeDepth / 2);
@@ -156,22 +155,21 @@ public:
         glPopMatrix();
     }
     static void drawAirConditioner(float x, float y, float z, float angleX, float angleY, float angleZ) {
-        //  ⁄—Ì› „ €Ì—«  ·· Õﬂ„ ›Ì «·ÕÃ„
-        float width = 40.0f * 3;  // «·⁄—÷
-        float height = 20.0f * 3; // «·«— ›«⁄
-        float depth = 10.0f * 3;  // «·⁄„ﬁ
-        float pipeHeight = 10.0f * 3; // «— ›«⁄ «·√‰«»Ì»
+        float width = 40.0f * 3;  
+        float height = 20.0f * 3; 
+        float depth = 10.0f * 3;  
+        float pipeHeight = 10.0f * 3; 
 
         glPushMatrix();
         glTranslatef(x, y, z);
-        glRotatef(angleX, 10.0f, 0.0f, 0.0f); // œÊ—«‰ ÕÊ· «·„ÕÊ— X
-        glRotatef(angleY, 0.0f, 10.0f, 0.0f); // œÊ—«‰ ÕÊ· «·„ÕÊ— Y
-        glRotatef(angleZ, 0.0f, 0.0f, 10.0f); // œÊ—«‰ ÕÊ· «·„ÕÊ— Z
+        glRotatef(angleX, 10.0f, 0.0f, 0.0f);
+        glRotatef(angleY, 0.0f, 10.0f, 0.0f); 
+        glRotatef(angleZ, 0.0f, 0.0f, 10.0f); 
 
-        glColor3f(0.8f, 0.8f, 0.8f); // ·Ê‰ «·„ﬂÌ›
+        glColor3f(0.8f, 0.8f, 0.8f); 
         glBegin(GL_QUADS);
 
-        // «·ÃÊ«‰» «·√—»⁄… ··„ﬂÌ› („ﬂ⁄») »«” Œœ«„ «·„ €Ì—« 
+       
         glVertex3f(0, 0, 0);
         glVertex3f(width, 0, 0);
         glVertex3f(width, height, 0);
@@ -198,21 +196,8 @@ public:
         glVertex3f(0, 0, 0);
 
         glEnd();
-
-        //  ›«’Ì· ≈÷«›Ì… („À· «·√‰«»Ì») »«” Œœ«„ «·„ €Ì—« 
-        glLineWidth(3.0f);
-        glColor3f(0.3f, 0.3f, 0.3f);
-        glBegin(GL_LINES);
-        glVertex3f(0, pipeHeight, 0);
-        glVertex3f(width, pipeHeight, 0); // √‰»Ê» ›Ì «·√⁄·Ï
-        glEnd();
-
-        glLineWidth(3.0f);
-        glColor3f(0.3f, 0.3f, 0.3f);
-        glBegin(GL_LINES);
-        glVertex3f(0, pipeHeight, -depth);
-        glVertex3f(width, pipeHeight, -depth); // √‰»Ê» ›Ì «·√”›·
-        glEnd();
+           
+      
 
         glPopMatrix();
     }
@@ -284,23 +269,23 @@ public:
     }
 
     static void drawAirConditionerWithFan(float x, float y, float z, float angleX, float angleY, float angleZ, float fanRotation) {
-        //  ⁄—Ì› „ €Ì—«  ·· Õﬂ„ ›Ì √»⁄«œ «·„ﬂÌ› Ê«·„—ÊÕ…
-        float acWidth = 40.0f * 3;   // «·⁄—÷
-        float acHeight = 20.0f * 3;  // «·«— ›«⁄
-        float acDepth = 10.0f * 3;   // «·⁄„ﬁ
-        float fanRadius = 10 * 3; // ‰’› ﬁÿ— «·„—ÊÕ…
+    
+        float acWidth = 40.0f * 3;   
+        float acHeight = 20.0f * 3;  
+        float acDepth = 10.0f * 3;  
+        float fanRadius = 10 * 3; 
 
         glPushMatrix();
         glTranslatef(x, y, z);
-        glRotatef(angleX, 10.0f, 0.0f, 0.0f); // œÊ—«‰ ÕÊ· «·„ÕÊ— X
-        glRotatef(angleY, 0.0f, 10.0f, 0.0f); // œÊ—«‰ ÕÊ· «·„ÕÊ— Y
-        glRotatef(angleZ, 0.0f, 0.0f, 10.0f); // œÊ—«‰ ÕÊ· «·„ÕÊ— Z
+        glRotatef(angleX, 10.0f, 0.0f, 0.0f); 
+        glRotatef(angleY, 0.0f, 10.0f, 0.0f); 
+        glRotatef(angleZ, 0.0f, 0.0f, 10.0f); 
 
         // —”„ ÂÌﬂ· «·„ﬂÌ›
-        glColor3f(0.8f, 0.8f, 0.8f); // ·Ê‰ «·„ﬂÌ›
+        glColor3f(0.8f, 0.8f, 0.8f); 
         glBegin(GL_QUADS);
 
-        // «·ÃÊ«‰» «·√—»⁄… ··„ﬂÌ›
+    // ÊÃÂ «„«„Ì
         glVertex3f(0, 0, 0);
         glVertex3f(acWidth, 0, 0);
         glVertex3f(acWidth, acHeight, 0);
@@ -350,21 +335,11 @@ public:
         }
         glEnd();
 
-        // —”„ › Õ«  «· ÂÊÌ…
-        glLineWidth(3.0f);
-        glColor3f(0.3f, 0.3f, 0.3f);
-        glBegin(GL_LINES);
-        for (float i = 10.0f; i < acWidth; i += 16.0f) {
-            glVertex3f(i - 8, acHeight, 0);
-            glVertex3f(i, acHeight, 0);
-            glVertex3f(i - 8, acHeight, -acDepth);
-            glVertex3f(i, acHeight, -acDepth);
-        }
-        glEnd();
+       
         float fanCenterX = acWidth / 2.0f;
         float fanCenterY = acHeight / 2.0f;
         float fanCenterZ = -1.0f;
-        // —”„ «·‘»ﬂ «·√„«„Ì ··„—ÊÕ…
+      
         glColor3f(0.2f, 0.2f, 0.2f);
         glBegin(GL_LINE_LOOP);
         for (int i = 0; i < 360; i += 3) {
@@ -395,7 +370,7 @@ public:
         glPopMatrix();
     }
     static void drawfireplace(float x, float y, float z, float angleX, float angleY, float angleZ) {
-        //  ﬂ»Ì— «·√»⁄«œ ·Ì’»Õ «·ÕÃ„ „÷«⁄›«
+      
         float width = 80.0f * 2;
         float height = 40.0f * 2;
         float depth = 20.0f * 2;
@@ -406,7 +381,7 @@ public:
         glRotatef(angleY, 0.0f, 1.0f, 0.0f);
         glRotatef(angleZ, 0.0f, 0.0f, 1.0f);
 
-        // —”„ «·„Êﬁœ
+      
         glColor3f(0.8f, 0.8f, 0.8f);
         glBegin(GL_QUADS);
         // «·ÃÊ«‰» «·√—»⁄…
@@ -436,7 +411,6 @@ public:
         glVertex3f(0, 0, 0);
         glEnd();
 
-        // —”„ «·› Õ… «·√„«„Ì…
         glColor3f(0.8f, 0.8f, 0.8f);
         glBegin(GL_QUADS);
         glVertex3f(40.0f, 40.0f, -0.1f);
@@ -483,7 +457,7 @@ public:
         glRotatef(angleZ, 0.0f, 0.0f, 1.0f);
         glBindTexture(GL_TEXTURE_2D, wash);
         // —”„ Ã”„ «·€”«·…
-        glColor3f(0.5, 0.5, 0.5); // ·Ê‰ «·€”«·… (√»Ì÷ √Ê —„«œÌ ›« Õ)
+        glColor3f(0.5, 0.5, 0.5); 
 
         glBegin(GL_QUADS);
 
@@ -497,7 +471,7 @@ public:
         glTexCoord2f(0, 1);
         glVertex3f(-machineWidth / 2, machineHeight, machineDepth / 2);
         glEnd();
-        glColor3f(r, g, b); // ·Ê‰ «·€”«·… (√»Ì÷ √Ê —„«œÌ ›« Õ)
+        glColor3f(r, g, b); 
 
         glBegin(GL_QUADS);
         // ÊÃÂ Œ·›Ì
@@ -538,27 +512,25 @@ public:
         glPushMatrix();
         float scale = 4;
         glTranslatef(x, y, z);
-        glRotatef(angleX, 1.0f, 0.0f, 0.0f); // œÊ—«‰ ÕÊ· «·„ÕÊ— X
-        glRotatef(angleY, 0.0f, 1.0f, 0.0f); // œÊ—«‰ ÕÊ· «·„ÕÊ— Y
-        glRotatef(angleZ, 0.0f, 0.0f, 1.0f); // œÊ—«‰ ÕÊ· «·„ÕÊ— Z
+        glRotatef(angleX, 1.0f, 0.0f, 0.0f); 
+        glRotatef(angleY, 0.0f, 1.0f, 0.0f); 
+        glRotatef(angleZ, 0.0f, 0.0f, 1.0f); 
+        glRotatef(-90.0f, 1.0f, 0.0f, 0.0f); 
 
-        //  ÊÃÌÂ «·„—ÊÕ… ··√”›· (œÊ—«‰ ÕÊ· «·„ÕÊ— X)
-        glRotatef(-90.0f, 1.0f, 0.0f, 0.0f); // œÊ—«‰ 90 œ—Ã… ÕÊ· «·„ÕÊ— X ·Ã⁄· «·„—ÊÕ… „ÊÃÂ… ··√”›·
-
-        // —”„ «·–—«⁄ «·√”ÿÊ«‰Ì… «· Ì  ⁄·ﬁ «·„—ÊÕ…
-        glColor3f(0.5f, 0.5f, 0.5f); // ·Ê‰ «·–—«⁄
-        GLUquadric* quadric = gluNewQuadric(); // ≈‰‘«¡ ﬂ«∆‰ ·√”ÿÊ«‰…
+      
+        glColor3f(0.5f, 0.5f, 0.5f); 
+        GLUquadric* quadric = gluNewQuadric(); 
 
         glPushMatrix();
-        glTranslatef(0.0f, 0.0f, 40.0f * scale); //  Õ—Ìﬂ «·–—«⁄ ≈·Ï «·”ﬁ› „⁄ „—«⁄«… „⁄«„· «· ﬂ»Ì—
-        gluCylinder(quadric, 2.0f * scale, 2.0f * scale, 40.0f * scale, 10, 10); // —”„ «·–—«⁄ „⁄  ﬂ»Ì—
+        glTranslatef(0.0f, 0.0f, 40.0f * scale); 
+        gluCylinder(quadric, 2.0f * scale, 2.0f * scale, 40.0f * scale, 10, 10); 
         glPopMatrix();
 
-        // —”„ «·„ÕÊ— «·„—ﬂ“Ì ··„—ÊÕ…
+       
         glPushMatrix();
-        glTranslatef(0.0f, 0.0f, 40.0f * scale); //  Õ—Ìﬂ «·„ÕÊ— ≈·Ï «·–—«⁄ „⁄  ﬂ»Ì—
-        glRotatef(fanRotation, 0.0f, 0.0f, 1.0f); //  œÊÌ— «·„ÕÊ—
-        glBegin(GL_QUADS); // —”„ «·„ÕÊ— ﬂ„ﬂ⁄» ’€Ì— „⁄ „—«⁄«… «· ﬂ»Ì—
+        glTranslatef(0.0f, 0.0f, 40.0f * scale); 
+        glRotatef(fanRotation, 0.0f, 0.0f, 1.0f);
+        glBegin(GL_QUADS); 
         glVertex3f(-2.0f * scale, -2.0f * scale, -2.0f * scale);
         glVertex3f(2.0f * scale, -2.0f * scale, -2.0f * scale);
         glVertex3f(2.0f * scale, 2.0f * scale, -2.0f * scale);
@@ -566,15 +538,15 @@ public:
         glEnd();
         glPopMatrix();
 
-        // —”„ «·‘›—«  «·„” ÿÌ·… ··„—ÊÕ…
-        glColor3f(0.8f, 0.8f, 0.8f); // ·Ê‰ «·‘›—« 
-        float bladeLength = 40.0f * scale; // ÿÊ· «·‘›—… „⁄  ﬂ»Ì—
-        float bladeWidth = 8.0f * scale; // ⁄—÷ «·‘›—… „⁄  ﬂ»Ì—
+        // —”„ «·‘›—«  
+        glColor3f(0.8f, 0.8f, 0.8f); 
+        float bladeLength = 40.0f * scale; 
+        float bladeWidth = 8.0f * scale; 
 
         for (int i = 0; i < 4; ++i) {
             glPushMatrix();
-            glTranslatef(0.0f, 0.0f, 40.0f * scale); //  Õ—Ìﬂ «·‰Ÿ«„ ≈·Ï „—ﬂ“ «·„—ÊÕ… „⁄  ﬂ»Ì—
-            glRotatef(fanRotation + i * 90.0f, 0.0f, 0.0f, 1.0f); // «· œÊÌ— ÕÊ· «·„ÕÊ— Z
+            glTranslatef(0.0f, 0.0f, 40.0f * scale); 
+            glRotatef(fanRotation + i * 90.0f, 0.0f, 0.0f, 1.0f); 
 
             // —”„ «·‘›—«  ﬂ„” ÿÌ·«  „⁄  ﬂ»Ì—
             glBegin(GL_QUADS);
@@ -593,24 +565,23 @@ public:
         glPushMatrix();
         float scale = 300.0f;
 
-        //  Õ—Ìﬂ «·„—ÊÕ… ≈·Ï «·„Êﬁ⁄ «·„Õœœ
+   
         glColor3f(r, g, b);
         glTranslatef(x, y, z);
 
-        //  œÊÌ— «·„—ÊÕ… ÕÊ· «·„Õ«Ê— «·À·«À… X, Y, Z
-        glRotatef(rotationX, 1.0f, 0.0f, 0.0f); // œÊ—«‰ ÕÊ· «·„ÕÊ— X
-        glRotatef(rotationY, 0.0f, 1.0f, 0.0f); // œÊ—«‰ ÕÊ· «·„ÕÊ— Y
-        glRotatef(rotationZ, 0.0f, 0.0f, 1.0f); // œÊ—«‰ ÕÊ· «·„ÕÊ— Z
+        glRotatef(rotationX, 1.0f, 0.0f, 0.0f); 
+        glRotatef(rotationY, 0.0f, 1.0f, 0.0f); 
+        glRotatef(rotationZ, 0.0f, 0.0f, 1.0f); 
 
         glPushMatrix();
         glRotatef(270, 1, 0, 0);
-        glTranslatef(0.0f, 0.0f, 0.05f * scale); //  Õ—Ìﬂ «·ﬁ«⁄œ… ··√⁄·Ï
+        glTranslatef(0.0f, 0.0f, 0.05f * scale); 
         glBegin(GL_POLYGON);
-        int numSegments = 100; // ⁄œœ «·ﬁÿ«⁄«  ·—”„ œ«∆—… ”·”…
+        int numSegments = 100; 
         for (int i = 0; i < numSegments; ++i) {
-            float theta = 2.0f * 3.1415926f * float(i) / float(numSegments); // “«ÊÌ… «·ﬁÿ«⁄
-            float dx = 0.2f * scale * cosf(theta); // ≈Õœ«ÀÌ X
-            float dy = 0.2f * scale * sinf(theta); // ≈Õœ«ÀÌ Y
+            float theta = 2.0f * 3.1415926f * float(i) / float(numSegments); 
+            float dx = 0.2f * scale * cosf(theta); 
+            float dy = 0.2f * scale * sinf(theta); 
             glVertex3f(dx, dy, -5);
         }
         glEnd();
@@ -622,15 +593,15 @@ public:
         // —”„ «·⁄„Êœ
         glPushMatrix();
         GLUquadric* standQuad = gluNewQuadric();
-        glTranslatef(0.0f, 0.1f * scale, 0.0f); //  Õ—Ìﬂ «·⁄„Êœ ··√⁄·Ï
-        gluCylinder(standQuad, 0.05f * scale, 0.05f * scale, 0.5f * scale, 32, 32); // —”„ «·⁄„Êœ „⁄ «· ﬂ»Ì—
+        glTranslatef(0.0f, 0.1f * scale, 0.0f); 
+        gluCylinder(standQuad, 0.05f * scale, 0.05f * scale, 0.5f * scale, 32, 32); 
         gluDeleteQuadric(standQuad);
         glPopMatrix();
 
-        // —”„ «·„Õ—ﬂ
+       
         glPushMatrix();
-        glTranslatef(0.0f, 0.1f * scale, 60*3); //  Õ—Ìﬂ «·„Õ—ﬂ ··√⁄·Ï
-        glutSolidSphere(0.1f * scale, 100, 32); // —”„ «·„Õ—ﬂ ⁄·Ï ‘ﬂ· ﬂ—… „⁄ «· ﬂ»Ì—
+        glTranslatef(0.0f, 0.1f * scale, 60*3); 
+        glutSolidSphere(0.1f * scale, 100, 32); // —”„ ﬂ—…
         glPopMatrix();
 
         glPopMatrix();
@@ -638,23 +609,23 @@ public:
         // —”„ «·‘›—« 
         glPushMatrix();
         glColor3f(0, 0, 0);
-        glTranslatef(0.0f, 0.6f * scale, 0.0f); //  Õ—Ìﬂ «·‘›—«  ··√⁄·Ï
+        glTranslatef(0.0f, 0.6f * scale, 0.0f); 
         for (int i = 0; i < 3; ++i) {
             glPushMatrix();
-            glRotatef(fanRotation + i * 120.0f, 0.0f, 0.0f, 1.0f); //  œÊÌ— «·‘›—«  ÕÊ· «·„ÕÊ— Z
-            glTranslatef(0.2f * scale, 0.0f, 0.0f); //  Õ—Ìﬂ «·‘›—«  ··√„«„
-            glScalef(0.4f * scale/2, 0.05f * scale/2, 0.1f * scale/2); //  ﬂ»Ì— «·‘›—«  · ﬂÊ‰ √›ﬁÌ…
-            glutSolidCube(1.0f); // —”„ «·‘›—«  »«” Œœ«„ «·„ﬂ⁄»«  „⁄ «· ﬂ»Ì—
+            glRotatef(fanRotation + i * 120.0f, 0.0f, 0.0f, 1.0f);
+            glTranslatef(0.2f * scale, 0.0f, 0.0f); 
+            glScalef(0.4f * scale/2, 0.05f * scale/2, 0.1f * scale/2); 
+            glutSolidCube(1.0f); 
             glPopMatrix();
         }
         glPopMatrix();
 
         // —”„ «·‘»ﬂ «·ﬂ—ÊÌ ÕÊ· «·‘›—« 
         glPushMatrix();
-        glTranslatef(0.0f, 0.6f * scale, 0.0f); //  „—ﬂ“ «·‘»ﬂ ⁄‰œ «·„Õ—ﬂ Ê«·‘›—« 
+        glTranslatef(0.0f, 0.6f * scale, 0.0f); 
         GLUquadric* meshQuad = gluNewQuadric();
-        gluQuadricDrawStyle(meshQuad, GLU_LINE); //  ⁄ÌÌ‰ ‰„ÿ «·—”„ ﬂ‘»ﬂ…
-        gluSphere(meshQuad, 0.3f * scale, 32, 32); // —”„ ﬂ—… ﬂ‘»ﬂ ÌÕÌÿ »«·‘›—« 
+        gluQuadricDrawStyle(meshQuad, GLU_LINE); 
+        gluSphere(meshQuad, 0.3f * scale, 32, 32); 
         gluDeleteQuadric(meshQuad);
         glPopMatrix();
 
@@ -676,7 +647,7 @@ public:
         // —”„ Ã”„ «·»—«œ
 
         glBindTexture(GL_TEXTURE_2D, brada);
-        glColor3f(0.9f, 0.9f, 0.9f); // ·Ê‰ «·»—«œ (√»Ì÷ √Ê —„«œÌ ›« Õ)
+        glColor3f(0.9f, 0.9f, 0.9f); 
         glBegin(GL_QUADS);
 
         // ÊÃÂ √„«„Ì
@@ -694,7 +665,7 @@ public:
 
         glEnd();
 
-        glColor3f(r, g, b); // ·Ê‰ «·»—«œ (√»Ì÷ √Ê —„«œÌ ›« Õ)
+        glColor3f(r, g, b);
         glBegin(GL_QUADS);
         // ÊÃÂ Œ·›Ì
         glVertex3f(-fridgeWidth / 2, 0, -fridgeDepth / 2);

@@ -132,6 +132,7 @@
     <ClCompile Include="abd.cpp" />
     <ClCompile Include="C:\Users\abd alrzaq\Downloads\Telegram Desktop\stb_image.c" />
     <ClCompile Include="cameraConfiguration.cpp" />
+    <ClCompile Include="Door.cpp" />
     <ClCompile Include="ElectronicDeviceDrawer.cpp" />
     <ClCompile Include="Glass.cpp" />
     <ClCompile Include="KeyboardConfiguration.cpp" />
@@ -147,6 +148,7 @@
     <ClInclude Include="abdMain.h" />
     <ClInclude Include="camera.h" />
     <ClInclude Include="cameraConfiguration.h" />
+    <ClInclude Include="Door.h" />
     <ClInclude Include="ElectronicDeviceDrawer.h" />
     <ClInclude Include="Glass.h" />
     <ClInclude Include="keyboardConfiguration.h" />
