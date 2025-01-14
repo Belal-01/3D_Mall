@@ -24,7 +24,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="test2.cpp">
+    <ClCompile Include="3D_mall.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="texture.cpp">
@@ -54,7 +54,7 @@
     <ClCompile Include="restorant.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="3D_mall.cpp">
+    <ClCompile Include="Test.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="C:\Users\abd alrzaq\Downloads\Telegram Desktop\stb_image.c">

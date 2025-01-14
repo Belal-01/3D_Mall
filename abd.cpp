@@ -29,6 +29,7 @@ void Abd::init()
 
 void Abd::AbdDraw(float CameraX,float CameraY,float CameraZ)
 {
+
     cameraX= CameraX, cameraZ= CameraZ, cameraY = CameraY;
     fanRotation += 10.0f;
     if (fanRotation >= 360.0f) {
@@ -41,6 +42,7 @@ void Abd::AbdDraw(float CameraX,float CameraY,float CameraZ)
     first();
     second();
     
+
 }
 void  Abd::first() {
 
@@ -102,7 +104,7 @@ void Abd::second()
     drawtable(2550, 885, 4900, 180);
     drawtable(3200, 885, 4900, 180);
     drawtable(3900, 885, 4900, 180);
-    technical.drawGamingChair(0, 0, 0, 90);;
+
 
 }
 void Abd::drawtable(float x,float y, float z,float rotate) {
@@ -120,5 +122,6 @@ void Abd::drawtable(float x,float y, float z,float rotate) {
         technical.drawKeyboard(x + 250, y + 260, z + 150, 0, 180, 0);
         technical.drawSpeakerFrame(x + 100, y + 295, z + 100, 0, 0, 0, speaker);
         technical.drawMouse(x + 400, y + 250, z + 150, 0, 180, 0);
+        technical.drawGamingChair(x+275, 1075, z+300, 90);;
     }
 }

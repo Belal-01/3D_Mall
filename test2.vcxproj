@@ -136,10 +136,10 @@
     <ClCompile Include="ElectronicDeviceDrawer.cpp" />
     <ClCompile Include="Glass.cpp" />
     <ClCompile Include="KeyboardConfiguration.cpp" />
-    <ClCompile Include="3D_mall.cpp" />
+    <ClCompile Include="Test.cpp" />
     <ClCompile Include="restorant.cpp" />
     <ClCompile Include="TechnicalDivecesDrawer.cpp" />
-    <ClCompile Include="test2.cpp" />
+    <ClCompile Include="3D_mall.cpp" />
     <ClCompile Include="texture.cpp" />
     <ClCompile Include="wall.cpp" />
   </ItemGroup>
