@@ -45,6 +45,9 @@
     <ClCompile Include="restorant.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Stairs.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="camera.h">
@@ -71,15 +74,15 @@
     <ClInclude Include="restorant.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Stairs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="floortexture.bmp">
       <Filter>Source Files\images</Filter>
     </Image>
     <Image Include="floorImg.bmp">
-      <Filter>Source Files\images</Filter>
-    </Image>
-    <Image Include="insidMallFloorTexture.bmp">
       <Filter>Source Files\images</Filter>
     </Image>
     <Image Include="woodWallTexture.bmp">
@@ -94,13 +97,7 @@
     <Image Include="TableWoodTexture.bmp">
       <Filter>Source Files\images</Filter>
     </Image>
-    <Image Include="kitchenFloorWoodTexture2.bmp">
-      <Filter>Source Files\images</Filter>
-    </Image>
     <Image Include="kitchenFloorWoodTexture.bmp">
-      <Filter>Source Files\images</Filter>
-    </Image>
-    <Image Include="phrezaFront.bmp">
       <Filter>Source Files\images</Filter>
     </Image>
     <Image Include="phrezaside.bmp">
@@ -119,6 +116,24 @@
       <Filter>Source Files\images</Filter>
     </Image>
     <Image Include="shaurmaTable2.bmp">
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="floorInsidStore.bmp">
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="images\kitchenLogo.bmp">
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="images\kitchenWallWood.bmp">
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="images\interiorWall.bmp">
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="images\externalWall.bmp">
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="images\stairimg.bmp">
       <Filter>Source Files\images</Filter>
     </Image>
   </ItemGroup>
