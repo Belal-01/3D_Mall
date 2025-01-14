@@ -4,7 +4,7 @@
 #include "Wall.h"
 #include "restorant.h"
 
- extern Wall wall;
+extern Wall wall;
 extern Resturant resturant;
 void Stairs::stairsInit() {
     oneStairImg = LoadTexture((char*)"images\\stairimg.bmp", 255.0f);
@@ -125,7 +125,7 @@ void Stairs::stairs(int x, int y, int z, int Q) {
     glDepthMask(GL_TRUE);
 
     // draw the glasses staicks roof 
-      stairSideStick(stairSideStickImg);
+    stairSideStick(stairSideStickImg);
 
 
     glPushMatrix();
@@ -134,7 +134,7 @@ void Stairs::stairs(int x, int y, int z, int Q) {
     {
         wall.sideWall(220, 0, 220, -60, -75, 15, resturant.sideshaurmaTable, 1, 1, resturant.sideshaurmaTable, 1, 1);
         oneStair();
-            glTranslated(0, 55, -150);
+        glTranslated(0, 55, -150);
     }
     glPopMatrix();
 
