@@ -51,9 +51,6 @@
     <ClCompile Include="abd.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="TechnicalDivecesDrawer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="restorant.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -65,6 +62,9 @@
     </ClCompile>
     <ClCompile Include="Door.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TechnicalDivecesDrawer.cpp">
+      <Filter>Source Files\AbdAlrzaq</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -95,14 +95,14 @@
     <ClInclude Include="abd.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="TechnicalDivecesDrawer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="restorant.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Door.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TechnicalDivecesDrawer.h">
+      <Filter>Header Files\AbdAlrzaq</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -120,9 +120,6 @@
     </Image>
     <Image Include="xboxb.bmp">
       <Filter>Source Files\AbdAlrzaq\Images</Filter>
-    </Image>
-    <Image Include="wash.bmp">
-      <Filter>Source Files</Filter>
     </Image>
     <Image Include="speaker.bmp">
       <Filter>Source Files\AbdAlrzaq\Images</Filter>
@@ -160,13 +157,16 @@
     <Image Include="brada1.bmp">
       <Filter>Source Files\AbdAlrzaq\Images</Filter>
     </Image>
-    <Image Include="brada2.bmp">
-      <Filter>Source Files\AbdAlrzaq</Filter>
-    </Image>
     <Image Include="brada3.bmp">
       <Filter>Source Files\AbdAlrzaq\Images</Filter>
     </Image>
     <Image Include="s7ana.bmp">
+      <Filter>Source Files\AbdAlrzaq\Images</Filter>
+    </Image>
+    <Image Include="brada2.bmp">
+      <Filter>Source Files\AbdAlrzaq\Images</Filter>
+    </Image>
+    <Image Include="wash.bmp">
       <Filter>Source Files\AbdAlrzaq\Images</Filter>
     </Image>
   </ItemGroup>

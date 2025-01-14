@@ -10,14 +10,14 @@ class TechnicalDivecesDrawer
 public :
     void drawComputerMonitor(float x, float y, float z, float angleX, float angleY, float angleZ) {
         // ÇáÃÈÚÇÏ ÇáËÇÈÊÉ ááÔÇÔÉ æÇáŞÇÚÏÉ
-        float width = 50.0f;
-        float height = 30.0f;
-        float screenThickness = 1.0f; // Óãß ÇáÔÇÔÉ
-        float baseWidth = 40.0f; // ÊÕÛíÑ ÇáŞÇÚÏÉ
-        float baseDepth = 15.0f; // ÊÕÛíÑ ÚãŞ ÇáŞÇÚÏÉ
-        float connectorHeight = 1.5f; // ÊŞáíÕ Óãß ÇáæÕáÉ áíßæä ÃŞá ãä Óãß ÇáÔÇÔÉ
-        float buttonWidth = 3.0f; // ÚÑÖ ÇáÒÑ
-        float buttonHeight = 1.0f; // ÇÑÊİÇÚ ÇáÒÑ
+        float width = 50.0f*4;
+        float height = 30.0f*4;
+        float screenThickness = 1.0f*4; // Óãß ÇáÔÇÔÉ
+        float baseWidth = 40.0f*4; // ÊÕÛíÑ ÇáŞÇÚÏÉ
+        float baseDepth = 15.0f*4; // ÊÕÛíÑ ÚãŞ ÇáŞÇÚÏÉ
+        float connectorHeight = 4*1.5f; // ÊŞáíÕ Óãß ÇáæÕáÉ áíßæä ÃŞá ãä Óãß ÇáÔÇÔÉ
+        float buttonWidth = 3.0f*4; // ÚÑÖ ÇáÒÑ
+        float buttonHeight = 1.0f*4; // ÇÑÊİÇÚ ÇáÒÑ
 
         glPushMatrix();
         glTranslatef(x, y, z);
@@ -105,10 +105,10 @@ public :
         glColor3f(1.0f, 0.0f, 0.0f); // áæä ÇáÒÑ ÃÍãÑ
         glBegin(GL_QUADS);
         // ÑİÚ ÇáÒÑ ŞáíáÇğ æÌÚáå ÃÍãÑ
-        glVertex3f(22, -connectorHeight + 2.0f, -0.1); // ÊÚÏíá ÇÑÊİÇÚ ÇáÒÑ
-        glVertex3f(25, -connectorHeight + 2.0f, -0.1); // ÊÚÏíá ÇÑÊİÇÚ ÇáÒÑ
-        glVertex3f(25, -connectorHeight + buttonHeight + 2.0f, -0.1); // ÊÚÏíá ÇÑÊİÇÚ ÇáÒÑ
-        glVertex3f(22, -connectorHeight + buttonHeight + 2.0f, -0.1); // ÊÚÏíá ÇÑÊİÇÚ ÇáÒÑ
+        glVertex3f(22, -connectorHeight + 10.0f, -0.1); // ÊÚÏíá ÇÑÊİÇÚ ÇáÒÑ
+        glVertex3f(25, -connectorHeight + 10.0f, -0.1); // ÊÚÏíá ÇÑÊİÇÚ ÇáÒÑ
+        glVertex3f(25, -connectorHeight + buttonHeight + 10.0f, -0.1); // ÊÚÏíá ÇÑÊİÇÚ ÇáÒÑ
+        glVertex3f(22, -connectorHeight + buttonHeight + 10.0f, -0.1); // ÊÚÏíá ÇÑÊİÇÚ ÇáÒÑ
         glEnd();
 
         glPopMatrix();
@@ -363,12 +363,12 @@ public :
     }
     void drawKeyboard(float x, float y, float z, float angleX, float angleY, float angleZ) {
         // ÃÈÚÇÏ ÇáßíÈæÑÏ
-        float keyboardWidth = 60.0f;
-        float keyboardHeight = 15.0f;
-        float keyboardDepth = 2.0f; // Óãß ÇáßíÈæÑÏ
-        float keyHeight = 1.0f; // ÇÑÊİÇÚ ÇáÃÒÑÇÑ
-        float cableThickness = 0.5f;
-        float cableLength = 20.0f;
+        float keyboardWidth = 3*60.0f;
+        float keyboardHeight =3* 15.0f;
+        float keyboardDepth =3* 2.0f; // Óãß ÇáßíÈæÑÏ
+        float keyHeight = 1.0f*3; // ÇÑÊİÇÚ ÇáÃÒÑÇÑ
+        float cableThickness = 3*0.5f;
+        float cableLength = 15.0f*3;
 
         glPushMatrix();
         glTranslatef(x, y, z);
@@ -379,7 +379,7 @@ public :
         glRotatef(angleZ, 0.0f, 0.0f, 1.0f); // ÏæÑÇä Íæá ÇáãÍæÑ Z
 
         // ÑÓã ÇáßíÈæÑÏ
-        glColor3f(0.2f, 0.2f, 0.2f); // áæä ÇáßíÈæÑÏ
+        glColor3f(0.5f, 0.5f, 0.5f); // áæä ÇáßíÈæÑÏ
         glBegin(GL_QUADS);
         // æÌå ÇáßíÈæÑÏ ÇáÚáæí
         glVertex3f(-keyboardWidth / 2, 0, -keyboardHeight / 2);
@@ -410,10 +410,10 @@ public :
         glEnd();
 
         // ÑÓã ÇáÃÒÑÇÑ
-        glColor3f(0.8f, 0.8f, 0.8f); // áæä ÇáÃÒÑÇÑ
-        float keyWidth = 4.0f;
-        float keyDepth = 4.0f;
-        float spacing = 1.0f; // ÇáãÓÇİÉ Èíä ÇáÃÒÑÇÑ
+        glColor3f(0.9f, 0.9f, 0.9f); // áæä ÇáÃÒÑÇÑ
+        float keyWidth = 4*3.0f;
+        float keyDepth = 4*3.0f;
+        float spacing = 1.0f*3; // ÇáãÓÇİÉ Èíä ÇáÃÒÑÇÑ
 
         for (float row = -keyboardHeight / 2 + spacing; row < keyboardHeight / 2 - spacing; row += keyDepth + spacing) {
             for (float col = -keyboardWidth / 2 + spacing; col < keyboardWidth / 2 - spacing; col += keyWidth + spacing) {
@@ -648,9 +648,9 @@ public :
         glPopMatrix();
     }
     static void drawSpeakerFrame(float x, float y, float z, float angleX, float angleY, float angleZ, int  speaker) {
-        float speakerWidth = 20.0f;   // ÚÑÖ ÇáÓÈíßÑ
-        float speakerHeight = 60.0f;  // ÇÑÊİÇÚ ÇáÓÈíßÑ
-        float speakerDepth = 20.0f;   // ÚãŞ ÇáÓÈíßÑ
+        float speakerWidth = 1.5*20.0f;   // ÚÑÖ ÇáÓÈíßÑ
+        float speakerHeight = 1.5*60.0f;  // ÇÑÊİÇÚ ÇáÓÈíßÑ
+        float speakerDepth = 1.5*20.0f;   // ÚãŞ ÇáÓÈíßÑ
 
         glPushMatrix();
         glTranslatef(x, y, z);
@@ -712,10 +712,87 @@ public :
 
        
     }
+    static void drawMouse(float x, float y, float z, float angleX, float angleY, float angleZ) {
+        float mouseWidth = 20.0f;
+        float mouseHeight = 5.0f;
+        float mouseDepth = 25.0f;
+
+        glPushMatrix();
+        glTranslatef(x, y, z);
+        glRotatef(angleX, 1.0f, 0.0f, 0.0f);
+        glRotatef(angleY, 0.0f, 1.0f, 0.0f);
+        glRotatef(angleZ, 0.0f, 0.0f, 1.0f);
+
+        // ÑÓã ÇáãÇæÓ ßãÊæÇÒí ãÓÊØíáÇÊ
+        glColor3f(0.7f, 0.7f, 0.7f);  // áæä ÇáãÇæÓ ÇáÑãÇÏí
+        glBegin(GL_QUADS);
+
+        // ÇáÌåÉ ÇáÃãÇãíÉ
+        glVertex3f(0, 0, 0);
+        glVertex3f(mouseWidth, 0, 0);
+        glVertex3f(mouseWidth, mouseHeight, 0);
+        glVertex3f(0, mouseHeight, 0);
+
+        // ÇáÌåÉ ÇáÎáİíÉ
+        glVertex3f(0, 0, -mouseDepth);
+        glVertex3f(mouseWidth, 0, -mouseDepth);
+        glVertex3f(mouseWidth, mouseHeight, -mouseDepth);
+        glVertex3f(0, mouseHeight, -mouseDepth);
+
+        // ÇáÌåÉ ÇáÚáíÇ
+        glVertex3f(0, mouseHeight, -mouseDepth);
+        glVertex3f(mouseWidth, mouseHeight, -mouseDepth);
+        glVertex3f(mouseWidth, mouseHeight, 0);
+        glVertex3f(0, mouseHeight, 0);
+
+        // ÇáÌåÉ ÇáÓİáì
+        glVertex3f(0, 0, -mouseDepth);
+        glVertex3f(mouseWidth, 0, -mouseDepth);
+        glVertex3f(mouseWidth, 0, 0);
+        glVertex3f(0, 0, 0);
+
+        // ÇáÌåÉ Çáíãäì
+        glVertex3f(mouseWidth, 0, -mouseDepth);
+        glVertex3f(mouseWidth, mouseHeight, -mouseDepth);
+        glVertex3f(mouseWidth, mouseHeight, 0);
+        glVertex3f(mouseWidth, 0, 0);
+
+        // ÇáÌåÉ ÇáíÓÑì
+        glVertex3f(0, 0, -mouseDepth);
+        glVertex3f(0, mouseHeight, -mouseDepth);
+        glVertex3f(0, mouseHeight, 0);
+        glVertex3f(0, 0, 0);
+
+        glEnd();
+
+        // ÑÓã ÇáÃÒÑÇÑ Úáì ÇáæÌå ÇáÚáæí ãä ÇáÃãÇã
+        float buttonWidth = mouseWidth / 2;
+        float buttonHeight = mouseHeight / 5;
+
+        glColor3f(0.2f, 0.2f, 0.2f);  // áæä ÇáÃÒÑÇÑ ÇáÃÓæÏ
+        glBegin(GL_QUADS);
+
+        // ÇáÒÑ ÇáÃíÓÑ
+        glVertex3f(0, mouseHeight+1, 0.01f);
+        glVertex3f( buttonWidth, mouseHeight+1, 0.01f);
+        glVertex3f(buttonWidth, mouseHeight+1, -mouseDepth/4);
+        glVertex3f(0, mouseHeight +1, -mouseDepth / 4);
+
+        // ÇáÒÑ ÇáÃíãä
+        glVertex3f(buttonWidth+1, mouseHeight + 1, 0.01f);
+        glVertex3f(buttonWidth*2, mouseHeight + 1, 0.01f);
+        glVertex3f(buttonWidth*2, mouseHeight + 1, -mouseDepth / 4);
+        glVertex3f(buttonWidth + 1, mouseHeight + 1, -mouseDepth / 4);
+
+        glEnd();
+
+        glPopMatrix();
+    }
+
     static void drawComputerCase(float x, float y, float z, float angleX, float angleY, float angleZ,int pcf,int pcb,int pcs) {
-        float caseWidth = 60.0f;   // ÚÑÖ ÇáßíÓ (ÃßÈÑ ÚÑÖ)
-        float caseHeight = 40; // ÇÑÊİÇÚ ÇáßíÓ
-        float caseDepth = 20.0f;   // ÚãŞ ÇáßíÓ (ÃÕÛÑ ãä ÇáÚÑÖ)
+        float caseWidth = 60*3.0f;   // ÚÑÖ ÇáßíÓ (ÃßÈÑ ÚÑÖ)
+        float caseHeight = 40*3; // ÇÑÊİÇÚ ÇáßíÓ
+        float caseDepth = 20.0f*3;   // ÚãŞ ÇáßíÓ (ÃÕÛÑ ãä ÇáÚÑÖ)
 
         glPushMatrix();
         glTranslatef(x, y+ caseHeight / 2, z);
@@ -799,6 +876,108 @@ public :
 
         glPopMatrix();
     }
+    static void drawGamingTable(float width, float depth, float height, float x, float y, float z, float rotation) {
+        glPushMatrix();
+        glTranslatef(x, y , z);
+        glRotatef(rotation, 0.0f, 1.0f, 0.0f);
+        glLineWidth(10.0f);
+        glColor3f(0.5, 0.5, 0.5);
+        glBegin(GL_LINES);
+        glVertex3f(5, 0, 0);
+        glVertex3f(5, height, depth);
+        glVertex3f(5, 0, 0);
+        glVertex3f(5, 0, depth);
+        glVertex3f(5, height, 0);
+        glVertex3f(5, 0, depth);
+
+        glVertex3f(width-5, 0, -10);
+        glVertex3f(width-5, height, depth);
+        glVertex3f(width-5, 0, -10);
+        glVertex3f(width-5, 0, depth);
+        glVertex3f(width - 5, height, 0);
+        glVertex3f(width - 5, 0, depth);
+
+        glEnd();
+        glBegin(GL_QUADS);
+        glVertex3f(0, height, 0);
+        glVertex3f(width, height, 0);
+        glVertex3f(width, height, depth+2);
+        glVertex3f(0, height, depth+2);
+        glEnd();
+        glPopMatrix();
+    }
+    void drawGamingChair(float x, float y, float z, float rotationAngle) {
+        glPushMatrix();
+
+        // Apply translation and rotation
+        glTranslatef(x, y, z);
+        glRotatef(rotationAngle, 0.0f, 1.0f, 0.0f);  // Rotate around the y-axis
+
+        // Base Cylinder (Vertical)
+        glPushMatrix();
+        glColor3f(0.5f, 0.5f, 0.5f);  // Gray color
+        glTranslatef(0.0f, 0.0f, 0.0f);  // Ensure cylinder is vertically aligned
+        GLUquadric* quadric = gluNewQuadric();
+        gluCylinder(quadric, 5.0f, 5.0f, 40.0f, 32, 32);
+        gluDeleteQuadric(quadric);
+        glPopMatrix();
+
+        // Slanted Rectangles
+        for (int i = 0; i < 3; ++i) {
+            glPushMatrix();
+            glTranslatef(0.0f, 0.0f, -5.0f);
+            glRotatef(120.0f * i, 0.0f, 1.0f, 0.0f);
+            glRotatef(-30.0f, 1.0f, 0.0f, 0.0f);
+            glColor3f(0.3f, 0.3f, 0.3f);
+            glBegin(GL_QUADS);
+            glVertex3f(-1.0f, 0.0f, 0.0f);
+            glVertex3f(1.0f, 0.0f, 0.0f);
+            glVertex3f(1.0f, 20.0f, -10.0f);
+            glVertex3f(-1.0f, 20.0f, -10.0f);
+            glEnd();
+            glPopMatrix();
+        }
+
+        // Polygon Circle at the Top
+        glPushMatrix();
+        glTranslatef(0.0f, 0.0f, 40.0f);
+        glColor3f(0.7f, 0.7f, 0.7f);  // Light gray
+        glBegin(GL_POLYGON);
+        for (int i = 0; i < 32; ++i) {
+            float angle = 2.0f * 3.14 * float(i) / float(32);
+            float px = 5.0f * cosf(angle);
+            float py = 5.0f * sinf(angle);
+            glVertex2f(px, py);
+        }
+        glEnd();
+        glPopMatrix();
+
+        // Backrest (Rectangle connected to the polygon)
+        glPushMatrix();
+        glTranslatef(0.0f, 0.0f, 40.0f);
+        glColor3f(0.2f, 0.2f, 0.2f);  // Dark gray
+        glBegin(GL_QUADS);
+        glVertex3f(-5.0f, 0.0f, 0.0f);
+        glVertex3f(5.0f, 0.0f, 0.0f);
+        glVertex3f(5.0f, 30.0f, 0.0f);
+        glVertex3f(-5.0f, 30.0f, 0.0f);
+        glEnd();
+        glPopMatrix();
+
+        glPopMatrix();
+    }
+
+    void display() {
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+        glLoadIdentity();
+        gluLookAt(0.0f, 50.0f, 100.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f);
+
+        // Example usage of drawGamingChair
+        drawGamingChair(0.0f, 0.0f, 0.0f, 45.0f);  // Position at origin with 45-degree rotation
+
+        glutSwapBuffers();
+    }
+
 
 };
 

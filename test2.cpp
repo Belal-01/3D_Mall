@@ -75,7 +75,7 @@ void init() {
     gluPerspective(60.0, (double)windowWidth / (double)windowHeight, 0.1, 12000.0);
 
     //   
-    glEnable(GL_TEXTURE_2D);
+ glEnable(GL_TEXTURE_2D);
 
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);

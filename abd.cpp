@@ -38,11 +38,16 @@ void Abd::AbdDraw(float CameraX,float CameraY,float CameraZ)
         door.updateState(cameraX,cameraY, cameraZ);
         door.draw();
     }
+    first();
+    second();
+    
+}
+void  Abd::first() {
 
-    electronic.drawFridge(900, 890, 200, 0,270, 0);
+    electronic.drawFridge(900, 890, 200, 0, 270, 0);
     electronic.drawFridge(900, 890, -300, 0, 270, 0, fridge1, 0.2, 0.2, 0.2);
     electronic.drawFridge(900, 890, -50, 0, 270, 0);
-    electronic.drawWashingMachine(900, 890, 400,0, 270, 0,wash,0.1,0.1,0.1);
+    electronic.drawWashingMachine(900, 890, 400, 0, 270, 0, wash, 0.1, 0.1, 0.1);
     electronic.drawWashingMachine(900, 890, 600, 0, 270, 0, washw, 0.4, 0.4, 0.4);
     electronic.drawWashingMachine(900, 890, 800, 0, 270, 0, washr, 0.40, 0.13, 0.18);
     electronic.drawWashingMachine(1100, 890, 800, 0, 180, 0, washb, 0.16, 0.23, 0.27);
@@ -57,13 +62,13 @@ void Abd::AbdDraw(float CameraX,float CameraY,float CameraZ)
     electronic.drawFridge(3300, 890, 800, 0, 180, 0);
     electronic.drawFridge(3600, 890, 800, 0, 180, 0);
     electronic.drawFridge(3875, 890, 800, 0, 180, 0, fridge4, 0.2, 0.2, 0.2);
-    electronic.drawFloorFan(900, 872, -1700, 0, 270, 0, fanRotation,0,0,0);
+    electronic.drawFloorFan(900, 872, -1700, 0, 270, 0, fanRotation, 0, 0, 0);
     electronic.drawFloorFan(900, 872, -1900, 0, 270, 0, fanRotation, 0.40, 0.13, 0.18);
     electronic.drawFloorFan(900, 872, -2100, 0, 270, 0, fanRotation, 0.30, 0.13, 0.5);
     electronic.drawFloorFan(900, 872, -2300, 0, 270, 0, fanRotation, 0.18, 0.13, 0.5);
     electronic.drawfireplace(900, 882, -2400, 0, 90, 0);
     electronic.drawfireplace(900, 962, -2400, 0, 90, 0);
-    electronic.drawAirConditionerWithFan(900, 880, -2600, 0, 90, 0,fanRotation);
+    electronic.drawAirConditionerWithFan(900, 880, -2600, 0, 90, 0, fanRotation);
     electronic.drawAirConditioner(900, 940, -2600, 0, 90, 0);
     electronic.drawbrada(900, 880, -2850, 0, 270, 0, brada1, 0.9, 0.9, 0.9);
     electronic.drawbrada(1100, 880, -2850, 0, 0, 0, brada1, 0.9, 0.9, 0.9);
@@ -83,4 +88,37 @@ void Abd::AbdDraw(float CameraX,float CameraY,float CameraZ)
     electronic.drawFloorFan(3900, 872, -2850, 0, 0, 0, fanRotation, 0.18, 0.13, 0.5);
     electronic.drawCeilingFanWithArm(2500, 1400, -1000, 0, 0, 0, fanRotation);
 
+
+}
+
+void Abd::second()
+{
+
+    drawtable(1200, 885, 1015, 0);
+    drawtable(1950, 885, 1015,0);
+    drawtable( 2600, 885, 1015, 0);
+    drawtable(3300, 885, 1015, 0);
+    drawtable(1800, 885, 4900, 180);
+    drawtable(2550, 885, 4900, 180);
+    drawtable(3200, 885, 4900, 180);
+    drawtable(3900, 885, 4900, 180);
+    technical.drawGamingChair(0, 0, 0, 90);;
+
+}
+void Abd::drawtable(float x,float y, float z,float rotate) {
+    technical.drawGamingTable(600, 200, 250,x, y, z ,rotate);
+    if (rotate == 180) {
+        technical.drawComputerCase(x -550 , y + 252, z-100, 0, 270, 0, pcf, pcb, pcs);
+        technical.drawComputerMonitor(x - 250, y + 257, z -50, 0, 0, 0);
+        technical.drawKeyboard(x - 250, y + 260, z - 150, 0, 0, 0);
+        technical.drawSpeakerFrame(x - 100, y + 295, z - 100, 0, 180, 0, speaker);
+        technical.drawMouse(x - 400, y + 250, z - 150, 0, 0, 0);
+    }
+    else {
+        technical.drawComputerCase(x + 550, y + 252, z + 100, 0, 90, 0, pcf, pcb, pcs);
+        technical.drawComputerMonitor(x + 250, y + 257, z+50 , 0, 180, 0);
+        technical.drawKeyboard(x + 250, y + 260, z + 150, 0, 180, 0);
+        technical.drawSpeakerFrame(x + 100, y + 295, z + 100, 0, 0, 0, speaker);
+        technical.drawMouse(x + 400, y + 250, z + 150, 0, 180, 0);
+    }
 }

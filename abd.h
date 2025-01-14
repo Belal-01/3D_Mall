@@ -24,7 +24,9 @@ public :
    Door(-3000,890, 820, 0.7f,90,570,800)
     };
     void AbdDraw(float CameraX, float CameraY, float CameraZ);
-    
+    void first();
+    void drawtable(float x, float y, float z, float rotate);
+    void second();
     void init();
 };
 

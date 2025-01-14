@@ -6,24 +6,30 @@
 Door::Door(float x,float y, float z, float alpha,float rot,float w,float h)
     : xPosition(x), yPosition(y), zPosition(z), openAmount(0.0f), transparency(alpha),rotate(rot),width(w),hight(h) {}
 
-// Function to calculate the distance between the camera and the door
 float Door::calculateDistance(float cameraX,float cameraY, float cameraZ) const {
-    float dis = abs(zPosition - cameraZ);
+    float dis;
+    dis = abs(zPosition - cameraZ);
     if (rotate == 90 || rotate == 270) {
-        dis= abs(zPosition - cameraX);
-   }
+        dis = abs(zPosition - cameraX);
+      if (cameraY - yPosition <= hight && cameraY - yPosition >= 0   )
+            return dis;
+        else return 1e9;
+    }
 
-    return dis;
+    
+
+    if (cameraY - yPosition <= hight && cameraY - yPosition >= 0 )
+        return dis;
+    else return 1e9;
 }
 
-// Update door state based on distance
 void Door::updateState(float cameraX, float cameraY, float cameraZ) {
     float distance = calculateDistance(cameraX, cameraY, cameraZ);
-    if (distance <= 1000) {
-        openAmount = std::min(openAmount + 2, width/2); // Open the doors gradually
+    if (distance <= 800) {
+        openAmount = std::min(openAmount + 2, width/2); 
     }
     else {
-        openAmount = std::max(openAmount - 2, 0.0f); // Close the doors gradually
+        openAmount = std::max(openAmount - 2, 0.0f); 
     }
 }
 
