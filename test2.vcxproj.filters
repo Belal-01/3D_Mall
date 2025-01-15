@@ -169,5 +169,8 @@
     <Image Include="wash.bmp">
       <Filter>Source Files\AbdAlrzaq\Images</Filter>
     </Image>
+    <Image Include="games.bmp">
+      <Filter>Source Files\AbdAlrzaq\Images</Filter>
+    </Image>
   </ItemGroup>
 </Project>

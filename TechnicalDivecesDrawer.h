@@ -115,6 +115,8 @@ public :
 
     }
     static void drawScreen(float x, float y, float z, float angleX, float angleY, float angleZ) {
+        float width = 60 * 6;
+        float hight = 40 * 6;
         glPushMatrix();
         glTranslatef(x, y, z);
         glRotatef(angleX, 10.0f, 0.0f, 0.0f); 
@@ -126,45 +128,35 @@ public :
 
         // «·‘«‘…
         glVertex3f(0, 0, 0);
-        glVertex3f(60.0f, 0, 0);
-        glVertex3f(60.0f, 40.0f, 0);
-        glVertex3f(0, 40.0f, 0);
+        glVertex3f(width, 0, 0);
+        glVertex3f(width, hight, 0);
+        glVertex3f(0, hight, 0);
 
         glEnd();
 
-        // «·ÕÊ«›
-        glColor3f(0.2f, 0.2f, 0.2f);
-        glBegin(GL_LINE_LOOP);
-
-        glVertex3f(0, 0, 0);
-        glVertex3f(60.0f, 0, 0);
-        glVertex3f(60.0f, 40.0f, 0);
-        glVertex3f(0, 40.0f, 0);
-
-        glEnd();
+       
         glPopMatrix();
     }
     void drawPS5(float x, float y, float z, float angleX, float angleY, float angleZ) {
-     
-        float bodyWidth = 10.0f;
-        float bodyHeight = 30.0f;
-        float bodyDepth = 5.0f;
-        float wingWidth = 12.0f;
-        float wingHeight = 30.0f;
-        float wingDepth = 0.5f;
-        float wingOffset = 2.0f; 
+
+        float bodyWidth = 30.0f;   // 10 * 3
+        float bodyHeight = 90.0f;  // 30 * 3
+        float bodyDepth = 15.0f;   // 5 * 3
+        float wingWidth = 36.0f;   // 12 * 3
+        float wingHeight = 90.0f;  // 30 * 3
+        float wingDepth = 1.5f;    // 0.5 * 3
+        float wingOffset = 6.0f;   // 2 * 3
 
         glPushMatrix();
         glTranslatef(x, y, z);
 
-     
-        glRotatef(angleX, 1.0f, 0.0f, 0.0f); 
-        glRotatef(angleY, 0.0f, 1.0f, 0.0f); 
-        glRotatef(angleZ, 0.0f, 0.0f, 1.0f); 
+        glRotatef(angleX, 1.0f, 0.0f, 0.0f);
+        glRotatef(angleY, 0.0f, 1.0f, 0.0f);
+        glRotatef(angleZ, 0.0f, 0.0f, 1.0f);
 
-      
-        glColor3f(0.1f, 0.1f, 0.1f); 
+        glColor3f(0.1f, 0.1f, 0.1f);
         glBegin(GL_QUADS);
+
         // ÊÃÂ √„«„Ì
         glVertex3f(-bodyWidth / 2, 0, -bodyDepth / 2);
         glVertex3f(bodyWidth / 2, 0, -bodyDepth / 2);
@@ -200,36 +192,36 @@ public :
         glVertex3f(-bodyWidth / 2, bodyHeight, bodyDepth / 2);
         glEnd();
 
-     
         glColor3f(1.0f, 1.0f, 1.0f);
         glBegin(GL_QUADS);
         // «·Ã‰«Õ «·√Ì”—
-        glVertex3f(5.1, 0, -bodyDepth / 2 - wingDepth / 2);
-        glVertex3f(5.1, 0, 5);
-        glVertex3f(5.1, wingHeight, 5);
-        glVertex3f(5.1, wingHeight, -bodyDepth / 2 + wingDepth / 2);
+        glVertex3f(15.3, 0, -bodyDepth / 2 - wingDepth / 2);
+        glVertex3f(15.3, 0, 15);
+        glVertex3f(15.3, wingHeight, 15);
+        glVertex3f(15.3, wingHeight, -bodyDepth / 2 + wingDepth / 2);
 
         // «·Ã‰«Õ «·√Ì„‰
-        glVertex3f(-5.1, 0, -bodyDepth / 2 - wingDepth / 2);
-        glVertex3f(-5.1, 0, 5);
-        glVertex3f(-5.1, wingHeight, 5);
-        glVertex3f(-5.1, wingHeight, -bodyDepth / 2 - wingDepth / 2);
+        glVertex3f(-15.3, 0, -bodyDepth / 2 - wingDepth / 2);
+        glVertex3f(-15.3, 0, 15);
+        glVertex3f(-15.3, wingHeight, 15);
+        glVertex3f(-15.3, wingHeight, -bodyDepth / 2 - wingDepth / 2);
         glEnd();
+
         glColor3f(0, 0, 0);
         glBegin(GL_LINES);
-        glVertex3f(5.1, wingHeight / 2, -bodyDepth / 2 - wingDepth / 2);
-        glVertex3f(5.1, wingHeight * 3 / 4, 5);
-        glVertex3f(-5.1, wingHeight / 2, -bodyDepth / 2 - wingDepth / 2);
-        glVertex3f(-5.1, wingHeight * 3 / 4, 5);
+        glVertex3f(15.3, wingHeight / 2, -bodyDepth / 2 - wingDepth / 2);
+        glVertex3f(15.3, wingHeight * 3 / 4, 15);
+        glVertex3f(-15.3, wingHeight / 2, -bodyDepth / 2 - wingDepth / 2);
+        glVertex3f(-15.3, wingHeight * 3 / 4, 15);
         glEnd();
         glPopMatrix();
     }
     void drawXbox(float x, float y, float z, float angleX, float angleY, float angleZ, int xboxf, int xboxb) {
-        float bodyWidth = 24.0f;
-        float bodyHeight = 12.0f;
-        float bodyDepth = 20.0f;
-        float buttonRadius = 2.0f;
-        float logoRadius = 4.5f;
+        float bodyWidth = 24.0f*3;
+        float bodyHeight = 12.0f*3;
+        float bodyDepth = 20.0f*3;
+        float buttonRadius = 2.0f*3;
+        float logoRadius = 4.5f*3;
         glPushMatrix();
         glTranslatef(x, y, z);
 
@@ -962,7 +954,79 @@ public :
     }
 
     
+    void drawPlayStationController(float x, float y, float z, float angleX, float angleY, float angleZ) {
+        float bodyWidth = 20.0f;
+        float bodyHeight = 5.0f;
+        float bodyDepth = 15.0f;
+        float buttonRadius = 2.0f;
 
+        // œ«›⁄ »œ«Ì… «· «»⁄
+        glPushMatrix();
+        glTranslatef(x, y, z);
+
+        glRotatef(angleX, 1.0f, 0.0f, 0.0f);
+        glRotatef(angleY, 0.0f, 1.0f, 0.0f);
+        glRotatef(angleZ, 0.0f, 0.0f, 1.0f);
+
+        // —”„ «·Ã”„ «·—∆Ì”Ì (ﬁ»÷… «· Õﬂ„)
+        glColor3f(0.1f, 0.1f, 0.1f); // ·Ê‰ «·ﬁ»÷… (√”Êœ)
+        glBegin(GL_QUADS);
+        // «·ÃÊ«‰» «·√„«„Ì… Ê«·Œ·›Ì…
+        glVertex3f(-bodyWidth / 2, -bodyHeight / 2, -bodyDepth / 2);
+        glVertex3f(bodyWidth / 2, -bodyHeight / 2, -bodyDepth / 2);
+        glVertex3f(bodyWidth / 2, bodyHeight / 2, -bodyDepth / 2);
+        glVertex3f(-bodyWidth / 2, bodyHeight / 2, -bodyDepth / 2);
+
+        glVertex3f(-bodyWidth / 2, -bodyHeight / 2, bodyDepth / 2);
+        glVertex3f(bodyWidth / 2, -bodyHeight / 2, bodyDepth / 2);
+        glVertex3f(bodyWidth / 2, bodyHeight / 2, bodyDepth / 2);
+        glVertex3f(-bodyWidth / 2, bodyHeight / 2, bodyDepth / 2);
+
+        // «·ÃÊ«‰» «·Ã«‰»Ì…
+        glVertex3f(-bodyWidth / 2, -bodyHeight / 2, -bodyDepth / 2);
+        glVertex3f(-bodyWidth / 2, -bodyHeight / 2, bodyDepth / 2);
+        glVertex3f(-bodyWidth / 2, bodyHeight / 2, bodyDepth / 2);
+        glVertex3f(-bodyWidth / 2, bodyHeight / 2, -bodyDepth / 2);
+
+        glVertex3f(bodyWidth / 2, -bodyHeight / 2, -bodyDepth / 2);
+        glVertex3f(bodyWidth / 2, -bodyHeight / 2, bodyDepth / 2);
+        glVertex3f(bodyWidth / 2, bodyHeight / 2, bodyDepth / 2);
+        glVertex3f(bodyWidth / 2, bodyHeight / 2, -bodyDepth / 2);
+
+        // «·”ﬁ› Ê«·ﬁ«⁄œ…
+        glVertex3f(-bodyWidth / 2, -bodyHeight / 2, -bodyDepth / 2);
+        glVertex3f(bodyWidth / 2, -bodyHeight / 2, -bodyDepth / 2);
+        glVertex3f(bodyWidth / 2, -bodyHeight / 2, bodyDepth / 2);
+        glVertex3f(-bodyWidth / 2, -bodyHeight / 2, bodyDepth / 2);
+
+        glVertex3f(-bodyWidth / 2, bodyHeight / 2, -bodyDepth / 2);
+        glVertex3f(bodyWidth / 2, bodyHeight / 2, -bodyDepth / 2);
+        glVertex3f(bodyWidth / 2, bodyHeight / 2, bodyDepth / 2);
+        glVertex3f(-bodyWidth / 2, bodyHeight / 2, bodyDepth / 2);
+        glEnd();
+
+        // —”„ «·√“—«—
+        glColor3f(1.0f, 1.0f, 1.0f); // ·Ê‰ «·√“—«— (√»Ì÷)
+        drawButton(4.0f, 2.0f, 0.0f, buttonRadius); // “— «·Ì„Ì‰
+        drawButton(-4.0f, 2.0f, 0.0f, buttonRadius); // “— «·Ì”«—
+        drawButton(0.0f, -2.0f, 0.0f, buttonRadius); // “— «·√”›·
+
+        // ‰Â«Ì… «· «»⁄
+        glPopMatrix();
+    }
+
+    //  «»⁄ —”„ «·“—
+    void drawButton(float x, float y, float z, float radius) {
+        glPushMatrix();
+        glTranslatef(x, y, z);
+        glBegin(GL_TRIANGLE_FAN);
+        for (int i = 0; i <= 360; i += 15) {
+            float angle = i * 3.14159f / 180.0f;
+            glVertex3f(radius * cos(angle), radius * sin(angle), 0.0f);
+        }
+        glEnd();
+        glPopMatrix();
+    }
 
 };
 

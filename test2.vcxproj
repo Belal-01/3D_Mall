@@ -167,6 +167,7 @@
     <Image Include="fridge1.bmp" />
     <Image Include="fridge3.bmp" />
     <Image Include="fridge4.bmp" />
+    <Image Include="games.bmp" />
     <Image Include="insidMallFloorTexture.bmp" />
     <Image Include="pcb.bmp" />
     <Image Include="pcf.bmp" />

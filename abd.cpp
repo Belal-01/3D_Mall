@@ -25,6 +25,7 @@ void Abd::init()
    brada3 = LoadTexture((char*)"brada3.bmp", 255);
    brada4 = LoadTexture((char*)"brada4.bmp", 255);
    s7ana = LoadTexture((char*)"s7ana.bmp", 255);
+   games = LoadTexture((char*)"games.bmp", 255);
 }
 
 void Abd::AbdDraw(float CameraX,float CameraY,float CameraZ)
@@ -104,10 +105,17 @@ void Abd::second()
     drawtable(2550, 885, 4900, 180);
     drawtable(3200, 885, 4900, 180);
     drawtable(3900, 885, 4900, 180);
-
-
+    technical.drawScreen(3990, 1100,3000, 0,90,0);
+    technical.drawScreen(3990, 1100, 2200, 0, 90, 0);
+    technical.drawScreen(3990, 1100, 4000, 0, 90, 0);
+   wall.Roof(3800, 4000, 1000, 1500, 4000, 10, games, 1, 1);
+   technical.drawPS5(3900, 1010, 1700, 0, 90, 0);
+   technical.drawPS5(3900, 1010, 2500, 0, 90, 0);
+   technical.drawXbox(3900, 1010, 3500, 0, 90, 0, xboxf, xboxb);
+   technical.drawPlayStationController(0, 50, 0, 4,0,0);
 }
 void Abd::drawtable(float x,float y, float z,float rotate) {
+
     technical.drawGamingTable(600, 200, 250,x, y, z ,rotate);
     if (rotate == 180) {
         technical.drawComputerCase(x -550 , y + 252, z-100, 0, 270, 0, pcf, pcb, pcs);
@@ -115,6 +123,7 @@ void Abd::drawtable(float x,float y, float z,float rotate) {
         technical.drawKeyboard(x - 250, y + 260, z - 150, 0, 0, 0);
         technical.drawSpeakerFrame(x - 100, y + 295, z - 100, 0, 180, 0, speaker);
         technical.drawMouse(x - 400, y + 250, z - 150, 0, 0, 0);
+        technical.drawGamingChair(x - 275, 1075, z  -300, 270);;
     }
     else {
         technical.drawComputerCase(x + 550, y + 252, z + 100, 0, 90, 0, pcf, pcb, pcs);
