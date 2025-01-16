@@ -1,5 +1,6 @@
 #include <GL/glut.h>
 #include "Glass.h"
+#include <iostream>
 
 // Constructor
 Glass::Glass() {}
