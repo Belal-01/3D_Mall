@@ -10,6 +10,7 @@
 #include "cameraConfiguration.h"
 #include "BilalMain.h"
 #include "OutSpace.h"
+#include "Waterfall.h"
 
 
 double angle = 0.0;
@@ -18,6 +19,7 @@ bool keys[255];
 CameraConfiguration camera;
 BilalMain bilal;
 OutSpace outspace;
+Waterfall waterfall;
 
 int windowWidth = 1920, windowHeight = 1080;
 
@@ -52,8 +54,10 @@ void display() {
     
     //here put ur display
      bilal.display();
+     waterfall.draw();
      outspace.draw();
-   
+     //waterfall.drawRockSlope(1000, 1000);
+     //waterfall.drawWaterfall(500, 1000);
     glFlush(); // Render the line
     glutSwapBuffers();
 }
@@ -83,6 +87,7 @@ void init() {
     // here put your inits 
     bilal.init();
     outspace.init();
+    waterfall.init();
     
    
     
@@ -103,6 +108,7 @@ int main(int argc, char** argv) {
     glutKeyboardUpFunc(keyReleased);
     glutPassiveMotionFunc(mouseMotion);
     glutReshapeFunc(reshape);
+ 
 
     glutWarpPointer(windowWidth / 2, windowHeight / 2);
 

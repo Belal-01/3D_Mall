@@ -133,10 +133,12 @@
     <ClCompile Include="Glass.cpp" />
     <ClCompile Include="KeyboardConfiguration.cpp" />
     <ClCompile Include="3D_mall.cpp" />
+    <ClCompile Include="ObjLoader.cpp" />
     <ClCompile Include="OutSpace.cpp" />
     <ClCompile Include="restorant.cpp" />
     <ClCompile Include="texture.cpp" />
     <ClCompile Include="wall.cpp" />
+    <ClCompile Include="Waterfall.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BilalMain.h" />
@@ -144,9 +146,12 @@
     <ClInclude Include="cameraConfiguration.h" />
     <ClInclude Include="Glass.h" />
     <ClInclude Include="keyboardConfiguration.h" />
+    <ClInclude Include="ObjLoader.h" />
+    <ClInclude Include="OutSpace.h" />
     <ClInclude Include="restorant.h" />
     <ClInclude Include="texture.h" />
     <ClInclude Include="Wall.h" />
+    <ClInclude Include="Waterfall.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="floorImg.bmp" />

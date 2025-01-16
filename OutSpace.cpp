@@ -3,8 +3,9 @@
 #include <iostream>
 #include "OutSpace.h"
 #include "Glass.h"
+#include "Waterfall.h"
 
-
+//Waterfall waterfall;
  float M_PI =3.14;
 
  void OutSpace::drawFlag(float x1, float y1, float z1, float len, float hig) {
@@ -19,7 +20,7 @@
      float stepX = len / gridSize;  // Step size along the x-axis
      float stepY = hig / gridSize; // Step size along the y-axis
 
-     float waveTime = glutGet(GLUT_ELAPSED_TIME) * 0.005f; // Time for wave animation
+     float waveTime = glutGet(GLUT_ELAPSED_TIME) * 0.007f; // Time for wave animation
      float frequency = 0.02f;   // Wave frequency
      float amplitude = 20;  // Wave amplitude
 
@@ -823,8 +824,8 @@ void OutSpace::drawSperatedGlass(int x, int y, int z, float len, float alpha) {
 }
 
 void  OutSpace::drawGrassSquare(float x , float y ,float z ,float len,float wid) {
-    int repX = 8;
-    int repY = 8;
+    int repX = 15;
+    int repY = 15;
 
     glPushMatrix();
     glTranslatef(x, y, z);
@@ -978,6 +979,47 @@ void OutSpace::drawSquareTree(float centerX, float centerY, float centerZ, float
     }
     glPopMatrix();
 }
+
+
+void OutSpace::drawFence(float x, float y, float z, float len, float hig) {
+    int repX = 1;  // Texture repetition in the horizontal direction
+    int repY = 1;  // Texture repetition in the vertical direction
+    int quantity = len / 40;
+    glPushMatrix();
+    glTranslatef(x, y, z);
+
+    for (float i = 0; i < len; i += quantity) {
+        glEnable(GL_TEXTURE_2D);
+        glBindTexture(GL_TEXTURE_2D, fence);
+
+        glColor3f(1.0f, 1.0f, 1.0f);  // Ensure the color doesn't affect texture rendering
+
+        glBegin(GL_QUADS);
+
+        // Bottom-left corner
+        glTexCoord2f(0, 0);
+        glVertex3f(0, 0, -i);
+
+        // Top-left corner
+        glTexCoord2f(0, repY);
+        glVertex3f(0, hig, -i);
+
+        // Top-right corner
+        glTexCoord2f(repX, repY);
+        glVertex3f(0, hig, -(i + quantity));
+
+        // Bottom-right corner
+        glTexCoord2f(repX, 0);
+        glVertex3f(0, 0, -(i + quantity));
+
+        glEnd();
+
+        glDisable(GL_TEXTURE_2D);
+    }
+
+    glPopMatrix();
+}
+
 void OutSpace::draw() {
 
      drawStreet(-8500, -7500, 15, 9000, -6000);
@@ -1013,8 +1055,9 @@ void OutSpace::draw() {
     glRotatef(90,0,1,0);
     drawWalkway(-6750, 10, -300, 5250, 1200, 10, 2);
     glPopMatrix();
-    
-}
+    drawFence(-7500,0,6500,5000,100);
+    drawFence(-7500,0,300,5000,100);
+ }
 void OutSpace::init(){
     fatainTex1 = LoadTexture((char*)"images/fatain.bmp", 255.0f);
     fatainTex2 = LoadTexture((char*)"images/fatain1.bmp", 255.0f);
@@ -1028,6 +1071,7 @@ void OutSpace::init(){
     himilayan = LoadTexture((char*)"images/himalayan.bmp", 255.0f);
     enteranc = LoadTexture((char*)"images/enterance.bmp", 255.0f);
     flowerLand = LoadTexture((char*)"images/flowerlandspace.bmp", 255.0f);
+    fence = LoadTexture((char*)"images/fence.bmp", 255.0f);
 
     if (fatainTex1 < 0 || fatainTex2<0 || grassTex<0|| grassSpaceTex<0 || flowerTex<0 || flower1Tex<0 || flagTex<0 || WalkwayTex<0 || whiteStone<0) {
         std::cerr << "Failed to load texture." << std::endl;

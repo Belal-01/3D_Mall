@@ -15,6 +15,7 @@ public:
     int himilayan;
     int enteranc;
     int flowerLand;
+    int fence;
 
     void drawFlag(float x1, float y1, float z1, float len, float hig);
     void drawConicalStick(float baseRadius, float topRadius, float height, float x, float y, float z,  float len, float wid);
@@ -38,6 +39,7 @@ void drawGrassSquare(float x, float y, float z, float len, float wid);
 void drawShrubTree(float centerX, float centerY, float centerZ, float radius, int segments, float height, float scale);
 void drawEnterance(float x, float y, float z, float len, float wid);
 void drawSquareTree(float centerX, float centerY, float centerZ, float wid, float height, float scale );
+void drawFence(float x, float y, float z, float len,float  hig);
 };
 
  
