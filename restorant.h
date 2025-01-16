@@ -11,6 +11,7 @@ public:
 	int kitchenWallTexture;
 	int tableWoodTexture;
 	int KitchenFloorWoodTexture;
+	int kitchenLogo , kitchenWallWood, sideshaurmaTable;
     float PI = 3.14159265358979323846;
 
 
@@ -19,5 +20,6 @@ private:
 	void ChairLeg(int width, int tall,  int start, int height);
 	int woodWallTexture;
 	int phrezFront,phrezBack;
-	int shauma, shaurmaTable ,sideshaurmaTable ,shaurmaTable2;
+	int shauma, shaurmaTable  ,shaurmaTable2;
+	
 };

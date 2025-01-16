@@ -8,16 +8,20 @@ extern Wall wall;
 
 void Resturant::resturantInit() {
 
-    Resturant::woodWallTexture = LoadTexture((char*)"woodWallTexture.bmp", 255.0f);
-    Resturant::kitchenWallTexture = LoadTexture((char*)"kitchenWallTexture2.bmp", 255.0f);
-    Resturant::tableWoodTexture = LoadTexture((char*)"TableWoodTexture.bmp", 255.0f);
-    Resturant::KitchenFloorWoodTexture = LoadTexture((char*)"KitchenFloorWoodTexture.bmp", 255.0f);
-    Resturant::phrezFront = LoadTexture((char*)"phreza2Front.bmp", 255.0f);
-    Resturant::phrezBack = LoadTexture((char*)"phrezaside.bmp", 255.0f);
-    Resturant::shauma = LoadTexture((char*)"shaurma.bmp", 255.0f);
-    Resturant::shaurmaTable = LoadTexture((char*)"shaurmaTable.bmp", 255.0f);
-    Resturant::sideshaurmaTable = LoadTexture((char*)"sideshaurmaTable.bmp", 255.0f);
-    Resturant::shaurmaTable2 = LoadTexture((char*)"shaurmaTable2.bmp", 255.0f);
+    Resturant::woodWallTexture = LoadTexture((char*)"images\\woodWallTexture.bmp", 255.0f);
+    Resturant::kitchenWallTexture = LoadTexture((char*)"images\\kitchenWallTexture2.bmp", 255.0f);
+    Resturant::tableWoodTexture = LoadTexture((char*)"images\\TableWoodTexture.bmp", 255.0f);
+    Resturant::KitchenFloorWoodTexture = LoadTexture((char*)"images\\KitchenFloorWoodTexture.bmp", 255.0f);
+    Resturant::phrezFront = LoadTexture((char*)"images\\phreza2Front.bmp", 255.0f);
+    Resturant::phrezBack = LoadTexture((char*)"images\\phrezaside.bmp", 255.0f);
+    Resturant::shauma = LoadTexture((char*)"images\\shaurma.bmp", 255.0f);
+    Resturant::shaurmaTable = LoadTexture((char*)"images\\shaurmaTable.bmp", 255.0f);
+    Resturant::sideshaurmaTable = LoadTexture((char*)"images\\sideshaurmaTable.bmp", 255.0f);
+    Resturant::shaurmaTable2 = LoadTexture((char*)"images\\shaurmaTable2.bmp", 255.0f);
+    Resturant::kitchenLogo = LoadTexture((char*)"images\\kitchenLogo.bmp", 255.0f);
+    Resturant::kitchenWallWood = LoadTexture((char*)"images\\kitchenWallWood.bmp", 255.0f);
+
+
 
 
 
@@ -390,13 +394,13 @@ void Resturant::resturantRoom() {
 
     //chicken table
     wall.Roof(-3200, -1000, 250, -2500, -3000, 50, Resturant::woodWallTexture, 1, 1);
-    wall.sideWall(-3200, 0, 250, -2500, -3000, 50, woodWallTexture, 1, 1);
-    wall.frontWall(-3200, -1000, 0, 250, -2550, 50,Resturant::woodWallTexture,1,1);
+    wall.sideWall(-3200, 0, 250, -2500, -3000, 50, woodWallTexture, 1, 1, woodWallTexture, 1, 1);
+    wall.frontWall(-3200, -1000, 0, 250, -2550, 50,Resturant::woodWallTexture,1,1, Resturant::woodWallTexture, 1, 1);
 
 
     // phreza
-    wall.frontWall(-4000,-3300,0,600,-3650,20,phrezFront,1,1);
-    wall.sideWall(-3320, 0, 600, -3655, -4000, 20, phrezBack, 1, 1);
+    wall.frontWall(-4000,-3300,0,600,-3650,20,phrezFront,1,1, phrezFront, 1, 1);
+    wall.sideWall(-3320, 0, 600, -3655, -4000, 20, phrezBack, 1, 1, phrezBack, 1, 1);
     wall.Roof(-4000, -3300, 600, -3650, -4000, 20, phrezBack, 1, 1);
 
 
@@ -410,15 +414,15 @@ void Resturant::resturantRoom() {
 
     // shaurma Table
 
-    wall.frontWall(-1500, -1000, 0, 300, -3650, 20, shaurmaTable, 1, 1);
-    wall.sideWall(-1500, 0, 300, -3650, -4000, 20, sideshaurmaTable, 1, 1);
+    wall.frontWall(-1500, -1000, 0, 300, -3650, 20, shaurmaTable, 1, 1, shaurmaTable, 1, 1);
+    wall.sideWall(-1500, 0, 300, -3650, -4000, 20, sideshaurmaTable, 1, 1, sideshaurmaTable, 1, 1);
     wall.Roof(-1500, -1000, 300, -3650, -4000, 10, sideshaurmaTable, 1, 1);
-    wall.frontWall(-1400, -1100, 300, 750, -3940, 60, shaurmaTable2, 1, 1);
+    wall.frontWall(-1400, -1100, 300, 750, -3940, 60, shaurmaTable2, 1, 1, shaurmaTable2, 1, 1);
 
 
     // base table
     wall.Roof(-3300,-1500,300,-3650,-4000,30,sideshaurmaTable,1,1);
-    wall.sideWall(-3300, 0, 300, -3650, -4000, 30, sideshaurmaTable, 1, 1);
+    wall.sideWall(-3300, 0, 300, -3650, -4000, 30, sideshaurmaTable, 1, 1, sideshaurmaTable, 1, 1);
 
 }
 
