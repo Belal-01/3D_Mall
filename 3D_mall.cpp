@@ -9,14 +9,14 @@
 #include <iostream>
 #include "cameraConfiguration.h"
 #include "BilalMain.h"
-
+#include "FurnitureStore.h"
 
 double angle = 0.0;
 bool keys[255];
 
 CameraConfiguration camera;
 BilalMain bilal;
-
+FurnitureStore Furniture_Store;
 
 int windowWidth = 1920, windowHeight = 1080;
 
@@ -51,8 +51,8 @@ void display() {
     
     //here put ur display
      bilal.display();
-   
-   
+     Furniture_Store.display();
+
     glFlush(); // Render the line
     glutSwapBuffers();
 }
@@ -81,7 +81,8 @@ void init() {
 
     // here put your inits 
     bilal.init();
- 
+    Furniture_Store.init();
+    
     
    
     

@@ -128,9 +128,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\Downloads\stb_image.c" />
+    <ClCompile Include="..\..\stb_image.c" />
     <ClCompile Include="BilalMain.cpp" />
     <ClCompile Include="cameraConfiguration.cpp" />
+    <ClCompile Include="FurnitureStore.cpp" />
     <ClCompile Include="Glass.cpp" />
     <ClCompile Include="KeyboardConfiguration.cpp" />
     <ClCompile Include="3D_mall.cpp" />
@@ -142,6 +143,7 @@
     <ClInclude Include="BilalMain.h" />
     <ClInclude Include="camera.h" />
     <ClInclude Include="cameraConfiguration.h" />
+    <ClInclude Include="FurnitureStore.h" />
     <ClInclude Include="Glass.h" />
     <ClInclude Include="keyboardConfiguration.h" />
     <ClInclude Include="restorant.h" />
@@ -149,6 +151,9 @@
     <ClInclude Include="Wall.h" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="..\..\WoodFloor051.bmp" />
+    <Image Include="CircularFabric1.bmp" />
+    <Image Include="CircularFabric2.bmp" />
     <Image Include="floorImg.bmp" />
     <Image Include="floortexture.bmp" />
     <Image Include="insidMallFloorTexture.bmp" />
@@ -156,14 +161,29 @@
     <Image Include="kitchenFloorWoodTexture2.bmp" />
     <Image Include="kitchenWallTexture.bmp" />
     <Image Include="kitchenWallTexture2.bmp" />
+    <Image Include="Leather.bmp" />
+    <Image Include="Leather3.bmp" />
+    <Image Include="LeatherBlack.bmp" />
+    <Image Include="LeatherSofa1.bmp" />
     <Image Include="phreza2Front.bmp" />
     <Image Include="phrezaFront.bmp" />
     <Image Include="phrezaside.bmp" />
+    <Image Include="PlasticTable1.bmp" />
+    <Image Include="PlasticTable2.bmp" />
     <Image Include="shaurma.bmp" />
     <Image Include="shaurmaTable.bmp" />
     <Image Include="shaurmaTable2.bmp" />
     <Image Include="sideshaurmaTable.bmp" />
     <Image Include="TableWoodTexture.bmp" />
+    <Image Include="tmp1.bmp" />
+    <Image Include="tmp2.bmp" />
+    <Image Include="tmp3.bmp" />
+    <Image Include="tmp4.bmp" />
+    <Image Include="Woodcolumn1.bmp" />
+    <Image Include="WoodForTable1.bmp" />
+    <Image Include="WoodTable.bmp" />
+    <Image Include="WoodTable2.bmp" />
+    <Image Include="WoodTable3.bmp" />
     <Image Include="woodWallTexture.bmp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

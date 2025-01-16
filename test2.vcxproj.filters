@@ -24,9 +24,6 @@
     <ClCompile Include="texture.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Downloads\stb_image.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="cameraConfiguration.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -43,6 +40,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="restorant.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\stb_image.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FurnitureStore.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -69,6 +72,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="restorant.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FurnitureStore.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -119,6 +125,60 @@
       <Filter>Source Files\images</Filter>
     </Image>
     <Image Include="shaurmaTable2.bmp">
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="..\..\WoodFloor051.bmp">
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="Leather.bmp">
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="WoodTable.bmp">
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="LeatherBlack.bmp">
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="Leather3.bmp">
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="WoodForTable1.bmp">
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="PlasticTable1.bmp">
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="WoodTable2.bmp">
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="WoodTable3.bmp">
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="LeatherSofa1.bmp">
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="CircularFabric1.bmp">
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="CircularFabric2.bmp">
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="PlasticTable2.bmp">
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="Woodcolumn1.bmp">
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="tmp1.bmp">
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="tmp2.bmp">
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="tmp3.bmp">
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="tmp4.bmp">
       <Filter>Source Files\images</Filter>
     </Image>
   </ItemGroup>
