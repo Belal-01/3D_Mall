@@ -1,36 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-<<<<<<< HEAD
     <ClCompile Include="3D_mall.cpp">
       <Filter>SourceFiles</Filter>
-=======
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
-    </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
-    <Filter Include="Source Files\AbdAlrzaq">
-      <UniqueIdentifier>{ea8067b2-ae98-48d6-8210-24226d858d04}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\AbdAlrzaq">
-      <UniqueIdentifier>{14bc64c0-7908-4ecd-9fb1-e48a7d86fc5d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\AbdAlrzaq\Images">
-      <UniqueIdentifier>{cafcf061-810c-40af-9a64-fe38b21058c9}</UniqueIdentifier>
-    </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="3D_mall.cpp">
-      <Filter>Source Files</Filter>
->>>>>>> abdAlrazaq
     </ClCompile>
     <ClCompile Include="BilalMain.cpp">
       <Filter>SourceFiles</Filter>
@@ -44,16 +16,8 @@
     <ClCompile Include="KeyboardConfiguration.cpp">
       <Filter>SourceFiles</Filter>
     </ClCompile>
-<<<<<<< HEAD
     <ClCompile Include="OutSpace.cpp">
       <Filter>SourceFiles</Filter>
-=======
-    <ClCompile Include="..\..\3D_Mall\BilalMain.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="abd.cpp">
-      <Filter>Source Files</Filter>
->>>>>>> abdAlrazaq
     </ClCompile>
     <ClCompile Include="restorant.cpp">
       <Filter>SourceFiles</Filter>
@@ -66,18 +30,6 @@
     </ClCompile>
     <ClCompile Include="wall.cpp">
       <Filter>SourceFiles</Filter>
-    </ClCompile>
-    <ClCompile Include="Test.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\abd alrzaq\Downloads\Telegram Desktop\stb_image.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Door.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="TechnicalDivecesDrawer.cpp">
-      <Filter>Source Files\AbdAlrzaq</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -93,19 +45,8 @@
     <ClInclude Include="Glass.h">
       <Filter>HeaderFiles</Filter>
     </ClInclude>
-<<<<<<< HEAD
     <ClInclude Include="keyboardConfiguration.h">
       <Filter>HeaderFiles</Filter>
-=======
-    <ClInclude Include="ElectronicDeviceDrawer.h">
-      <Filter>Header Files\AbdAlrzaq</Filter>
-    </ClInclude>
-    <ClInclude Include="abdMain.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="abd.h">
-      <Filter>Header Files</Filter>
->>>>>>> abdAlrazaq
     </ClInclude>
     <ClInclude Include="restorant.h">
       <Filter>HeaderFiles</Filter>
@@ -118,12 +59,6 @@
     </ClInclude>
     <ClInclude Include="Wall.h">
       <Filter>HeaderFiles</Filter>
-    </ClInclude>
-    <ClInclude Include="Door.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="TechnicalDivecesDrawer.h">
-      <Filter>Header Files\AbdAlrzaq</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -148,16 +83,11 @@
     <Image Include="images\kitchenLogo.bmp">
       <Filter>images</Filter>
     </Image>
-<<<<<<< HEAD
     <Image Include="kitchenWallTexture.bmp">
       <Filter>images</Filter>
     </Image>
     <Image Include="kitchenWallTexture2.bmp">
       <Filter>images</Filter>
-=======
-    <Image Include="speaker.bmp">
-      <Filter>Source Files\AbdAlrzaq\Images</Filter>
->>>>>>> abdAlrazaq
     </Image>
     <Image Include="images\kitchenWallWood.bmp">
       <Filter>images</Filter>
@@ -189,47 +119,7 @@
     <Image Include="woodWallTexture.bmp">
       <Filter>images</Filter>
     </Image>
-    <Image Include="washw.bmp">
-      <Filter>Source Files\AbdAlrzaq\Images</Filter>
-    </Image>
-    <Image Include="fridge.bmp">
-      <Filter>Source Files\AbdAlrzaq\Images</Filter>
-    </Image>
-    <Image Include="washb.bmp">
-      <Filter>Source Files\AbdAlrzaq\Images</Filter>
-    </Image>
-    <Image Include="washr.bmp">
-      <Filter>Source Files\AbdAlrzaq\Images</Filter>
-    </Image>
-    <Image Include="fridge3.bmp">
-      <Filter>Source Files\AbdAlrzaq\Images</Filter>
-    </Image>
-    <Image Include="fridge1.bmp">
-      <Filter>Source Files\AbdAlrzaq\Images</Filter>
-    </Image>
-    <Image Include="fridge4.bmp">
-      <Filter>Source Files\AbdAlrzaq\Images</Filter>
-    </Image>
-    <Image Include="brada1.bmp">
-      <Filter>Source Files\AbdAlrzaq\Images</Filter>
-    </Image>
-    <Image Include="brada3.bmp">
-      <Filter>Source Files\AbdAlrzaq\Images</Filter>
-    </Image>
-    <Image Include="s7ana.bmp">
-      <Filter>Source Files\AbdAlrzaq\Images</Filter>
-    </Image>
-    <Image Include="brada2.bmp">
-      <Filter>Source Files\AbdAlrzaq\Images</Filter>
-    </Image>
-    <Image Include="wash.bmp">
-      <Filter>Source Files\AbdAlrzaq\Images</Filter>
-    </Image>
-    <Image Include="games.bmp">
-      <Filter>Source Files\AbdAlrzaq\Images</Filter>
-    </Image>
   </ItemGroup>
-<<<<<<< HEAD
   <ItemGroup>
     <Filter Include="images">
       <UniqueIdentifier>{5b300df2-1e9b-4425-aae4-9ff5666ade26}</UniqueIdentifier>
@@ -242,6 +132,3 @@
     </Filter>
   </ItemGroup>
 </Project>
-=======
-</Project>
->>>>>>> abdAlrazaq

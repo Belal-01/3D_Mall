@@ -77,7 +77,6 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -129,7 +128,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-<<<<<<< HEAD
     <ClCompile Include="BilalMain.cpp" />
     <ClCompile Include="cameraConfiguration.cpp" />
     <ClCompile Include="Glass.cpp" />
@@ -138,20 +136,6 @@
     <ClCompile Include="OutSpace.cpp" />
     <ClCompile Include="restorant.cpp" />
     <ClCompile Include="Stairs.cpp" />
-=======
-    <ClCompile Include="..\..\3D_Mall\BilalMain.cpp" />
-    <ClCompile Include="abd.cpp" />
-    <ClCompile Include="C:\Users\abd alrzaq\Downloads\Telegram Desktop\stb_image.c" />
-    <ClCompile Include="cameraConfiguration.cpp" />
-    <ClCompile Include="Door.cpp" />
-    <ClCompile Include="ElectronicDeviceDrawer.cpp" />
-    <ClCompile Include="Glass.cpp" />
-    <ClCompile Include="KeyboardConfiguration.cpp" />
-    <ClCompile Include="Test.cpp" />
-    <ClCompile Include="restorant.cpp" />
-    <ClCompile Include="TechnicalDivecesDrawer.cpp" />
-    <ClCompile Include="3D_mall.cpp" />
->>>>>>> abdAlrazaq
     <ClCompile Include="texture.cpp" />
     <ClCompile Include="wall.cpp" />
   </ItemGroup>
@@ -159,30 +143,17 @@
     <ClInclude Include="BilalMain.h" />
     <ClInclude Include="camera.h" />
     <ClInclude Include="cameraConfiguration.h" />
-<<<<<<< HEAD
     <ClInclude Include="Glass.h" />
     <ClInclude Include="keyboardConfiguration.h" />
     <ClInclude Include="restorant.h" />
     <ClInclude Include="Stairs.h" />
-=======
-    <ClInclude Include="Door.h" />
-    <ClInclude Include="ElectronicDeviceDrawer.h" />
-    <ClInclude Include="Glass.h" />
-    <ClInclude Include="keyboardConfiguration.h" />
-    <ClInclude Include="restorant.h" />
-    <ClInclude Include="TechnicalDivecesDrawer.h" />
->>>>>>> abdAlrazaq
     <ClInclude Include="texture.h" />
     <ClInclude Include="Wall.h" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="brada1.bmp" />
-    <Image Include="brada2.bmp" />
-    <Image Include="brada3.bmp" />
     <Image Include="floorImg.bmp" />
     <Image Include="floorInsidStore.bmp" />
     <Image Include="floortexture.bmp" />
-<<<<<<< HEAD
     <Image Include="images\externalWall.bmp" />
     <Image Include="images\interiorWall.bmp" />
     <Image Include="images\kitchenLogo.bmp" />
@@ -199,25 +170,6 @@
     <Image Include="sideshaurmaTable.bmp" />
     <Image Include="TableWoodTexture.bmp" />
     <Image Include="woodWallTexture.bmp" />
-=======
-    <Image Include="fridge.bmp" />
-    <Image Include="fridge1.bmp" />
-    <Image Include="fridge3.bmp" />
-    <Image Include="fridge4.bmp" />
-    <Image Include="games.bmp" />
-    <Image Include="insidMallFloorTexture.bmp" />
-    <Image Include="pcb.bmp" />
-    <Image Include="pcf.bmp" />
-    <Image Include="pcs.bmp" />
-    <Image Include="s7ana.bmp" />
-    <Image Include="speaker.bmp" />
-    <Image Include="wash.bmp" />
-    <Image Include="washb.bmp" />
-    <Image Include="washr.bmp" />
-    <Image Include="washw.bmp" />
-    <Image Include="xboxb.bmp" />
-    <Image Include="xboxf.bmp" />
->>>>>>> abdAlrazaq
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

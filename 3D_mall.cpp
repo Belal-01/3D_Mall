@@ -9,31 +9,22 @@
 #include <iostream>
 #include "cameraConfiguration.h"
 #include "BilalMain.h"
-<<<<<<< HEAD
 #include "OutSpace.h"
 
-=======
-#include "abd.h"
->>>>>>> abdAlrazaq
 
 double angle = 0.0;
 bool keys[255];
 
 CameraConfiguration camera;
 BilalMain bilal;
-<<<<<<< HEAD
 OutSpace outspace;
-=======
-Abd abd;
-
->>>>>>> abdAlrazaq
 
 int windowWidth = 1920, windowHeight = 1080;
 
 void keyPressed(unsigned char key, int x, int y) {
     camera.processKeyboardInput(key, true);
-
-
+   
+    
 }
 
 void keyReleased(unsigned char key, int x, int y) {
@@ -58,17 +49,11 @@ void display() {
     // set the camera confiuration
     camera.updateMovement();
     camera.setupCamera();
-
+    
     //here put ur display
-<<<<<<< HEAD
      bilal.display();
      outspace.draw();
    
-=======
-    bilal.display();
-    abd.AbdDraw(camera.cameraX,camera.cameraY,camera.cameraZ);
-
->>>>>>> abdAlrazaq
     glFlush(); // Render the line
     glutSwapBuffers();
 }
@@ -88,33 +73,19 @@ void init() {
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
     gluPerspective(60.0, (double)windowWidth / (double)windowHeight, 0.1, 12000.0);
-<<<<<<< HEAD
     glMatrixMode(GL_MODELVIEW);
  //   
     /*glEnable(GL_TEXTURE_2D);*/
-=======
-
-    //   
- glEnable(GL_TEXTURE_2D);
->>>>>>> abdAlrazaq
 
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
 
     // here put your inits 
     bilal.init();
-<<<<<<< HEAD
     outspace.init();
     
    
     
-=======
-    abd.init();
-
-
-
-
->>>>>>> abdAlrazaq
 }
 
 int main(int argc, char** argv) {

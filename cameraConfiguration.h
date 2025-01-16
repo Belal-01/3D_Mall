@@ -12,7 +12,7 @@ public:
 
     float cameraX = -2000, cameraY = 1000, cameraZ = 2000;
     float cameraAngleX = 0.0f, cameraAngleY = 0.0f;
-    float cameraSpeed = 35.1f;
+    float cameraSpeed = 5.1f;
     float mouseSensitivity = 0.005f;
 
     bool isJumping = false;
