@@ -2,30 +2,30 @@
 
 void Abd::init()
 {
-    xboxb = LoadTexture((char*)"xboxb.bmp", 255.0f);
-   xboxf = LoadTexture((char*)"xboxf.bmp", 255.0f);
-   wash = LoadTexture((char*)"wash.bmp", 255);
-   washw = LoadTexture((char*)"washw.bmp", 255);
-   washb= LoadTexture((char*)"washb.bmp", 255);
-   washr = LoadTexture((char*)"washr.bmp", 255);
-   wash2= LoadTexture((char*)"wash2.bmp", 255);
-   speaker = LoadTexture((char*)"speaker.bmp", 255);
-   pcf = LoadTexture((char*)"pcf.bmp", 255);
-   pcb = LoadTexture((char*)"pcb.bmp", 255);
-   pcs = LoadTexture((char*)"pcs.bmp", 255);
-   fridge = LoadTexture((char*)"fridge1.bmp", 255);
-   fridge1= LoadTexture((char*)"fridge.bmp", 255); 
-   fridge2 = LoadTexture((char*)"fridge2.bmp", 255);
-   fridge3 = LoadTexture((char*)"fridge3.bmp", 255);
-   fridge4 = LoadTexture((char*)"fridge4.bmp", 255);
-   aircondition= LoadTexture((char*)"aircondition.bmp", 255);
-   airconditionfan = LoadTexture((char*)"airconditionfan.bmp", 255);
-   brada1 = LoadTexture((char*)"brada1.bmp", 255);
-   brada2 = LoadTexture((char*)"brada2.bmp", 255);
-   brada3 = LoadTexture((char*)"brada3.bmp", 255);
-   brada4 = LoadTexture((char*)"brada4.bmp", 255);
-   s7ana = LoadTexture((char*)"s7ana.bmp", 255);
-   games = LoadTexture((char*)"games.bmp", 255);
+    xboxb = LoadTexture((char*)"images\\xboxb.bmp", 255.0f);
+   xboxf = LoadTexture((char*)"images\\xboxf.bmp", 255.0f);
+   wash = LoadTexture((char*)"images\\wash.bmp", 255);
+   washw = LoadTexture((char*)"images\\washw.bmp", 255);
+   washb= LoadTexture((char*)"images\\washb.bmp", 255);
+   washr = LoadTexture((char*)"images\\washr.bmp", 255);
+   wash2= LoadTexture((char*)"images\\wash2.bmp", 255);
+   speaker = LoadTexture((char*)"images\\speaker.bmp", 255);
+   pcf = LoadTexture((char*)"images\\pcf.bmp", 255);
+   pcb = LoadTexture((char*)"images\\pcb.bmp", 255);
+   pcs = LoadTexture((char*)"images\\pcs.bmp", 255);
+   fridge = LoadTexture((char*)"images\\fridge1.bmp", 255);
+   fridge1= LoadTexture((char*)"images\\fridge.bmp", 255); 
+   fridge2 = LoadTexture((char*)"images\\fridge2.bmp", 255);
+   fridge3 = LoadTexture((char*)"images\\fridge3.bmp", 255);
+   fridge4 = LoadTexture((char*)"images\\fridge4.bmp", 255);
+   aircondition= LoadTexture((char*)"images\\aircondition.bmp", 255);
+   airconditionfan = LoadTexture((char*)"images\\airconditionfan.bmp", 255);
+   brada1 = LoadTexture((char*)"images\\brada1.bmp", 255);
+   brada2 = LoadTexture((char*)"images\\brada2.bmp", 255);
+   brada3 = LoadTexture((char*)"images\\brada3.bmp", 255);
+   brada4 = LoadTexture((char*)"images\\brada4.bmp", 255);
+   s7ana = LoadTexture((char*)"images\\s7ana.bmp", 255);
+   games = LoadTexture((char*)"images\\games.bmp", 255);
 }
 
 void Abd::AbdDraw(float CameraX,float CameraY,float CameraZ)
