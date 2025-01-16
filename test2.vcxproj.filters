@@ -24,9 +24,6 @@
     <ClCompile Include="texture.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Downloads\stb_image.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="cameraConfiguration.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -45,9 +42,12 @@
     <ClCompile Include="restorant.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Stairs.cpp">
-      <Filter>Resource Files</Filter>
-    </ClCompile>
+    <ClCompile Include="OutSpace.cpp">
+      <Filter>Source Files</Filter>
+     </ClCompile>
+     <ClCompile Include="Stairs.cpp">
+      <Filter>Source Files</Filter>
+      </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="camera.h">

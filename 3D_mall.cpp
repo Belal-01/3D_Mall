@@ -9,6 +9,7 @@
 #include <iostream>
 #include "cameraConfiguration.h"
 #include "BilalMain.h"
+#include "OutSpace.h"
 
 
 double angle = 0.0;
@@ -16,7 +17,7 @@ bool keys[255];
 
 CameraConfiguration camera;
 BilalMain bilal;
-
+OutSpace outspace;
 
 int windowWidth = 1920, windowHeight = 1080;
 
@@ -51,7 +52,7 @@ void display() {
     
     //here put ur display
      bilal.display();
-   
+     outspace.draw();
    
     glFlush(); // Render the line
     glutSwapBuffers();
@@ -72,7 +73,7 @@ void init() {
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
     gluPerspective(60.0, (double)windowWidth / (double)windowHeight, 0.1, 12000.0);
-
+    glMatrixMode(GL_MODELVIEW);
  //   
     /*glEnable(GL_TEXTURE_2D);*/
 
@@ -81,7 +82,7 @@ void init() {
 
     // here put your inits 
     bilal.init();
- 
+    outspace.init();
     
    
     

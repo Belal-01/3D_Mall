@@ -128,12 +128,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\Downloads\stb_image.c" />
     <ClCompile Include="BilalMain.cpp" />
     <ClCompile Include="cameraConfiguration.cpp" />
     <ClCompile Include="Glass.cpp" />
     <ClCompile Include="KeyboardConfiguration.cpp" />
     <ClCompile Include="3D_mall.cpp" />
+    <ClCompile Include="OutSpace.cpp" />
     <ClCompile Include="restorant.cpp" />
     <ClCompile Include="Stairs.cpp" />
     <ClCompile Include="texture.cpp" />
