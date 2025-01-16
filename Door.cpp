@@ -1,6 +1,7 @@
 #include <GL/glut.h>
 #include "Door.h"
 #include <cmath>
+#include <iostream>
 
 // Constructor
 Door::Door(float x,float y, float z, float alpha,float rot,float w,float h)

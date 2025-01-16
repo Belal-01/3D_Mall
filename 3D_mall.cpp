@@ -10,7 +10,7 @@
 #include "cameraConfiguration.h"
 #include "BilalMain.h"
 #include "OutSpace.h"
-
+#include "abd.h"
 
 double angle = 0.0;
 bool keys[255];
@@ -18,6 +18,7 @@ bool keys[255];
 CameraConfiguration camera;
 BilalMain bilal;
 OutSpace outspace;
+Abd abd;
 
 int windowWidth = 1920, windowHeight = 1080;
 
@@ -53,6 +54,7 @@ void display() {
     //here put ur display
      bilal.display();
      outspace.draw();
+     abd.AbdDraw(camera.cameraX, camera.cameraY, camera.cameraZ);
    
     glFlush(); // Render the line
     glutSwapBuffers();
@@ -83,6 +85,7 @@ void init() {
     // here put your inits 
     bilal.init();
     outspace.init();
+    abd.init();
     
    
     

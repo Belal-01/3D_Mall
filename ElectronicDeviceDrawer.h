@@ -101,7 +101,7 @@ public:
 
         
         // —”„ Ã”„ «·»—«œ
-
+        glEnable(GL_TEXTURE_2D);
         glBindTexture(GL_TEXTURE_2D, fridge);
         glColor3f(0.9f, 0.9f, 0.9f); 
         glBegin(GL_QUADS);
@@ -119,6 +119,7 @@ public:
         glVertex3f(-fridgeWidth / 2, fridgeHeight, fridgeDepth / 2);
 
         glEnd();
+        glDisable(GL_TEXTURE_2D);
 
         glColor3f(r, g, b); 
         glBegin(GL_QUADS);
@@ -206,7 +207,10 @@ public:
         float width = 40.0f * 3;  // «·⁄—÷
         float height = 20.0f * 3; // «·«— ›«⁄
         float depth = 10.0f * 3;  // «·⁄„ﬁ
-        float pipeHeight = 10.0f * 3; // «— ›«⁄ «·√‰«»Ì»
+        float pipeHeight = 10.0f * 3;
+        
+        // «— ›«⁄ «·√‰«»Ì»
+        glEnable(GL_TEXTURE_2D);
 
         glBindTexture(GL_TEXTURE_2D, texture);
         glPushMatrix();
@@ -249,7 +253,7 @@ public:
         glVertex3f(0, 0, 0);
 
         glEnd();
-
+        glDisable(GL_TEXTURE_2D);
         //  ›«’Ì· ≈÷«›Ì… („À· «·√‰«»Ì») »«” Œœ«„ «·„ €Ì—« 
         glLineWidth(3.0f);
         glColor3f(0.3f, 0.3f, 0.3f);
@@ -449,6 +453,7 @@ public:
         float machineDepth = 50.0f * 3;
         float doorRadius = 20.0f * 3;
         float doorThickness = 1.0f * 3;
+        glEnable(GL_TEXTURE_2D);
 
         glPushMatrix();
         glTranslatef(x, y, z);
@@ -503,6 +508,7 @@ public:
         glVertex3f(-machineWidth / 2, machineHeight, machineDepth / 2);
 
         glEnd();
+        glDisable(GL_TEXTURE_2D);
 
 
 
@@ -645,6 +651,7 @@ public:
 
 
         // —”„ Ã”„ «·»—«œ
+        glEnable(GL_TEXTURE_2D);
 
         glBindTexture(GL_TEXTURE_2D, brada);
         glColor3f(0.9f, 0.9f, 0.9f); 
@@ -696,7 +703,7 @@ public:
         glVertex3f(-fridgeWidth / 2, fridgeHeight, fridgeDepth / 2);
 
         glEnd();
-
+        glDisable(GL_TEXTURE_2D);
         glPopMatrix();
     }
 
