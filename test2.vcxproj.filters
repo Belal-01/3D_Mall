@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="3D_mall.cpp">
+      <Filter>SourceFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="BilalMain.cpp">
+      <Filter>SourceFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="cameraConfiguration.cpp">
+      <Filter>SourceFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="Glass.cpp">
+      <Filter>SourceFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="KeyboardConfiguration.cpp">
+      <Filter>SourceFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="OutSpace.cpp">
+      <Filter>SourceFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="restorant.cpp">
+      <Filter>SourceFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="Stairs.cpp">
+      <Filter>SourceFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="texture.cpp">
+      <Filter>SourceFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="wall.cpp">
+      <Filter>SourceFiles</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="camera.h">
+      <Filter>HeaderFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="BilalMain.h">
+      <Filter>HeaderFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="cameraConfiguration.h">
+      <Filter>HeaderFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="Glass.h">
+      <Filter>HeaderFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="keyboardConfiguration.h">
+      <Filter>HeaderFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="restorant.h">
+      <Filter>HeaderFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="texture.h">
+      <Filter>HeaderFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="Stairs.h">
+      <Filter>HeaderFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="Wall.h">
+      <Filter>HeaderFiles</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="images\externalWall.bmp">
+      <Filter>images</Filter>
+    </Image>
+    <Image Include="floorImg.bmp">
+      <Filter>images</Filter>
+    </Image>
+    <Image Include="floorInsidStore.bmp">
+      <Filter>images</Filter>
+    </Image>
+    <Image Include="floortexture.bmp">
+      <Filter>images</Filter>
+    </Image>
+    <Image Include="images\interiorWall.bmp">
+      <Filter>images</Filter>
+    </Image>
+    <Image Include="kitchenFloorWoodTexture.bmp">
+      <Filter>images</Filter>
+    </Image>
+    <Image Include="images\kitchenLogo.bmp">
+      <Filter>images</Filter>
+    </Image>
+    <Image Include="kitchenWallTexture.bmp">
+      <Filter>images</Filter>
+    </Image>
+    <Image Include="kitchenWallTexture2.bmp">
+      <Filter>images</Filter>
+    </Image>
+    <Image Include="images\kitchenWallWood.bmp">
+      <Filter>images</Filter>
+    </Image>
+    <Image Include="phreza2Front.bmp">
+      <Filter>images</Filter>
+    </Image>
+    <Image Include="phrezaside.bmp">
+      <Filter>images</Filter>
+    </Image>
+    <Image Include="shaurma.bmp">
+      <Filter>images</Filter>
+    </Image>
+    <Image Include="shaurmaTable.bmp">
+      <Filter>images</Filter>
+    </Image>
+    <Image Include="shaurmaTable2.bmp">
+      <Filter>images</Filter>
+    </Image>
+    <Image Include="sideshaurmaTable.bmp">
+      <Filter>images</Filter>
+    </Image>
+    <Image Include="images\stairimg.bmp">
+      <Filter>images</Filter>
+    </Image>
+    <Image Include="TableWoodTexture.bmp">
+      <Filter>images</Filter>
+    </Image>
+    <Image Include="woodWallTexture.bmp">
+      <Filter>images</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="images">
+      <UniqueIdentifier>{5b300df2-1e9b-4425-aae4-9ff5666ade26}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="HeaderFiles">
+      <UniqueIdentifier>{494ea8b4-accb-4815-9422-4b2ca7804cab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SourceFiles">
+      <UniqueIdentifier>{02e33750-47d2-4c58-aa94-ae2fbda6c78b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
