@@ -272,6 +272,7 @@ void OutSpace::drawParking(float x, float y, float z) {
 void OutSpace::drawBigTree(float x, float y, float z, float h,  float scale) {
    
     float width = 400;
+    glColor3f(1, 1, 1);
     for (float i = 0; i <= 360; i += 30) {
         glPushMatrix();  
 
@@ -1021,6 +1022,7 @@ void OutSpace::drawFence(float x, float y, float z, float len, float hig) {
 }
 
 void OutSpace::draw() {
+    glColor3f(1, 1, 1);
 
      drawStreet(-8500, -7500, 15, 9000, -6000);
     drawParking(-7500, 20, 7700);
@@ -1059,6 +1061,9 @@ void OutSpace::draw() {
     drawFence(-7500,0,300,5000,100);
  }
 void OutSpace::init(){
+
+    glColor3f(1, 1, 1);
+
     fatainTex1 = LoadTexture((char*)"images/fatain.bmp", 255.0f);
     fatainTex2 = LoadTexture((char*)"images/fatain1.bmp", 255.0f);
     grassTex = LoadTexture((char*)"images/grass.bmp", 255.0f);

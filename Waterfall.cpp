@@ -434,7 +434,8 @@ void Waterfall::drawWallWater(float centerx, float bottomy, float centerz, float
         glTexCoord2f(0.0f, repY);
         glVertex3d(-len/2, hig, 0);
         glEnd();
-  
+        glDisable(GL_TEXTURE_2D);
+
     glPopMatrix();
     glDisable(GL_BLEND);
 
