@@ -68,9 +68,9 @@ void BilalMain::rightBuilding() {
 void BilalMain::init() {
 
 
-    BilalMain::textureID = LoadTexture((char*)"floorImg.bmp", 255.0f);
-    BilalMain::secondFloorTexture = LoadTexture((char*)"insidMallFloorTexture.bmp", 255.0f);
-    BilalMain::RoofFloorTexture = LoadTexture((char*)"floortexture.bmp", 255.0f); // Use 255 for fully opaque
+    BilalMain::textureID = LoadTexture((char*)"images/floorImg.bmp", 255.0f);
+    BilalMain::secondFloorTexture = LoadTexture((char*)"images/insidMallFloorTexture.bmp", 255.0f);
+    BilalMain::RoofFloorTexture = LoadTexture((char*)"images/floortexture.bmp", 255.0f); // Use 255 for fully opaque
     resturant.resturantInit();
 
 }

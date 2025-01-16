@@ -8,16 +8,16 @@ extern Wall wall;
 
 void Resturant::resturantInit() {
 
-    Resturant::woodWallTexture = LoadTexture((char*)"woodWallTexture.bmp", 255.0f);
-    Resturant::kitchenWallTexture = LoadTexture((char*)"kitchenWallTexture2.bmp", 255.0f);
-    Resturant::tableWoodTexture = LoadTexture((char*)"TableWoodTexture.bmp", 255.0f);
-    Resturant::KitchenFloorWoodTexture = LoadTexture((char*)"KitchenFloorWoodTexture.bmp", 255.0f);
-    Resturant::phrezFront = LoadTexture((char*)"phreza2Front.bmp", 255.0f);
-    Resturant::phrezBack = LoadTexture((char*)"phrezaside.bmp", 255.0f);
-    Resturant::shauma = LoadTexture((char*)"shaurma.bmp", 255.0f);
-    Resturant::shaurmaTable = LoadTexture((char*)"shaurmaTable.bmp", 255.0f);
-    Resturant::sideshaurmaTable = LoadTexture((char*)"sideshaurmaTable.bmp", 255.0f);
-    Resturant::shaurmaTable2 = LoadTexture((char*)"shaurmaTable2.bmp", 255.0f);
+    Resturant::woodWallTexture = LoadTexture((char*)"images/woodWallTexture.bmp", 255.0f);
+    Resturant::kitchenWallTexture = LoadTexture((char*)"images/kitchenWallTexture2.bmp", 255.0f);
+    Resturant::tableWoodTexture = LoadTexture((char*)"images/TableWoodTexture.bmp", 255.0f);
+    Resturant::KitchenFloorWoodTexture = LoadTexture((char*)"images/KitchenFloorWoodTexture.bmp", 255.0f);
+    Resturant::phrezFront = LoadTexture((char*)"images/phreza2Front.bmp", 255.0f);
+    Resturant::phrezBack = LoadTexture((char*)"images/phrezaside.bmp", 255.0f);
+    Resturant::shauma = LoadTexture((char*)"images/shaurma.bmp", 255.0f);
+    Resturant::shaurmaTable = LoadTexture((char*)"images/shaurmaTable.bmp", 255.0f);
+    Resturant::sideshaurmaTable = LoadTexture((char*)"images/sideshaurmaTable.bmp", 255.0f);
+    Resturant::shaurmaTable2 = LoadTexture((char*)"images/shaurmaTable2.bmp", 255.0f);
 
 
 
