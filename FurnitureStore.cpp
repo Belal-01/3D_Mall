@@ -12,21 +12,121 @@ void FurnitureStore::init() {
     FurnitureStore::CT_columnTextureID = LoadTexture((char*)"tmp4.bmp", 255.0f);
     FurnitureStore::CT_tabletopTextureID = LoadTexture((char*)"PlasticTable2.bmp", 255.0f);
     FurnitureStore::CH_tabletopTextureID = LoadTexture((char*)"CircularFabric1.bmp", 255.0f);
+    FurnitureStore::shelves1TextureID = LoadTexture((char*)"WoodCabinet1.bmp", 255.0f);
+    FurnitureStore::CabinetLeftDoor1TextureID = LoadTexture((char*)"CabinetLeftDoor1.bmp", 255.0f);
+    FurnitureStore::CabinetRightDoor1TextureID = LoadTexture((char*)"CabinetRightDoor1.bmp", 255.0f);
+    FurnitureStore::tmpTextureID = LoadTexture((char*)"tmp7.bmp", 255.0f);
+    FurnitureStore::CabinetLeftDoor2TextureID = LoadTexture((char*)"CabinetLeftDoor2.bmp", 255.0f);
+    FurnitureStore::CabinetRightDoor2TextureID = LoadTexture((char*)"CabinetRightDoor2.bmp", 255.0f);
+    FurnitureStore::FabricChair1TextureID = LoadTexture((char*)"ChairFabric2.bmp", 255.0f);
+    FurnitureStore::FabricChair1WoodTextureID = LoadTexture((char*)"FabricChairWood1.bmp", 255.0f); 
+    FurnitureStore::FabricChair2TextureID = LoadTexture((char*)"ChairFabric1.bmp", 255.0f);
+    FurnitureStore::FabricChair2WoodTextureID = LoadTexture((char*)"FabricChairWood3.bmp", 255.0f);
+    FurnitureStore::LegsID = LoadTexture((char*)"Legs3.bmp", 255.0f);
+    FurnitureStore::WallID = LoadTexture((char*)"tmp8.bmp", 255.0f);
+    FurnitureStore::TopTmpTable1TextureID = LoadTexture((char*)"tmp1.bmp", 255.0f);;
+    FurnitureStore::TopTmpTable2TextureID = LoadTexture((char*)"tmp1.bmp", 255.0f);;
 }
 void FurnitureStore::display() {
     drawLambaderAtPosition(3700, 0, 4700);
-    drawSofa(3500, 0, 1500, 400, 800, 300, 125, 75, 0, SofaTextureID, 0.0f);
-    drawSofa(2800, 0, 2100, 400, 800, 300, 125, 75, 0, SofaTextureID, 270.0f);
-    drawSofa(2800, 0, 900, 400, 800, 300, 120, 70, 0, SofaTextureID, 90.0f);
+    drawSofa(3500, 0, 1800, 400, 800, 300, 125, 75, 0, SofaTextureID, 0.0f);
+    drawSofa(2800, 0, 2500, 400, 800, 300, 125, 75, 0, SofaTextureID, 270.0f);
+    drawSofa(2800, 0, 1100, 400, 800, 300, 120, 70, 0, SofaTextureID, 90.0f);
 
-    drawTable(1375, 0, 1350, 250, 300, 200, 225, 75, 0, Table1TextureID);
-    drawTable(1200, 0, 1250, 300, 500, 250, 225, 15, 0, Table1TextureID);
-    drawTable(1075, 0, 1350, 250, 300, 200, 225, 75, 0, Table1TextureID);
+    drawTable(2975, 0, 2100, 250, 300, 200, 225, 75, 0, Table1TextureID);
+    drawTable(2800, 0, 2000, 300, 500, 250, 225, 15, 0, Table1TextureID);
+    drawTable(2675, 0, 2100, 250, 300, 200, 225, 75, 0, Table1TextureID);
 
     circlerTable(3200, 0, 4200, 300, 300, 32, CT_tabletopTextureID, CT_columnTextureID);
     drawCirclerChair(3400, 0, 3900, 80, 200, 100, CH_tabletopTextureID, CT_columnTextureID, 1);
     drawCirclerChair(2900, 0, 4000, 80, 200, 100, CH_tabletopTextureID, CT_columnTextureID, 1);
     drawCirclerChair(2900, 0, 4400, 80, 200, 100, CH_tabletopTextureID, CT_columnTextureID, 1);
+
+    drawBookshelves(2200, 0, 4800, 180);
+    drawCabient(1200, 0, 4600, 0);
+
+    drawChair(1900, 0, 1600,  45, FabricChair1TextureID, -1, FabricChair1WoodTextureID);
+    drawChair(1400, 0, 1800, 135, FabricChair1TextureID, -1, FabricChair1WoodTextureID);
+    drawCirclerChair(1750, 0, 1900, 80, 200, 100, FabricChair1WoodTextureID, FabricChair1WoodTextureID, 1);
+    
+    drawChair(2200, 0, 3400, -45, FabricChair2TextureID, -1, FabricChair2WoodTextureID);
+    drawChair(1700, 0, 3600, -135, FabricChair2TextureID, -1, FabricChair2WoodTextureID);
+    drawCirclerChair(1800, 0, 3300, 80, 200, 100, FabricChair2WoodTextureID, FabricChair2WoodTextureID, 1);
+
+    drawWallpaper(3975, 800, 0, 800, 1010, 4890, WallID, 1);
+    
+}
+void FurnitureStore::drawWallpaper(int x1, int x2, int y1, int y2, int z1, int z2, int textureID, float repeatFactor) {
+    
+    if (textureID != -1) {
+        glEnable(GL_TEXTURE_2D);
+        glBindTexture(GL_TEXTURE_2D, textureID);
+        glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_REPLACE);
+    }
+    else {
+        glDisable(GL_TEXTURE_2D);
+    }
+
+    glBegin(GL_QUADS);
+    if (textureID != -1) { glTexCoord2f(0, 0); }
+    glVertex3f(x1, y1, z1);
+    if (textureID != -1) { glTexCoord2f(0, repeatFactor); }
+    glVertex3f(x1, y2, z1);
+    if (textureID != -1) { glTexCoord2f(repeatFactor, repeatFactor); }
+    glVertex3f(x1, y2, z2);
+    if (textureID != -1) { glTexCoord2f(repeatFactor, 0); }
+    glVertex3f(x1, y1, z2);
+    glEnd();
+
+    glBegin(GL_QUADS);
+    if (textureID != -1) { glTexCoord2f(0, 0); }
+    glVertex3f(x1, y1, z1);
+    if (textureID != -1) { glTexCoord2f(0, repeatFactor); }
+    glVertex3f(x1, y2, z1);
+    if (textureID != -1) { glTexCoord2f(repeatFactor, repeatFactor); }
+    glVertex3f(x2, y2, z1);
+    if (textureID != -1) { glTexCoord2f(repeatFactor, 0); }
+    glVertex3f(x2, y1, z1);
+    glEnd();
+
+    glBegin(GL_QUADS);
+    if (textureID != -1) { glTexCoord2f(0, 0); }
+    glVertex3f(x1, y1, z2);
+    if (textureID != -1) { glTexCoord2f(0, repeatFactor); }
+    glVertex3f(x1, y2, z2);
+    if (textureID != -1) { glTexCoord2f(repeatFactor, repeatFactor); }
+    glVertex3f(x2, y2, z2);
+    if (textureID != -1) { glTexCoord2f(repeatFactor, 0); }
+    glVertex3f(x2, y1, z2);
+    glEnd();
+
+    glBegin(GL_QUADS);
+    y2 -= 10;
+    if (textureID != -1) { glTexCoord2f(0, 0); }
+    glVertex3f(x2, y2, z1);
+    if (textureID != -1) { glTexCoord2f(0, repeatFactor); }
+    glVertex3f(x2, y2, z2);
+    if (textureID != -1) { glTexCoord2f(repeatFactor, repeatFactor); }
+    glVertex3f(x1, y2, z2);
+    if (textureID != -1) { glTexCoord2f(repeatFactor, 0); }
+    glVertex3f(x1, y2, z1);
+    glEnd();
+    
+    if (textureID != -1) {
+        glDisable(GL_TEXTURE_2D);
+    }
+}
+void FurnitureStore::drawCabient(int x, int y, int z, double roateFactor) {
+    int height = 700, depth = 250, width = 500;
+    //drawCube(1000, y, z, width, depth, height, 1, 1, 1, tmpTextureID, 1);
+    drawCube(x, y, z, width, depth, 20, 1, 1, 1, tmpTextureID, 1);
+    drawCube(x, y + 20, z, 20, depth, height - 40, 1, 1, 1, tmpTextureID, 1);
+    drawCube(x + width - 20, y + 20, z, 20, depth, height - 40, 1, 1, 1, tmpTextureID, 1);
+    drawCube(x + 20, y + 20, z + depth - 20, width - 40, 20,  height - 40, 1, 1, 1, tmpTextureID, 1);
+    drawCube(x, y + height - 20, z, width, depth, 20, 1, 1, 1, tmpTextureID, 1);
+    int doorWidth = (width - 40) / 2;
+    drawCube(x + 20, y + 20, z, doorWidth, 20, height - 40, 1, 1, 1, CabinetLeftDoor2TextureID, 1);
+    drawCube(x + 20 + doorWidth, y + 20, z, doorWidth, 20, height - 40, 1, 1, 1, CabinetRightDoor2TextureID, 1);
 }
 
 void drawCylinder(float baseX, float baseY, float baseZ, float radius, float height, int segments, int textureID, float repeatFactor) {
@@ -178,16 +278,15 @@ void FurnitureStore::drawTable(float x, float y, float z, float width, float dep
 void FurnitureStore::drawSofa(float x, float y, float z, float width, float depth, float height, int red, int green, int blue, int textureID, float rotationAngle) {
     glPushMatrix();
 
-    
     glTranslatef(x + width / 2, y, z + depth / 2); 
     glRotatef(rotationAngle, 0, 1, 0);            
     glTranslatef(-(x + width / 2), -y, -(z + depth / 2)); 
 
     int legHeight = 50;
-    drawCube(x + 20, y, z + 20, 20, 20, legHeight, 150, 75, 0, -1, 1);
-    drawCube(x + width - 40, y, z + 20, 20, 20, legHeight, 150, 75, 0, -1, 1);
-    drawCube(x + 20, y, z + depth - 60, 20, 20, legHeight, 150, 75, 0, -1, 1);
-    drawCube(x + width - 40, y, z + depth - 60, 20, 20, legHeight, 150, 75, 0, -1, 1);
+    drawCube(x + 20, y, z + 20, 20, 20, legHeight, 150, 75, 0, LegsID, 1);
+    drawCube(x + width - 40, y, z + 20, 20, 20, legHeight, 150, 75, 0, LegsID, 1);
+    drawCube(x + 20, y, z + depth - 60, 20, 20, legHeight, 150, 75, 0, LegsID, 1);
+    drawCube(x + width - 40, y, z + depth - 60, 20, 20, legHeight, 150, 75, 0, LegsID, 1);
 
     int baseLayer = 130;
     drawCube(x, y + 50, z, width, depth, baseLayer, red, green, blue, textureID, 2);
@@ -203,7 +302,7 @@ void FurnitureStore::drawSofa(float x, float y, float z, float width, float dept
 
 
 void FurnitureStore::drawLeg(float x, float y, float z, float width, float depth, float height, int red, int green, int blue, int texture) {
-    drawCube(x, y, z, width, depth, height, 150, 75, 0, -1, 1);
+    drawCube(x, y, z, width, depth, height, 150, 75, 0, LegsID, 1);
 }
 
 void FurnitureStore::drawCube(float x, float y, float z, float width, float depth, float height, int red, int green, int blue, int textureID, float repeatFactor) {
@@ -531,4 +630,82 @@ void FurnitureStore::circlerTable(float x, float y, float z, float radius, float
     }
     glDisable(GL_TEXTURE_2D);
     glEnd();
+    }
+
+void FurnitureStore::drawBookshelves(int x, int y, int z, float rotateFactor) {
+
+    int bottomHeight = 200;
+    int width = 400;
+    int depth = 200;
+    int topHeight = 400;
+
+    // Begin transformation for the bookshelf
+    glPushMatrix();
+    glTranslatef(x, y, z); // Move to the specified coordinates
+    glRotatef(rotateFactor, 0.0f, 1.0f, 0.0f); // Rotate around the Y-axis
+
+    // Draw the bookshelf frame (top and sides)
+    drawCube(0, 0, 20, 20, 180, topHeight + bottomHeight, 0, 120, 0, shelves1TextureID, 1.0f);
+    drawCube(width - 20, 0, 20, 20, 180, topHeight + bottomHeight, 0, 0, 120, shelves1TextureID, 1.0f);
+    drawCube(0, 0, 0, width, 20, topHeight + bottomHeight, 120, 0, 0, shelves1TextureID, 1.0f);
+
+    // Draw the shelves inside the cabinet
+    int tmpY = bottomHeight;
+    for (int i = 0; i < 5; i++) {
+        if (tmpY + 100 > bottomHeight + topHeight) {
+            drawCube(0, tmpY, 0, width, 200, 20, 1, 1, 1, shelves1TextureID, 1.0f);
+        }
+        drawCube(20, tmpY, 20, width - 40, 180, 20, 1, 1, 1, shelves1TextureID, 1.0f);
+        tmpY += 100;
+    }
+
+    // Draw the doors
+    int doorWidth = (width - 40) / 2;
+    drawCube(20, 20, depth - 20, doorWidth, 20, bottomHeight - 20, 1, 1, 1, CabinetLeftDoor1TextureID, 1.0f);
+    drawCube(20 + doorWidth, 20, depth - 20, doorWidth, 20, bottomHeight - 20, 1, 1, 1, CabinetRightDoor1TextureID, 1.0f);
+
+    // Draw the back panel between the doors
+    drawCube(20, 0, 20, 2 * doorWidth, depth - 20, 20, 255, 1, 1, shelves1TextureID, 1.0f);
+
+    // End transformation for the bookshelf
+    glPopMatrix();
+}
+
+void FurnitureStore::drawChair(int x, int y, int z, float rotateFactor, int seatTextureID, int pillowTextureID, int woodTextureID) {
+    // Save the current transformation state
+    glPushMatrix();
+
+    // Translate to the chair's position and apply rotation
+    glTranslatef(x, y, z);
+    glRotatef(rotateFactor, 0, 1, 0); // Rotate around the Y-axis
+
+    // Draw the chair components with local coordinates relative to the new origin
+    drawCube(0, 0, 0, 20, 20, 260, 1, 1, 1, woodTextureID, 1);
+    drawCube(0, 0, 280, 20, 20, 260, 1, 1, 1, woodTextureID, 1);
+
+    drawCube(280, 0, 0, 20, 20, 320, 1, 1, 1, woodTextureID, 1);
+    drawCube(280, 0, 280, 20, 20, 320, 1, 1, 1, woodTextureID, 1);
+    drawCube(280, 300, 0, 20, 300, 20, 1, 1, 1, woodTextureID, 1);
+
+    drawCube(280, 100, 0, 20, 300, 20, 1, 1, 1, woodTextureID, 1);
+    drawCube(0, 100, 0, 20, 300, 20, 1, 1, 1, woodTextureID, 1);
+
+    int tmp = 90;
+    for (int i = 0; i < 2; i++) {
+        drawCube(20, 100, tmp, 260, 20, 20, 1, 1, 1, woodTextureID, 1);
+        drawCube(280, 120, tmp, 20, 20, 180, 1, 1, 1, woodTextureID, 1);
+        tmp += 90;
+    }
+
+    drawCube(0, 240, 0, 280, 20, 20, 1, 1, 1, woodTextureID, 1);
+    drawCube(0, 240, 280, 280, 20, 20, 1, 1, 1, woodTextureID, 1);
+
+    drawCube(0, 100, 0, 280, 20, 20, 1, 1, 1, woodTextureID, 1);
+    drawCube(0, 100, 280, 280, 20, 20, 1, 1, 1, woodTextureID, 1);
+
+    drawCube(-20, 120, 20, 300, 260, 80, 1, 1, 1, seatTextureID, 1);
+    drawCube(220, 202, 20, 60, 260, 160, 1, 1, 1, seatTextureID, 1);
+
+    // Restore the previous transformation state
+    glPopMatrix();
 }
