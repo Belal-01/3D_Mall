@@ -1,362 +1,304 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\images">
+      <UniqueIdentifier>{37687ce2-1c31-4e73-af94-7961b0accd3c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
     <ClCompile Include="3D_mall.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="texture.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="cameraConfiguration.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="KeyboardConfiguration.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="wall.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Glass.cpp">
-      <Filter>Source Files</Filter>
->>>>>>> Nozo
-    </ClCompile>
-    <ClCompile Include="BilalMain.cpp">
-      <Filter>SourceFiles</Filter>
-    </ClCompile>
-    <ClCompile Include="cameraConfiguration.cpp">
-      <Filter>SourceFiles</Filter>
-    </ClCompile>
-    <ClCompile Include="Glass.cpp">
-      <Filter>SourceFiles</Filter>
-    </ClCompile>
-    <ClCompile Include="OutSpace.cpp">
-      <Filter>SourceFiles</Filter>
-    </ClCompile>
-    <ClCompile Include="restorant.cpp">
-      <Filter>SourceFiles</Filter>
-    </ClCompile>
-    <ClCompile Include="Stairs.cpp">
-      <Filter>SourceFiles</Filter>
-    </ClCompile>
-    <ClCompile Include="texture.cpp">
-      <Filter>SourceFiles</Filter>
-    </ClCompile>
-    <ClCompile Include="wall.cpp">
-      <Filter>SourceFiles</Filter>
-    </ClCompile>
     <ClCompile Include="abd.cpp">
-      <Filter>SourceFiles</Filter>
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="abdMain.cpp">
-      <Filter>SourceFiles</Filter>
-    </ClCompile>
-    <ClCompile Include="Door.cpp">
-      <Filter>SourceFiles</Filter>
-    </ClCompile>
-    <ClCompile Include="ElectronicDeviceDrawer.cpp">
-      <Filter>SourceFiles</Filter>
-    </ClCompile>
-    <ClCompile Include="KeyboardConfiguration.cpp">
-      <Filter>SourceFiles</Filter>
-    </ClCompile>
-    <ClCompile Include="TechnicalDivecesDrawer.cpp">
-      <Filter>SourceFiles</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\stb_image.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="FurnitureStore.cpp">
+    <ClCompile Include="BilalMain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cameraConfiguration.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Door.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ElectronicDeviceDrawer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Glass.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="KeyboardConfiguration.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="OutSpace.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="restorant.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Stairs.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TechnicalDivecesDrawer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="texture.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="wall.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="camera.h">
-      <Filter>HeaderFiles</Filter>
-    </ClInclude>
-    <ClInclude Include="BilalMain.h">
-      <Filter>HeaderFiles</Filter>
-    </ClInclude>
-    <ClInclude Include="cameraConfiguration.h">
-      <Filter>HeaderFiles</Filter>
-    </ClInclude>
-    <ClInclude Include="Glass.h">
-      <Filter>HeaderFiles</Filter>
-    </ClInclude>
-    <ClInclude Include="keyboardConfiguration.h">
-      <Filter>HeaderFiles</Filter>
-    </ClInclude>
-    <ClInclude Include="restorant.h">
-      <Filter>HeaderFiles</Filter>
-    </ClInclude>
-    <ClInclude Include="texture.h">
-      <Filter>HeaderFiles</Filter>
-    </ClInclude>
-    <ClInclude Include="Stairs.h">
-      <Filter>HeaderFiles</Filter>
-    </ClInclude>
-    <ClInclude Include="Wall.h">
-      <Filter>HeaderFiles</Filter>
-    </ClInclude>
     <ClInclude Include="abd.h">
-      <Filter>HeaderFiles</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="abdMain.h">
-      <Filter>HeaderFiles</Filter>
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BilalMain.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="camera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cameraConfiguration.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Door.h">
-      <Filter>HeaderFiles</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ElectronicDeviceDrawer.h">
-      <Filter>HeaderFiles</Filter>
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Glass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="keyboardConfiguration.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="OutSpace.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="restorant.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Stairs.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="TechnicalDivecesDrawer.h">
-      <Filter>HeaderFiles</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="FurnitureStore.h">
+    <ClInclude Include="texture.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Wall.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <Image Include="images\brada1.bmp">
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="images\brada2.bmp">
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="images\brada3.bmp">
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="images\enterance.bmp">
+      <Filter>Source Files\images</Filter>
+    </Image>
     <Image Include="images\externalWall.bmp">
-      <Filter>images</Filter>
+      <Filter>Source Files\images</Filter>
     </Image>
-    <Image Include="floorImg.bmp">
-      <Filter>images</Filter>
+    <Image Include="images\fatain.bmp">
+      <Filter>Source Files\images</Filter>
     </Image>
-    <Image Include="floorInsidStore.bmp">
-      <Filter>images</Filter>
+    <Image Include="images\fatain1.bmp">
+      <Filter>Source Files\images</Filter>
     </Image>
-    <Image Include="floortexture.bmp">
-      <Filter>images</Filter>
+    <Image Include="images\flag.bmp">
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="images\floorImg.bmp">
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="images\floorImg.png">
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="images\floorInsidStore.bmp">
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="images\floortexture.bmp">
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="images\flower.bmp">
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="images\flower1.bmp">
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="images\flowerlandspace.bmp">
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="images\fridge.bmp">
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="images\fridge1.bmp">
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="images\fridge2.bmp">
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="images\fridge3.bmp">
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="images\fridge4.bmp">
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="images\games.bmp">
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="images\grass.bmp">
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="images\grassSpace.bmp">
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="images\himalayan.bmp">
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="images\insidMallFloorTexture.bmp">
+      <Filter>Source Files\images</Filter>
     </Image>
     <Image Include="images\interiorWall.bmp">
-      <Filter>images</Filter>
+      <Filter>Source Files\images</Filter>
     </Image>
-    <Image Include="kitchenFloorWoodTexture.bmp">
-      <Filter>images</Filter>
+    <Image Include="images\kitchenFloorWoodTexture.bmp">
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="images\kitchenFloorWoodTexture2.bmp">
+      <Filter>Source Files\images</Filter>
     </Image>
     <Image Include="images\kitchenLogo.bmp">
-      <Filter>images</Filter>
+      <Filter>Source Files\images</Filter>
     </Image>
-    <Image Include="kitchenWallTexture.bmp">
-      <Filter>images</Filter>
+    <Image Include="images\kitchenWallTexture.bmp">
+      <Filter>Source Files\images</Filter>
     </Image>
-    <Image Include="kitchenWallTexture2.bmp">
-      <Filter>images</Filter>
+    <Image Include="images\kitchenWallTexture2.bmp">
+      <Filter>Source Files\images</Filter>
     </Image>
     <Image Include="images\kitchenWallWood.bmp">
-      <Filter>images</Filter>
+      <Filter>Source Files\images</Filter>
     </Image>
-    <Image Include="phreza2Front.bmp">
-      <Filter>images</Filter>
+    <Image Include="images\pcb.bmp">
+      <Filter>Source Files\images</Filter>
     </Image>
-    <Image Include="phrezaside.bmp">
-      <Filter>images</Filter>
+    <Image Include="images\pcb.jpg">
+      <Filter>Source Files\images</Filter>
     </Image>
-    <Image Include="shaurma.bmp">
-      <Filter>images</Filter>
+    <Image Include="images\pcf.bmp">
+      <Filter>Source Files\images</Filter>
     </Image>
-    <Image Include="shaurmaTable.bmp">
-      <Filter>images</Filter>
+    <Image Include="images\pcf.jpg">
+      <Filter>Source Files\images</Filter>
     </Image>
-    <Image Include="shaurmaTable2.bmp">
-      <Filter>images</Filter>
+    <Image Include="images\pcs.bmp">
+      <Filter>Source Files\images</Filter>
     </Image>
-    <Image Include="sideshaurmaTable.bmp">
-      <Filter>images</Filter>
+    <Image Include="images\pcs.jpg">
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="images\phreza2Front.bmp">
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="images\phrezaFront.bmp">
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="images\phrezaside.bmp">
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="images\s7ana.bmp">
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="images\shaurma.bmp">
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="images\shaurmaTable.bmp">
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="images\shaurmaTable2.bmp">
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="images\sideshaurmaTable.bmp">
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="images\speaker.bmp">
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="images\speaker.png">
+      <Filter>Source Files\images</Filter>
     </Image>
     <Image Include="images\stairimg.bmp">
-      <Filter>images</Filter>
-    </Image>
-    <Image Include="TableWoodTexture.bmp">
-      <Filter>images</Filter>
-    </Image>
-    <Image Include="woodWallTexture.bmp">
-      <Filter>images</Filter>
-    </Image>
-    <Image Include="brada1.bmp">
-      <Filter>images</Filter>
-    </Image>
-    <Image Include="brada2.bmp">
-      <Filter>images</Filter>
-    </Image>
-    <Image Include="brada3.bmp">
-      <Filter>images</Filter>
-    </Image>
-    <Image Include="floorImg.png">
-      <Filter>images</Filter>
-    </Image>
-    <Image Include="fridge.bmp">
-      <Filter>images</Filter>
-    </Image>
-    <Image Include="fridge1.bmp">
-      <Filter>images</Filter>
-    </Image>
-    <Image Include="fridge2.bmp">
-      <Filter>images</Filter>
-    </Image>
-    <Image Include="fridge3.bmp">
-      <Filter>images</Filter>
-    </Image>
-    <Image Include="fridge4.bmp">
-      <Filter>images</Filter>
-    </Image>
-    <Image Include="games.bmp">
-      <Filter>images</Filter>
-    </Image>
-    <Image Include="insidMallFloorTexture.bmp">
-      <Filter>images</Filter>
-    </Image>
-    <Image Include="pcb.bmp">
-      <Filter>images</Filter>
-    </Image>
-    <Image Include="pcb.jpg">
-      <Filter>images</Filter>
-    </Image>
-    <Image Include="pcf.bmp">
-      <Filter>images</Filter>
-    </Image>
-    <Image Include="pcf.jpg">
-      <Filter>images</Filter>
-    </Image>
-    <Image Include="pcs.bmp">
-      <Filter>images</Filter>
-    </Image>
-    <Image Include="pcs.jpg">
-      <Filter>images</Filter>
-    </Image>
-    <Image Include="s7ana.bmp">
-      <Filter>images</Filter>
-    </Image>
-    <Image Include="speaker.bmp">
-      <Filter>images</Filter>
-    </Image>
-    <Image Include="speaker.png">
-      <Filter>images</Filter>
-    </Image>
-    <Image Include="wash.bmp">
-      <Filter>images</Filter>
-    </Image>
-    <Image Include="wash2.bmp">
-      <Filter>images</Filter>
-    </Image>
-    <Image Include="washb.bmp">
-      <Filter>images</Filter>
-    </Image>
-    <Image Include="washr.bmp">
-      <Filter>images</Filter>
-    </Image>
-    <Image Include="washw.bmp">
-      <Filter>images</Filter>
-    </Image>
-    <Image Include="xboxb.bmp">
-      <Filter>images</Filter>
-    </Image>
-    <Image Include="xboxf.bmp">
-      <Filter>images</Filter>
-    </Image>
-    <Image Include="..\..\WoodFloor051.bmp">
       <Filter>Source Files\images</Filter>
     </Image>
-    <Image Include="WoodTable.bmp">
+    <Image Include="images\TableWoodTexture.bmp">
       <Filter>Source Files\images</Filter>
     </Image>
-    <Image Include="WoodForTable1.bmp">
+    <Image Include="images\Walkway.bmp">
       <Filter>Source Files\images</Filter>
     </Image>
-    <Image Include="PlasticTable1.bmp">
+    <Image Include="images\wash.bmp">
       <Filter>Source Files\images</Filter>
     </Image>
-    <Image Include="WoodTable2.bmp">
+    <Image Include="images\wash2.bmp">
       <Filter>Source Files\images</Filter>
     </Image>
-    <Image Include="WoodTable3.bmp">
+    <Image Include="images\washb.bmp">
       <Filter>Source Files\images</Filter>
     </Image>
-    <Image Include="LeatherSofa1.bmp">
+    <Image Include="images\washr.bmp">
       <Filter>Source Files\images</Filter>
     </Image>
-    <Image Include="CircularFabric1.bmp">
+    <Image Include="images\washw.bmp">
       <Filter>Source Files\images</Filter>
     </Image>
-    <Image Include="CircularFabric2.bmp">
+    <Image Include="images\whiteStone.bmp">
       <Filter>Source Files\images</Filter>
     </Image>
-    <Image Include="PlasticTable2.bmp">
+    <Image Include="images\woodWallTexture.bmp">
       <Filter>Source Files\images</Filter>
     </Image>
-    <Image Include="Woodcolumn1.bmp">
+    <Image Include="images\xboxb.bmp">
       <Filter>Source Files\images</Filter>
     </Image>
-    <Image Include="tmp4.bmp">
-      <Filter>Source Files\images</Filter>
-    </Image>
-    <Image Include="WoodCabinet1.bmp">
-      <Filter>Source Files\images</Filter>
-    </Image>
-    <Image Include="CabinetLeftDoor1.bmp">
-      <Filter>Source Files\images</Filter>
-    </Image>
-    <Image Include="CabinetRightDoor2.bmp">
-      <Filter>Source Files\images</Filter>
-    </Image>
-    <Image Include="CabinetLeftDoor2.bmp">
-      <Filter>Source Files\images</Filter>
-    </Image>
-    <Image Include="CabinetRightDoor1.bmp">
-      <Filter>Source Files\images</Filter>
-    </Image>
-    <Image Include="ChairFabric1.bmp">
-      <Filter>Source Files\images</Filter>
-    </Image>
-    <Image Include="FabricChairWood1.bmp">
-      <Filter>Source Files\images</Filter>
-    </Image>
-    <Image Include="FabricChairWood2.bmp">
-      <Filter>Source Files\images</Filter>
-    </Image>
-    <Image Include="FabricChairWood3.bmp">
-      <Filter>Source Files\images</Filter>
-    </Image>
-    <Image Include="ChairFabric2.bmp">
-      <Filter>Source Files\images</Filter>
-    </Image>
-    <Image Include="Legs3.bmp">
-      <Filter>Source Files\images</Filter>
-    </Image>
-    <Image Include="tmp7.bmp">
-      <Filter>Source Files\images</Filter>
-    </Image>
-    <Image Include="tmp8.bmp">
-      <Filter>Source Files\images</Filter>
-    </Image>
-    <Image Include="tmp1.bmp">
-      <Filter>Source Files\images</Filter>
-    </Image>
-    <Image Include="tmp2.bmp">
-      <Filter>Source Files\images</Filter>
-    </Image>
-    <Image Include="tmp3.png">
+    <Image Include="images\xboxf.bmp">
       <Filter>Source Files\images</Filter>
     </Image>
   </ItemGroup>
   <ItemGroup>
-    <Filter Include="images">
-      <UniqueIdentifier>{5b300df2-1e9b-4425-aae4-9ff5666ade26}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="HeaderFiles">
-      <UniqueIdentifier>{494ea8b4-accb-4815-9422-4b2ca7804cab}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="SourceFiles">
-      <UniqueIdentifier>{02e33750-47d2-4c58-aa94-ae2fbda6c78b}</UniqueIdentifier>
-    </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="pcb.webp">
-      <Filter>images</Filter>
+    <None Include="images\pcb.webp">
+      <Filter>Source Files\images</Filter>
     </None>
-    <None Include="pcback.webp">
-      <Filter>images</Filter>
+    <None Include="images\pcback.webp">
+      <Filter>Source Files\images</Filter>
     </None>
   </ItemGroup>
 </Project>
