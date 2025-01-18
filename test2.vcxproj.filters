@@ -2,9 +2,6 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="3D_mall.cpp">
-<<<<<<< HEAD
-      <Filter>SourceFiles</Filter>
-=======
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="texture.cpp">
