@@ -222,7 +222,7 @@ void Abd::AbdDraw(float CameraX,float CameraY,float CameraZ)
         doorrotation = 0;
 
     drawRotatingGlassDoor(-400, 500, 100, 750, 800,doorrotation);
-    drawsky(cameraX, CameraY, CameraZ, sky);
+   // drawsky(cameraX, CameraY, CameraZ, sky);
   
     
 
