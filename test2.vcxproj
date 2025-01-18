@@ -77,10 +77,14 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>GLAUX.H</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>GLU32.lib;glut32.lib;OPENGL32.lib;glut32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>
+      </AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -133,6 +137,7 @@
     <ClCompile Include="Glass.cpp" />
     <ClCompile Include="KeyboardConfiguration.cpp" />
     <ClCompile Include="3D_mall.cpp" />
+    <ClCompile Include="Market.cpp" />
     <ClCompile Include="ObjLoader.cpp" />
     <ClCompile Include="OutSpace.cpp" />
     <ClCompile Include="restorant.cpp" />
@@ -146,6 +151,8 @@
     <ClInclude Include="cameraConfiguration.h" />
     <ClInclude Include="Glass.h" />
     <ClInclude Include="keyboardConfiguration.h" />
+    <ClInclude Include="Market.h" />
+    <ClInclude Include="Model_3DS.h" />
     <ClInclude Include="ObjLoader.h" />
     <ClInclude Include="OutSpace.h" />
     <ClInclude Include="restorant.h" />

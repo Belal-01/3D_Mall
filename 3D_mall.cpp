@@ -11,6 +11,9 @@
 #include "BilalMain.h"
 #include "OutSpace.h"
 #include "Waterfall.h"
+#include "Market.h"
+#include "Model_3DS.h"
+#include "Wall.h"
 
 
 double angle = 0.0;
@@ -20,7 +23,9 @@ CameraConfiguration camera;
 BilalMain bilal;
 OutSpace outspace;
 Waterfall waterfall;
-
+Market market;
+Model_3DS* tree; 
+//GLTexture BARK, Leaf;
 int windowWidth = 1920, windowHeight = 1080;
 
 void keyPressed(unsigned char key, int x, int y) {
@@ -48,19 +53,28 @@ void mouseMotion(int x, int y) {
 void display() {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glLoadIdentity();
-    // set the camera confiuration
+
+    // Set the camera configuration
     camera.updateMovement();
     camera.setupCamera();
-    
-    //here put ur display
+
+    // Render the skybox first (background)
+    glPushMatrix();
+    glDisable(GL_DEPTH_TEST);   
+    glTranslatef(camera.cameraX, camera.cameraY, camera.cameraZ);  
+    outspace.drawskybox();  // Draw the skybox
+    glEnable(GL_DEPTH_TEST);  // Re-enable depth testing
+    glPopMatrix();
+     
      bilal.display();
-     waterfall.draw();
-     outspace.draw();
-     //waterfall.drawRockSlope(1000, 1000);
-     //waterfall.drawWaterfall(500, 1000);
-    glFlush(); // Render the line
+    //waterfall.draw();
+    outspace.draw();
+    market.draw();
+
+    glFlush();  // Render the scene
     glutSwapBuffers();
 }
+
 void reshape(int w, int h) {
     windowWidth = w;
     windowHeight = h;
@@ -71,27 +85,27 @@ void reshape(int w, int h) {
     glMatrixMode(GL_MODELVIEW);
 }
 
-void init() {
-    glClearColor(1.0, 1.0, 1.0, 1.0);
-    glEnable(GL_DEPTH_TEST);
-    glMatrixMode(GL_PROJECTION);
-    glLoadIdentity();
-    gluPerspective(60.0, (double)windowWidth / (double)windowHeight, 0.1, 12000.0);
-    glMatrixMode(GL_MODELVIEW);
- //   
-    /*glEnable(GL_TEXTURE_2D);*/
+    void init() {
+        glClearColor(1.0, 1.0, 1.0, 1.0);
+        glEnable(GL_DEPTH_TEST);
+        glMatrixMode(GL_PROJECTION);
+        glLoadIdentity();
+        gluPerspective(60.0, (double)windowWidth / (double)windowHeight, 0.1, 12000);
+        glMatrixMode(GL_MODELVIEW);
+     //   
+        /*glEnable(GL_TEXTURE_2D);*/
 
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
 
-    // here put your inits 
-    bilal.init();
-    outspace.init();
-    waterfall.init();
+        // here put your inits 
+        bilal.init();
+        outspace.init();
+        //waterfall.init();
+        market.init();
     
-   
-    
-}
+     
+    }
 
 int main(int argc, char** argv) {
     glutInit(&argc, argv);

@@ -197,3 +197,20 @@ void Wall::create(int x1, int x2, int y1, int y2, int z1, int z2) {
     glEnd();
 }
 
+void floorBig(float centerX, float centerZ, float size, int textureID, float repeat) {
+    glEnable(GL_TEXTURE_2D);
+    glBindTexture(GL_TEXTURE_2D, textureID);
+
+    glColor3f(1.0f, 1.0f, 1.0f); // Ensure white color to avoid altering texture colors
+
+    float halfSize = size / 2.0f;
+
+    glBegin(GL_QUADS);
+    glTexCoord2f(0.0f, 0.0f); glVertex3f(centerX - halfSize, 0.0f, centerZ - halfSize);
+    glTexCoord2f(repeat, 0.0f); glVertex3f(centerX + halfSize, 0.0f, centerZ - halfSize);
+    glTexCoord2f(repeat, repeat); glVertex3f(centerX + halfSize, 0.0f, centerZ + halfSize);
+    glTexCoord2f(0.0f, repeat); glVertex3f(centerX - halfSize, 0.0f, centerZ + halfSize);
+    glEnd();
+
+    glDisable(GL_TEXTURE_2D);
+}

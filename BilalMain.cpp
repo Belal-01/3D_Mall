@@ -14,7 +14,7 @@
  int widthofRoof = 80;
 
 void BilalMain::leftBuilding() {
-    wall.floor(-4000, 0, 10, 0, -4000, resturant.KitchenFloorWoodTexture, 10);
+    //floor(-4000, 0, 10, 0, -4000, resturant.KitchenFloorWoodTexture, 10);
     wall.frontWall(-4080, -1000, 0, 800, -4000, widthofWall,resturant.kitchenWallTexture,1,1);
     wall.sideWall(-4080, 0, 800, 0, -1000, widthofWall,textureID,1,1);
     wall.sideWall(-4080, 0, 800, -2000, -4000, widthofWall,textureID,1,1);

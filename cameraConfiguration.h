@@ -10,8 +10,9 @@ class CameraConfiguration {
 public:
     std::map<char, bool> keys;
 
-    float cameraX = -5500, cameraY = 1000, cameraZ = -3000;
-    float cameraAngleX = 0.0f, cameraAngleY = 0.0f;
+    //float cameraX = -3670, cameraY = 2800, cameraZ = 4600;
+    float cameraX = 500, cameraY = 200, cameraZ = 0;
+    float cameraAngleX = 0.5, cameraAngleY = -45;
     float cameraSpeed = 20;
     float mouseSensitivity = 0.005f;
 

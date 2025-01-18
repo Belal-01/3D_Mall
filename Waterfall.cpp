@@ -8,6 +8,7 @@
 using namespace std;
 
 ObjLoader objLoader;
+OutSpace outsapce;
 // Constructor
 Waterfall::Waterfall() {
  
@@ -15,6 +16,115 @@ Waterfall::Waterfall() {
     frequency = 0.1f;
     amplitude = 5.0f;
 }
+void Waterfall::drawRectangleXZ(float x, float y, float z, float len, float wid) {
+    glPushMatrix();
+    glTranslatef(x, y, z);
+
+    glColor3f(0.5, 0.0f, 0.0f); 
+    glBegin(GL_QUADS);
+    // Front face
+    glVertex3f(0, 0, 0);
+    glVertex3f(len, 0, 0);
+    glVertex3f(len, wid, 0);
+    glVertex3f(0, wid, 0);
+
+    // Top face
+    glVertex3f(0, wid, 0);
+    glVertex3f(len, wid, 0);
+    glVertex3f(len, wid, -wid);
+    glVertex3f(0, wid, -wid);
+
+    // Bottom face
+    glVertex3f(0, 0, 0);
+    glVertex3f(len, 0, 0);
+    glVertex3f(len, 0, -wid);
+    glVertex3f(0, 0, -wid);
+
+    // Back face
+    glVertex3f(0, 0, -wid);
+    glVertex3f(len, 0, -wid);
+    glVertex3f(len, wid, -wid);
+    glVertex3f(0, wid, -wid);
+
+    // Left face
+    glVertex3f(0, 0, 0);
+    glVertex3f(0, wid, 0);
+    glVertex3f(0, wid, -wid);
+    glVertex3f(0, 0, -wid);
+
+    // Right face
+    glVertex3f(len, 0, 0);
+    glVertex3f(len, wid, 0);
+    glVertex3f(len, wid, -wid);
+    glVertex3f(len, 0, -wid);
+    glEnd();
+
+     
+    glColor3f(0.0f, 0.0f, 0.0f); 
+    glLineWidth(2.0f);           // Set line thickness
+
+    glBegin(GL_LINES);
+    // Front face edges
+    glVertex3f(0, 0, 0);
+    glVertex3f(len, 0, 0);
+    glVertex3f(len, 0, 0);
+    glVertex3f(len, wid, 0);
+    glVertex3f(len, wid, 0);
+    glVertex3f(0, wid, 0);
+    glVertex3f(0, wid, 0);
+    glVertex3f(0, 0, 0);
+
+    // Back face edges
+    glVertex3f(0, 0, -wid);
+    glVertex3f(len, 0, -wid);
+    glVertex3f(len, 0, -wid);
+    glVertex3f(len, wid, -wid);
+    glVertex3f(len, wid, -wid);
+    glVertex3f(0, wid, -wid);
+    glVertex3f(0, wid, -wid);
+    glVertex3f(0, 0, -wid);
+
+    // Connecting edges between front and back faces
+    glVertex3f(0, 0, 0);
+    glVertex3f(0, 0, -wid);
+    glVertex3f(len, 0, 0);
+    glVertex3f(len, 0, -wid);
+    glVertex3f(0, wid, 0);
+    glVertex3f(0, wid, -wid);
+    glVertex3f(len, wid, 0);
+    glVertex3f(len, wid, -wid);
+    glEnd();
+
+    glPopMatrix();
+}
+
+
+void Waterfall::drawNet(float startX, float startY,float startz, int columns, int rows, float cellSize, float thickness) {
+    glColor3f(0.5, 0, 0); 
+
+    
+    for (int i = 0; i <= columns; ++i) {
+         
+        drawRectangleXZ(startX,startY,startz+100-i*300,3000,thickness );
+    }
+    glPushMatrix();
+    glRotatef(90, 0, 1, 0);
+    for (int j = 0; j <= rows; ++j) {
+        drawRectangleXZ(startX+4500, startY, startz -450- j * 300, 3000, thickness);
+
+    }
+    glPopMatrix();
+    glPushMatrix();
+    glTranslatef(startX-500-thickness,startY-700,startz);
+    glRotatef(90,0,0,1);
+    drawRectangleXZ(0, -700, 0 , 700, thickness);
+    drawRectangleXZ(0, -3400, 0 , 700, thickness);
+    drawRectangleXZ(0, -700, -2500 , 700, thickness);
+
+    glPopMatrix();
+
+}
+
  void Waterfall::drawUmbrella(float x, float y, float z, float radius, float height, float handleLength, float handleRadius) {
     const int slices = 36;
 
@@ -449,7 +559,7 @@ void Waterfall::draw() {
     t += 0.01f; // Increment t for animation
     if (t > 1.0f) t = 0.0f;  
 
-     
+    glColor3f(1,1,1);
 
     // Draw other elements in the scene (existing functionality)
     for (float i = 0; i <= 2000; i += 1000) {
@@ -475,6 +585,26 @@ void Waterfall::draw() {
     }
     drawground(-7000,10,0,3000,5000);
     drawWallWater(-5500,0,-4000,2800,800);
+
+
+
+    // first layers
+
+    glColor3ub(255,255, 120);
+
+
+    glPushMatrix();
+    glTranslatef(3000,880,0);
+    for (float i = 0; i <= 2000; i += 1000) {
+        //drawUmbrella(-6250, 500, -500 - i, 500, 180, 200, 50);
+        drawRoundedTable(-6250, 250, -1000 - i, 300, 20, 250, 10);
+    }
+    for (float i = 0; i <= 2000; i += 1000) {
+        //drawUmbrella(-4750, 500, -500 - i, 500, 180, 200, 50);
+        drawRoundedTable(-4750, 250, -1000 - i, 300, 20, 250, 10);
+    }
+    glPopMatrix();
+    drawNet(-4000,1580,-700,9,9,10,50);
 }
 
 

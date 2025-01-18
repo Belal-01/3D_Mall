@@ -783,7 +783,7 @@ void OutSpace::drawEntranceArch(float x, float y, float z, float width, float he
     glPopMatrix();
 
 }
-void OutSpace::drawSperatedGlass(int x, int y, int z, float len, float alpha) {
+void drawSperatedGlass(int x, int y, int z, float len, float alpha) {
     float hig =150;
     float oneWid = len/15-len/150;
     glDepthMask(GL_FALSE);
@@ -1021,6 +1021,98 @@ void OutSpace::drawFence(float x, float y, float z, float len, float hig) {
     glPopMatrix();
 }
 
+void OutSpace::drawskybox() {
+
+        glEnable(GL_TEXTURE_2D);
+        glBindTexture(GL_TEXTURE_2D, skyrh);
+
+        glColor3f(1.0f, 1.0f, 1.0f);
+        glBegin(GL_QUADS);
+       glTexCoord2f(0, 0);
+        glVertex3f(-6000, 0, 6000);
+        glTexCoord2f(1, 0);
+        glVertex3f(-6000, 0, -6000);
+        glTexCoord2f(1, 1);
+        glVertex3f(-6000, 4000, -6000);
+       glTexCoord2f(0, 1);
+        glVertex3f(-6000, 4000, 6000);
+        glEnd();
+        glDisable(GL_TEXTURE_2D);
+    
+
+        // mid 
+        glEnable(GL_TEXTURE_2D);
+        glBindTexture(GL_TEXTURE_2D, skymid);
+
+        glColor3f(1.0f, 1.0f, 1.0f);
+        glBegin(GL_QUADS);
+        glTexCoord2f(0, 0);
+        glVertex3f(-6000, 0, -6000);
+        glTexCoord2f(1, 0);
+        glVertex3f(6000, 0, -6000);
+        glTexCoord2f(1, 1);
+        glVertex3f(6000, 4000, -6000);
+        glTexCoord2f(0, 1);
+        glVertex3f(-6000, 4000, -6000);
+        glEnd();
+        glDisable(GL_TEXTURE_2D);
+
+        //left
+        glEnable(GL_TEXTURE_2D);
+        glBindTexture(GL_TEXTURE_2D, skyleft);
+
+        glColor3f(1.0f, 1.0f, 1.0f);
+        glBegin(GL_QUADS);
+        glTexCoord2f(0, 0);
+        glVertex3f(6000, 0, -6000);
+        glTexCoord2f(1, 0);
+        glVertex3f(6000, 0, 6000);
+        glTexCoord2f(1, 1);
+        glVertex3f(6000, 4000, 6000);
+        glTexCoord2f(0, 1);
+        glVertex3f(6000, 4000, -6000);
+        glEnd();
+        glDisable(GL_TEXTURE_2D);
+
+        //le left
+        glEnable(GL_TEXTURE_2D);
+        glBindTexture(GL_TEXTURE_2D, skyleftleft);
+
+        glColor3f(1.0f, 1.0f, 1.0f);
+        glBegin(GL_QUADS);
+        glTexCoord2f(1, 0);
+        glVertex3f(-6000, 0, 6000);
+        glTexCoord2f(0, 0);
+        glVertex3f(6000, 0, 6000);
+        glTexCoord2f(0, 1);
+        glVertex3f(6000, 4000, 6000);
+        glTexCoord2f(1, 1);
+        glVertex3f(-6000, 4000, 6000);
+        glEnd();
+        glDisable(GL_TEXTURE_2D);
+        // up 
+
+
+        glEnable(GL_TEXTURE_2D);
+        glBindTexture(GL_TEXTURE_2D, skyup);
+
+        glColor3f(1.0f, 1.0f, 1.0f);
+        glBegin(GL_QUADS);
+        glTexCoord2f(0, 0);
+        glVertex3f(-6000, 4000, -6000);
+        glTexCoord2f(1, 0);
+        glVertex3f(6000, 4000, -6000);
+        glTexCoord2f(1, 1);
+        glVertex3f(6000, 4000, 6000);
+        glTexCoord2f(0, 1);
+        glVertex3f(-6000, 4000, 6000);
+        glEnd();
+        glDisable(GL_TEXTURE_2D);
+
+
+ 
+}
+
 void OutSpace::draw() {
     glColor3f(1, 1, 1);
 
@@ -1059,6 +1151,10 @@ void OutSpace::draw() {
     glPopMatrix();
     drawFence(-7500,0,6500,5000,100);
     drawFence(-7500,0,300,5000,100);
+
+    drawSperatedGlass(-4000, 880, -20, 4000, 0.4);
+    drawSperatedGlass(-4000, 880, -4000, 3000, 0.4);
+    //drawskybox();
  }
 void OutSpace::init(){
 
@@ -1077,6 +1173,13 @@ void OutSpace::init(){
     enteranc = LoadTexture((char*)"images/enterance.bmp", 255.0f);
     flowerLand = LoadTexture((char*)"images/flowerlandspace.bmp", 255.0f);
     fence = LoadTexture((char*)"images/fence.bmp", 255.0f);
+
+    skyrh = LoadTexture((char*)"images/skyrh.bmp", 255.0f);
+    skymid = LoadTexture((char*)"images/skymid.bmp", 255.0f);
+    skyleft = LoadTexture((char*)"images/skyleft.bmp", 255.0f);
+    skyleftleft = LoadTexture((char*)"images/skyleftleft.bmp", 255.0f);
+    skyup = LoadTexture((char*)"images/skyup.bmp", 255.0f);
+
 
     if (fatainTex1 < 0 || fatainTex2<0 || grassTex<0|| grassSpaceTex<0 || flowerTex<0 || flower1Tex<0 || flagTex<0 || WalkwayTex<0 || whiteStone<0) {
         std::cerr << "Failed to load texture." << std::endl;

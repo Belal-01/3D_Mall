@@ -35,6 +35,8 @@ public:
    void drawFenceWater(float cornerx, float cornery, float cornerz, float len, float wid, float hig);
    void drawground(float x, float y, float z, float len, float wid);
    void drawWallWater(float cornerx, float cornery, float cornerz, float len, float hig);
+   void drawRectangleXZ(float x, float y, float z, float len, float wid);
+   void drawNet(float startX, float startY, float z, int columns, int rows, float cellSize, float thickness);
 };
 
  
