@@ -102,6 +102,7 @@ void Wall::Roof(int x1, int x2, int y1, int z1, int z2, int width, int textureID
     glBindTexture(GL_TEXTURE_2D, textureID);
     int y2 = y1 + width;
     glBegin(GL_QUADS);
+    glColor3f(1, 1, 1);
    /* glColor4ub(0, 0, 0,0);*/
 
     glVertex3i(x1, y1, z1);

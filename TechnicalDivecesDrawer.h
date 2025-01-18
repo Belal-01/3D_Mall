@@ -2,7 +2,7 @@
 #include <GL/glut.h>
 #include <iostream>
 #include <cstdlib> 
-#include <ctime>   
+#include <ctime> 
 #include <random>
 
 class TechnicalDivecesDrawer
@@ -30,7 +30,6 @@ public:
 
         glColor3f(0.0f, 0.0f, 0.0f);
         glBegin(GL_QUADS);
-
         glVertex3f(-width / 2, height, 0);
         glVertex3f(width / 2, height, 0);
         glVertex3f(width / 2, 0, 0);
@@ -956,6 +955,7 @@ public:
     }
 
 
+<<<<<<< HEAD
     void drawPlayStationController(float x, float y, float z, float angleX, float angleY, float angleZ) {
         float bodyWidth = 20.0f;
         float bodyHeight = 5.0f;
@@ -1030,4 +1030,7 @@ public:
         glPopMatrix();
     }
 
+=======
+    
+>>>>>>> 9f9f4d17402426368db8887f1a02593d2272c055
 };

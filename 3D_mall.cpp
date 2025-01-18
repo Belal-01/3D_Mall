@@ -76,7 +76,7 @@ void reshape(int w, int h) {
     glViewport(0, 0, w, h);
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
-    gluPerspective(60.0, (double)w / (double)h, 0.1, 12000.0);
+    gluPerspective(60.0, (double)w / (double)h, 0.1, 50000.0);
     glMatrixMode(GL_MODELVIEW);
 }
 
@@ -85,7 +85,11 @@ void init() {
     glEnable(GL_DEPTH_TEST);
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
+<<<<<<< HEAD
     gluPerspective(60.0, (double)windowWidth / (double)windowHeight, 0.1, 12000.0);
+=======
+    gluPerspective(60.0, (double)windowWidth / (double)windowHeight, 0.1, 50000.0);
+>>>>>>> 9f9f4d17402426368db8887f1a02593d2272c055
     glMatrixMode(GL_MODELVIEW);
  //   
     /*glEnable(GL_TEXTURE_2D);*/
