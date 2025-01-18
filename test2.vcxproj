@@ -18,13 +18,142 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="3D_mall.cpp" />
+    <ClCompile Include="abd.cpp" />
+    <ClCompile Include="abdMain.cpp" />
+    <ClCompile Include="BilalMain.cpp" />
+    <ClCompile Include="cameraConfiguration.cpp" />
+    <ClCompile Include="Door.cpp" />
+    <ClCompile Include="ElectronicDeviceDrawer.cpp" />
+    <ClCompile Include="FurnitureStore.cpp" />
+    <ClCompile Include="Glass.cpp" />
+    <ClCompile Include="KeyboardConfiguration.cpp" />
+    <ClCompile Include="OutSpace.cpp" />
+    <ClCompile Include="restorant.cpp" />
+    <ClCompile Include="Stairs.cpp" />
+    <ClCompile Include="TechnicalDivecesDrawer.cpp" />
+    <ClCompile Include="texture.cpp" />
+    <ClCompile Include="wall.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="abd.h" />
+    <ClInclude Include="abdMain.h" />
+    <ClInclude Include="BilalMain.h" />
+    <ClInclude Include="camera.h" />
+    <ClInclude Include="cameraConfiguration.h" />
+    <ClInclude Include="Door.h" />
+    <ClInclude Include="ElectronicDeviceDrawer.h" />
+    <ClInclude Include="FurnitureStore.h" />
+    <ClInclude Include="Glass.h" />
+    <ClInclude Include="keyboardConfiguration.h" />
+    <ClInclude Include="OutSpace.h" />
+    <ClInclude Include="restorant.h" />
+    <ClInclude Include="Stairs.h" />
+    <ClInclude Include="TechnicalDivecesDrawer.h" />
+    <ClInclude Include="texture.h" />
+    <ClInclude Include="Wall.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="images\brada1.bmp" />
+    <Image Include="images\brada2.bmp" />
+    <Image Include="images\brada3.bmp" />
+    <Image Include="images\CabinetLeftDoor1.bmp" />
+    <Image Include="images\CabinetLeftDoor2.bmp" />
+    <Image Include="images\CabinetRightDoor1.bmp" />
+    <Image Include="images\CabinetRightDoor2.bmp" />
+    <Image Include="images\ChairFabric1.bmp" />
+    <Image Include="images\ChairFabric2.bmp" />
+    <Image Include="images\CircularFabric1.bmp" />
+    <Image Include="images\CircularFabric2.bmp" />
+    <Image Include="images\enterance.bmp" />
+    <Image Include="images\externalWall.bmp" />
+    <Image Include="images\FabricChair1.bmp" />
+    <Image Include="images\FabricChairWood1.bmp" />
+    <Image Include="images\FabricChairWood2.bmp" />
+    <Image Include="images\FabricChairWood3.bmp" />
+    <Image Include="images\fatain.bmp" />
+    <Image Include="images\fatain1.bmp" />
+    <Image Include="images\flag.bmp" />
+    <Image Include="images\floorImg.bmp" />
+    <Image Include="images\floorImg.png" />
+    <Image Include="images\floorInsidStore.bmp" />
+    <Image Include="images\floortexture.bmp" />
+    <Image Include="images\flower.bmp" />
+    <Image Include="images\flower1.bmp" />
+    <Image Include="images\flowerlandspace.bmp" />
+    <Image Include="images\fridge.bmp" />
+    <Image Include="images\fridge1.bmp" />
+    <Image Include="images\fridge2.bmp" />
+    <Image Include="images\fridge3.bmp" />
+    <Image Include="images\fridge4.bmp" />
+    <Image Include="images\games.bmp" />
+    <Image Include="images\grass.bmp" />
+    <Image Include="images\grassSpace.bmp" />
+    <Image Include="images\himalayan.bmp" />
+    <Image Include="images\insidMallFloorTexture.bmp" />
+    <Image Include="images\interiorWall.bmp" />
+    <Image Include="images\kitchenFloorWoodTexture.bmp" />
+    <Image Include="images\kitchenFloorWoodTexture2.bmp" />
+    <Image Include="images\kitchenLogo.bmp" />
+    <Image Include="images\kitchenWallTexture.bmp" />
+    <Image Include="images\kitchenWallTexture2.bmp" />
+    <Image Include="images\kitchenWallWood.bmp" />
+    <Image Include="images\LeatherSofa1.bmp" />
+    <Image Include="images\Legs3.bmp" />
+    <Image Include="images\pcb.bmp" />
+    <Image Include="images\pcb.jpg" />
+    <Image Include="images\pcf.bmp" />
+    <Image Include="images\pcf.jpg" />
+    <Image Include="images\pcs.bmp" />
+    <Image Include="images\pcs.jpg" />
+    <Image Include="images\phreza2Front.bmp" />
+    <Image Include="images\phrezaFront.bmp" />
+    <Image Include="images\phrezaside.bmp" />
+    <Image Include="images\PlasticTable1.bmp" />
+    <Image Include="images\PlasticTable2.bmp" />
+    <Image Include="images\s7ana.bmp" />
+    <Image Include="images\shaurma.bmp" />
+    <Image Include="images\shaurmaTable.bmp" />
+    <Image Include="images\shaurmaTable2.bmp" />
+    <Image Include="images\sideshaurmaTable.bmp" />
+    <Image Include="images\speaker.bmp" />
+    <Image Include="images\speaker.png" />
+    <Image Include="images\stairimg.bmp" />
+    <Image Include="images\TableWoodTexture.bmp" />
+    <Image Include="images\tmp1.bmp" />
+    <Image Include="images\tmp2.bmp" />
+    <Image Include="images\tmp3.png" />
+    <Image Include="images\tmp4.bmp" />
+    <Image Include="images\tmp7.bmp" />
+    <Image Include="images\tmp8.bmp" />
+    <Image Include="images\Walkway.bmp" />
+    <Image Include="images\wash.bmp" />
+    <Image Include="images\wash2.bmp" />
+    <Image Include="images\washb.bmp" />
+    <Image Include="images\washr.bmp" />
+    <Image Include="images\washw.bmp" />
+    <Image Include="images\whiteStone.bmp" />
+    <Image Include="images\WoodCabinet1.bmp" />
+    <Image Include="images\Woodcolumn1.bmp" />
+    <Image Include="images\WoodForTable1.bmp" />
+    <Image Include="images\WoodTable.bmp" />
+    <Image Include="images\WoodTable2.bmp" />
+    <Image Include="images\WoodTable3.bmp" />
+    <Image Include="images\woodWallTexture.bmp" />
+    <Image Include="images\xboxb.bmp" />
+    <Image Include="images\xboxf.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\pcb.webp" />
+    <None Include="images\pcback.webp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
     <ProjectGuid>{4b4dde37-3570-49dd-a576-45d175926ed7}</ProjectGuid>
     <RootNamespace>test2</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>3D_mall</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -77,6 +206,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -127,75 +257,6 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="BilalMain.cpp" />
-    <ClCompile Include="cameraConfiguration.cpp" />
-    <ClCompile Include="FurnitureStore.cpp" />
-    <ClCompile Include="Glass.cpp" />
-    <ClCompile Include="KeyboardConfiguration.cpp" />
-    <ClCompile Include="3D_mall.cpp" />
-    <ClCompile Include="restorant.cpp" />
-    <ClCompile Include="stb_image.c" />
-    <ClCompile Include="texture.cpp" />
-    <ClCompile Include="wall.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="BilalMain.h" />
-    <ClInclude Include="camera.h" />
-    <ClInclude Include="cameraConfiguration.h" />
-    <ClInclude Include="FurnitureStore.h" />
-    <ClInclude Include="Glass.h" />
-    <ClInclude Include="keyboardConfiguration.h" />
-    <ClInclude Include="restorant.h" />
-    <ClInclude Include="texture.h" />
-    <ClInclude Include="Wall.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="..\..\WoodFloor051.bmp" />
-    <Image Include="CabinetLeftDoor1.bmp" />
-    <Image Include="CabinetLeftDoor2.bmp" />
-    <Image Include="CabinetRightDoor1.bmp" />
-    <Image Include="CabinetRightDoor2.bmp" />
-    <Image Include="ChairFabric1.bmp" />
-    <Image Include="ChairFabric2.bmp" />
-    <Image Include="CircularFabric1.bmp" />
-    <Image Include="CircularFabric2.bmp" />
-    <Image Include="FabricChairWood1.bmp" />
-    <Image Include="FabricChairWood2.bmp" />
-    <Image Include="FabricChairWood3.bmp" />
-    <Image Include="floorImg.bmp" />
-    <Image Include="floortexture.bmp" />
-    <Image Include="insidMallFloorTexture.bmp" />
-    <Image Include="kitchenFloorWoodTexture.bmp" />
-    <Image Include="kitchenFloorWoodTexture2.bmp" />
-    <Image Include="kitchenWallTexture.bmp" />
-    <Image Include="kitchenWallTexture2.bmp" />
-    <Image Include="LeatherSofa1.bmp" />
-    <Image Include="Legs3.bmp" />
-    <Image Include="phreza2Front.bmp" />
-    <Image Include="phrezaFront.bmp" />
-    <Image Include="phrezaside.bmp" />
-    <Image Include="PlasticTable1.bmp" />
-    <Image Include="PlasticTable2.bmp" />
-    <Image Include="shaurma.bmp" />
-    <Image Include="shaurmaTable.bmp" />
-    <Image Include="shaurmaTable2.bmp" />
-    <Image Include="sideshaurmaTable.bmp" />
-    <Image Include="TableWoodTexture.bmp" />
-    <Image Include="tmp1.bmp" />
-    <Image Include="tmp2.bmp" />
-    <Image Include="tmp3.png" />
-    <Image Include="tmp4.bmp" />
-    <Image Include="tmp7.bmp" />
-    <Image Include="tmp8.bmp" />
-    <Image Include="WoodCabinet1.bmp" />
-    <Image Include="Woodcolumn1.bmp" />
-    <Image Include="WoodForTable1.bmp" />
-    <Image Include="WoodTable.bmp" />
-    <Image Include="WoodTable2.bmp" />
-    <Image Include="WoodTable3.bmp" />
-    <Image Include="woodWallTexture.bmp" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

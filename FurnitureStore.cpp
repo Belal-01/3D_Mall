@@ -7,25 +7,25 @@
 #define M_PI 3.14159265358979323846
 
 void FurnitureStore::init() {
-    FurnitureStore::SofaTextureID = LoadTexture((char*)"LeatherSofa1.bmp", 255.0f);
-    FurnitureStore::Table1TextureID = LoadTexture((char*)"WoodTable3.bmp", 255.0f);
-    FurnitureStore::CT_columnTextureID = LoadTexture((char*)"tmp4.bmp", 255.0f);
-    FurnitureStore::CT_tabletopTextureID = LoadTexture((char*)"PlasticTable2.bmp", 255.0f);
-    FurnitureStore::CH_tabletopTextureID = LoadTexture((char*)"CircularFabric1.bmp", 255.0f);
-    FurnitureStore::shelves1TextureID = LoadTexture((char*)"WoodCabinet1.bmp", 255.0f);
-    FurnitureStore::CabinetLeftDoor1TextureID = LoadTexture((char*)"CabinetLeftDoor1.bmp", 255.0f);
-    FurnitureStore::CabinetRightDoor1TextureID = LoadTexture((char*)"CabinetRightDoor1.bmp", 255.0f);
-    FurnitureStore::tmpTextureID = LoadTexture((char*)"tmp7.bmp", 255.0f);
-    FurnitureStore::CabinetLeftDoor2TextureID = LoadTexture((char*)"CabinetLeftDoor2.bmp", 255.0f);
-    FurnitureStore::CabinetRightDoor2TextureID = LoadTexture((char*)"CabinetRightDoor2.bmp", 255.0f);
-    FurnitureStore::FabricChair1TextureID = LoadTexture((char*)"ChairFabric2.bmp", 255.0f);
-    FurnitureStore::FabricChair1WoodTextureID = LoadTexture((char*)"FabricChairWood1.bmp", 255.0f); 
-    FurnitureStore::FabricChair2TextureID = LoadTexture((char*)"ChairFabric1.bmp", 255.0f);
-    FurnitureStore::FabricChair2WoodTextureID = LoadTexture((char*)"FabricChairWood3.bmp", 255.0f);
-    FurnitureStore::LegsID = LoadTexture((char*)"Legs3.bmp", 255.0f);
-    FurnitureStore::WallID = LoadTexture((char*)"tmp8.bmp", 255.0f);
-    FurnitureStore::TopTmpTable1TextureID = LoadTexture((char*)"tmp1.bmp", 255.0f);;
-    FurnitureStore::TopTmpTable2TextureID = LoadTexture((char*)"tmp1.bmp", 255.0f);;
+    FurnitureStore::SofaTextureID = LoadTexture((char*)"images\\LeatherSofa1.bmp", 255.0f);
+    FurnitureStore::Table1TextureID = LoadTexture((char*)"images\\WoodTable3.bmp", 255.0f);
+    FurnitureStore::CT_columnTextureID = LoadTexture((char*)"images\\tmp4.bmp", 255.0f);
+    FurnitureStore::CT_tabletopTextureID = LoadTexture((char*)"images\\PlasticTable2.bmp", 255.0f);
+    FurnitureStore::CH_tabletopTextureID = LoadTexture((char*)"images\\CircularFabric1.bmp", 255.0f);
+    FurnitureStore::shelves1TextureID = LoadTexture((char*)"images\\WoodCabinet1.bmp", 255.0f);
+    FurnitureStore::CabinetLeftDoor1TextureID = LoadTexture((char*)"images\\CabinetLeftDoor1.bmp", 255.0f);
+    FurnitureStore::CabinetRightDoor1TextureID = LoadTexture((char*)"images\\CabinetRightDoor1.bmp", 255.0f);
+    FurnitureStore::tmpTextureID = LoadTexture((char*)"images\\tmp7.bmp", 255.0f);
+    FurnitureStore::CabinetLeftDoor2TextureID = LoadTexture((char*)"images\\CabinetLeftDoor2.bmp", 255.0f);
+    FurnitureStore::CabinetRightDoor2TextureID = LoadTexture((char*)"images\\CabinetRightDoor2.bmp", 255.0f);
+    FurnitureStore::FabricChair1TextureID = LoadTexture((char*)"images\\ChairFabric2.bmp", 255.0f);
+    FurnitureStore::FabricChair1WoodTextureID = LoadTexture((char*)"images\\FabricChairWood1.bmp", 255.0f); 
+    FurnitureStore::FabricChair2TextureID = LoadTexture((char*)"images\\ChairFabric1.bmp", 255.0f);
+    FurnitureStore::FabricChair2WoodTextureID = LoadTexture((char*)"images\\FabricChairWood3.bmp", 255.0f);
+    FurnitureStore::LegsID = LoadTexture((char*)"images\\Legs3.bmp", 255.0f);
+    FurnitureStore::WallID = LoadTexture((char*)"images\\tmp8.bmp", 255.0f);
+    FurnitureStore::TopTmpTable1TextureID = LoadTexture((char*)"images\\tmp1.bmp", 255.0f);;
+    FurnitureStore::TopTmpTable2TextureID = LoadTexture((char*)"images\\tmp1.bmp", 255.0f);;
 }
 void FurnitureStore::display() {
     drawLambaderAtPosition(3700, 0, 4700);
