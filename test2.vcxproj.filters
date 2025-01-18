@@ -2,7 +2,26 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="3D_mall.cpp">
+<<<<<<< HEAD
       <Filter>SourceFiles</Filter>
+=======
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="texture.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cameraConfiguration.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="KeyboardConfiguration.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="wall.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Glass.cpp">
+      <Filter>Source Files</Filter>
+>>>>>>> Nozo
     </ClCompile>
     <ClCompile Include="BilalMain.cpp">
       <Filter>SourceFiles</Filter>
@@ -45,6 +64,12 @@
     </ClCompile>
     <ClCompile Include="TechnicalDivecesDrawer.cpp">
       <Filter>SourceFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\stb_image.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FurnitureStore.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -89,6 +114,9 @@
     </ClInclude>
     <ClInclude Include="TechnicalDivecesDrawer.h">
       <Filter>HeaderFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="FurnitureStore.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -229,6 +257,90 @@
     </Image>
     <Image Include="xboxf.bmp">
       <Filter>images</Filter>
+    </Image>
+    <Image Include="..\..\WoodFloor051.bmp">
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="WoodTable.bmp">
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="WoodForTable1.bmp">
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="PlasticTable1.bmp">
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="WoodTable2.bmp">
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="WoodTable3.bmp">
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="LeatherSofa1.bmp">
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="CircularFabric1.bmp">
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="CircularFabric2.bmp">
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="PlasticTable2.bmp">
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="Woodcolumn1.bmp">
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="tmp4.bmp">
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="WoodCabinet1.bmp">
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="CabinetLeftDoor1.bmp">
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="CabinetRightDoor2.bmp">
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="CabinetLeftDoor2.bmp">
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="CabinetRightDoor1.bmp">
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="ChairFabric1.bmp">
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="FabricChairWood1.bmp">
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="FabricChairWood2.bmp">
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="FabricChairWood3.bmp">
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="ChairFabric2.bmp">
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="Legs3.bmp">
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="tmp7.bmp">
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="tmp8.bmp">
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="tmp1.bmp">
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="tmp2.bmp">
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="tmp3.png">
+      <Filter>Source Files\images</Filter>
     </Image>
   </ItemGroup>
   <ItemGroup>

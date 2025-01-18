@@ -9,16 +9,24 @@
 #include <iostream>
 #include "cameraConfiguration.h"
 #include "BilalMain.h"
+<<<<<<< HEAD
 #include "OutSpace.h"
 #include "abd.h"
+=======
+#include "FurnitureStore.h"
+>>>>>>> Nozo
 
 double angle = 0.0;
 bool keys[255];
 
 CameraConfiguration camera;
 BilalMain bilal;
+<<<<<<< HEAD
 OutSpace outspace;
 Abd abd;
+=======
+FurnitureStore Furniture_Store;
+>>>>>>> Nozo
 
 int windowWidth = 1920, windowHeight = 1080;
 
@@ -53,9 +61,14 @@ void display() {
     
     //here put ur display
      bilal.display();
+<<<<<<< HEAD
      outspace.draw();
      abd.AbdDraw(camera.cameraX, camera.cameraY, camera.cameraZ);
    
+=======
+     Furniture_Store.display();
+
+>>>>>>> Nozo
     glFlush(); // Render the line
     glutSwapBuffers();
 }
@@ -84,8 +97,13 @@ void init() {
 
     // here put your inits 
     bilal.init();
+<<<<<<< HEAD
     outspace.init();
     abd.init();
+=======
+    Furniture_Store.init();
+    
+>>>>>>> Nozo
     
    
     
