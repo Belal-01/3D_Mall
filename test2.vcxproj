@@ -128,29 +128,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-<<<<<<< HEAD
+
     <ClCompile Include="abd.cpp" />
     <ClCompile Include="abdMain.cpp" />
     <ClCompile Include="BilalMain.cpp" />
     <ClCompile Include="cameraConfiguration.cpp" />
     <ClCompile Include="Door.cpp" />
     <ClCompile Include="ElectronicDeviceDrawer.cpp" />
-=======
-    <ClCompile Include="BilalMain.cpp" />
-    <ClCompile Include="cameraConfiguration.cpp" />
     <ClCompile Include="FurnitureStore.cpp" />
->>>>>>> Nozo
     <ClCompile Include="Glass.cpp" />
     <ClCompile Include="3D_mall.cpp" />
     <ClCompile Include="KeyboardConfiguration.cpp" />
     <ClCompile Include="OutSpace.cpp" />
     <ClCompile Include="restorant.cpp" />
-<<<<<<< HEAD
     <ClCompile Include="Stairs.cpp" />
     <ClCompile Include="TechnicalDivecesDrawer.cpp" />
-=======
     <ClCompile Include="stb_image.c" />
->>>>>>> Nozo
     <ClCompile Include="texture.cpp" />
     <ClCompile Include="wall.cpp" />
   </ItemGroup>
@@ -160,12 +153,10 @@
     <ClInclude Include="BilalMain.h" />
     <ClInclude Include="camera.h" />
     <ClInclude Include="cameraConfiguration.h" />
-<<<<<<< HEAD
     <ClInclude Include="Door.h" />
     <ClInclude Include="ElectronicDeviceDrawer.h" />
-=======
+
     <ClInclude Include="FurnitureStore.h" />
->>>>>>> Nozo
     <ClInclude Include="Glass.h" />
     <ClInclude Include="keyboardConfiguration.h" />
     <ClInclude Include="restorant.h" />
@@ -192,7 +183,6 @@
     <Image Include="FabricChairWood1.bmp" />
     <Image Include="FabricChairWood2.bmp" />
     <Image Include="FabricChairWood3.bmp" />
->>>>>>> Nozo
     <Image Include="floorImg.bmp" />
     <Image Include="floorImg.png" />
     <Image Include="floorInsidStore.bmp" />
@@ -212,25 +202,19 @@
     <Image Include="kitchenFloorWoodTexture.bmp" />
     <Image Include="kitchenWallTexture.bmp" />
     <Image Include="kitchenWallTexture2.bmp" />
-<<<<<<< HEAD
     <Image Include="pcb.bmp" />
     <Image Include="pcb.jpg" />
     <Image Include="pcf.bmp" />
     <Image Include="pcf.jpg" />
     <Image Include="pcs.bmp" />
     <Image Include="pcs.jpg" />
-=======
     <Image Include="LeatherSofa1.bmp" />
     <Image Include="Legs3.bmp" />
->>>>>>> Nozo
     <Image Include="phreza2Front.bmp" />
     <Image Include="phrezaside.bmp" />
-<<<<<<< HEAD
     <Image Include="s7ana.bmp" />
-=======
     <Image Include="PlasticTable1.bmp" />
     <Image Include="PlasticTable2.bmp" />
->>>>>>> Nozo
     <Image Include="shaurma.bmp" />
     <Image Include="shaurmaTable.bmp" />
     <Image Include="shaurmaTable2.bmp" />
@@ -238,13 +222,11 @@
     <Image Include="speaker.bmp" />
     <Image Include="speaker.png" />
     <Image Include="TableWoodTexture.bmp" />
-<<<<<<< HEAD
     <Image Include="wash.bmp" />
     <Image Include="wash2.bmp" />
     <Image Include="washb.bmp" />
     <Image Include="washr.bmp" />
     <Image Include="washw.bmp" />
-=======
     <Image Include="tmp1.bmp" />
     <Image Include="tmp2.bmp" />
     <Image Include="tmp3.png" />
@@ -257,7 +239,6 @@
     <Image Include="WoodTable.bmp" />
     <Image Include="WoodTable2.bmp" />
     <Image Include="WoodTable3.bmp" />
->>>>>>> Nozo
     <Image Include="woodWallTexture.bmp" />
     <Image Include="xboxb.bmp" />
     <Image Include="xboxf.bmp" />
