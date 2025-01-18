@@ -30,12 +30,17 @@
     <ClCompile Include="FurnitureStore.cpp" />
     <ClCompile Include="Glass.cpp" />
     <ClCompile Include="KeyboardConfiguration.cpp" />
+    <ClCompile Include="Market.cpp" />
+    <ClCompile Include="Model_3DS.cpp" />
     <ClCompile Include="OutSpace.cpp" />
     <ClCompile Include="restorant.cpp" />
     <ClCompile Include="Stairs.cpp" />
+    <ClCompile Include="stb_image.c" />
     <ClCompile Include="TechnicalDivecesDrawer.cpp" />
     <ClCompile Include="texture.cpp" />
+    <ClCompile Include="TTexture.cpp" />
     <ClCompile Include="wall.cpp" />
+    <ClCompile Include="Waterfall.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="abd.h" />
@@ -49,12 +54,16 @@
     <ClInclude Include="FurnitureStore.h" />
     <ClInclude Include="Glass.h" />
     <ClInclude Include="keyboardConfiguration.h" />
+    <ClInclude Include="Market.h" />
+    <ClInclude Include="Model_3DS.h" />
     <ClInclude Include="OutSpace.h" />
     <ClInclude Include="restorant.h" />
     <ClInclude Include="Stairs.h" />
     <ClInclude Include="TechnicalDivecesDrawer.h" />
     <ClInclude Include="texture.h" />
+    <ClInclude Include="TTexture.h" />
     <ClInclude Include="Wall.h" />
+    <ClInclude Include="Waterfall.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="images\brada1.bmp" />

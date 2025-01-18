@@ -12,13 +12,10 @@ float Door::calculateDistance(float cameraX,float cameraY, float cameraZ) const 
     dis = abs(zPosition - cameraZ);
     if (rotate == 90 || rotate == 270) {
         dis = abs(zPosition - cameraX);
-<<<<<<< HEAD
-      if (cameraY - yPosition <= hight && cameraY - yPosition >= 0   )
-=======
+
       if (cameraY - yPosition <= hight && cameraY - yPosition >= 0 )
->>>>>>> 9f9f4d17402426368db8887f1a02593d2272c055
             return dis;
-        else return 1e9;
+       /* else return 1e9;*/
     }
 
     
@@ -82,13 +79,10 @@ void Door::draw() {
     glBegin(GL_LINES);
     glVertex3f(xPosition - door1Offset, yPosition, zPosition);
     glVertex3f(xPosition - door1Offset, yPosition + hight, zPosition);
-<<<<<<< HEAD
-    glVertex3f(xPosition - door1Offset, yPosition, zPosition);
-    glVertex3f(xPosition - door1Offset, yPosition + hight, zPosition);
-=======
+
     glVertex3f(xPosition + door1Offset, yPosition, zPosition);
     glVertex3f(xPosition + door1Offset, yPosition + hight, zPosition);
->>>>>>> 9f9f4d17402426368db8887f1a02593d2272c055
+
     glEnd();
     glPopMatrix();
 }

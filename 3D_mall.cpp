@@ -13,6 +13,10 @@
 #include "abd.h"
 #include "FurnitureStore.h"
 #include "elevator.h"
+#include "Waterfall.h"
+#include "Market.h"
+#include "Model_3DS.h"
+//#include "Wall.h"
 double angle = 0.0;
 bool keys[255];
 
@@ -22,9 +26,12 @@ OutSpace outspace;
 Abd abd;
 FurnitureStore furniturStore;
 extern Elevator elevator;
-
+Waterfall waterfall;
+Market market;
 
 int windowWidth = 1920, windowHeight = 1080;
+GLfloat lightPosition[] = { -9000.0f, 4000, 6000.0f, 1.0f }; // Position of the "sun"
+GLfloat shadowMatrix[16];
 
 void keyPressed(unsigned char key, int x, int y) {
     camera.processKeyboardInput(key, true);
@@ -59,13 +66,27 @@ void display() {
     camera.updateMovement();
     camera.setupCamera();
     elevator.updateMovment();
+
+
+
+    // Render the skybox first (background)
+    glPushMatrix();
+    glDisable(GL_DEPTH_TEST);
+    glTranslatef(camera.cameraX, camera.cameraY, camera.cameraZ);
+    outspace.drawskybox();  // Draw the skybox
+    glEnable(GL_DEPTH_TEST);  // Re-enable depth testing
+    glPopMatrix();
+
     
     //here put ur display
-     outspace.draw();
+    /* outspace.draw();*/
      abd.AbdDraw(camera.cameraX, camera.cameraY, camera.cameraZ);
      elevator.upateDoorsMovments(camera.cameraX, camera.cameraY, camera.cameraZ);
      furniturStore.display();
      bilal.display();
+     outspace.drawshadow();
+     market.draw();
+     waterfall.draw();
    
     glFlush(); // Render the line
     glutSwapBuffers();
@@ -76,20 +97,50 @@ void reshape(int w, int h) {
     glViewport(0, 0, w, h);
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
-    gluPerspective(60.0, (double)w / (double)h, 0.1, 50000.0);
+    gluPerspective(60.0, (double)w / (double)h, 0.1, 12000.0);
     glMatrixMode(GL_MODELVIEW);
 }
+
+void initLighting() {
+    glEnable(GL_LIGHTING);  // Enable global lighting
+    glEnable(GL_LIGHT0);    // Enable LIGHT0 for sunlight
+    glEnable(GL_DEPTH_TEST); // Enable depth testing for proper rendering
+
+    //GLfloat lightAmbient[] = { 0.5, 0.5, 0.5, 1.0f };    // Soft ambient light
+    //GLfloat lightDiffuse[] = { 1.0f, 1, 1, 1.0f };    // Bright sunlight
+    //GLfloat lightSpecular[] = { 1.0f, 1.0f, 0.9f, 1.0f };   // Highlights
+
+
+    GLfloat lightAmbient[] = { 0.5, 0.5, 0.5, 1.0f };    // Soft ambient light
+    GLfloat lightDiffuse[] = { 1.0f, 1, 1, 1.0f };    // Bright sunlight
+    GLfloat lightSpecular[] = { 1.0f, 1.0f, 0.9f, 1.0f };   // Highlights
+
+    // Sunlight position
+
+    // Apply sunlight properties to LIGHT0
+    glLightfv(GL_LIGHT0, GL_AMBIENT, lightAmbient);
+    glLightfv(GL_LIGHT0, GL_DIFFUSE, lightDiffuse);
+    glLightfv(GL_LIGHT0, GL_SPECULAR, lightSpecular);
+    glLightfv(GL_LIGHT0, GL_POSITION, lightPosition);
+
+    glColorMaterial(GL_FRONT, GL_AMBIENT_AND_DIFFUSE);
+    glMaterialfv(GL_FRONT, GL_SPECULAR, lightSpecular);
+    glMateriali(GL_FRONT, GL_SHININESS, 128);
+
+    glShadeModel(GL_SMOOTH); // Smooth shading for realistic lighting
+
+
+}
+
 
 void init() {
     glClearColor(1.0, 1.0, 1.0, 1.0);
     glEnable(GL_DEPTH_TEST);
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
-<<<<<<< HEAD
-    gluPerspective(60.0, (double)windowWidth / (double)windowHeight, 0.1, 12000.0);
-=======
-    gluPerspective(60.0, (double)windowWidth / (double)windowHeight, 0.1, 50000.0);
->>>>>>> 9f9f4d17402426368db8887f1a02593d2272c055
+
+    gluPerspective(60.0, (double)windowWidth / (double)windowHeight, 0.1, 12000);
+
     glMatrixMode(GL_MODELVIEW);
  //   
     /*glEnable(GL_TEXTURE_2D);*/
@@ -102,8 +153,9 @@ void init() {
     outspace.init();
     abd.init();
     furniturStore.init();
-
-    
+    initLighting();
+    waterfall.init();
+    market.init();
 }
 
 int main(int argc, char** argv) {

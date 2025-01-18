@@ -955,7 +955,7 @@ public:
     }
 
 
-<<<<<<< HEAD
+
     void drawPlayStationController(float x, float y, float z, float angleX, float angleY, float angleZ) {
         float bodyWidth = 20.0f;
         float bodyHeight = 5.0f;
@@ -1030,7 +1030,4 @@ public:
         glPopMatrix();
     }
 
-=======
-    
->>>>>>> 9f9f4d17402426368db8887f1a02593d2272c055
 };

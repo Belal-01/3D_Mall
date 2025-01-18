@@ -15,6 +15,12 @@ public:
     int himilayan;
     int enteranc;
     int flowerLand;
+    int fence;
+    int skyrh;
+    int skymid;
+    int skyleft;
+    int skyleftleft;
+    int skyup;
 
     void drawFlag(float x1, float y1, float z1, float len, float hig);
     void drawConicalStick(float baseRadius, float topRadius, float height, float x, float y, float z,  float len, float wid);
@@ -29,15 +35,18 @@ public:
 void drawFlower(float x, float y, float z, float petalRadius, float centerRadius, int petalCount);
 void drawWater(float centerx, float centery, float centerz, float wid, float len, int gridSize);
 void drawFantain(float cornerx, float cornery, float cornerz, float len, float wid, float hig);
-void drawEntranceArch(float x, float y, float z, float width, float height, float archRadius);
-void drawGrass(float x1, float x2, float y, float z1, float z2, float repx, float repy,int tex);
+ void drawGrass(float x1, float x2, float y, float z1, float z2, float repx, float repy,int tex);
 void drawSmallFantain(float cornerx, float cornery, float cornerz, float len, float wid, float hig);
 void drawWalkway(float x, float y, float z1, float len, float wid, float repx, float repy);
-void drawSperatedGlass(int x, int y, int z, float len, float alpha);
 void drawGrassSquare(float x, float y, float z, float len, float wid);
 void drawShrubTree(float centerX, float centerY, float centerZ, float radius, int segments, float height, float scale);
 void drawEnterance(float x, float y, float z, float len, float wid);
 void drawSquareTree(float centerX, float centerY, float centerZ, float wid, float height, float scale );
+void drawFence(float x, float y, float z, float len,float  hig);
+void drawskybox();
+void drawshadow();
 };
-
+extern void drawSperatedGlass(int x, int y, int z, float len, float alpha);
+extern void setMaterialProperties();
+extern void generateShadowMatrix(GLfloat shadowMatrix[16], GLfloat groundPlane[4], GLfloat lightPos[4]);
  

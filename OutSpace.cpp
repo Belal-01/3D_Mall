@@ -3,11 +3,20 @@
 #include <iostream>
 #include "OutSpace.h"
 #include "Glass.h"
-
+#include "Waterfall.h"
+#include "Model_3DS.h"
 
  float M_PI =3.14;
+ Model_3DS *car,*motor,*plant1, *pole, *smalplant1,*jeep,*pop,*man,*arch;
 
- void OutSpace::drawFlag(float x1, float y1, float z1, float len, float hig) {
+
+//Model_3DS *motor,
+//
+//Model_3DS *plant1;
+//Model_3DS *pole;
+//Model_3DS *smalplant1;
+
+  void OutSpace::drawFlag(float x1, float y1, float z1, float len, float hig) {
      glPushMatrix();
      glTranslatef(x1, y1, z1);
 
@@ -15,41 +24,38 @@
      glBindTexture(GL_TEXTURE_2D, flagTex);
      glColor3f(1.0f, 1.0f, 1.0f);
 
-     int gridSize = 20; // Number of subdivisions along the flag
-     float stepX = len / gridSize;  // Step size along the x-axis
-     float stepY = hig / gridSize; // Step size along the y-axis
+     int gridSize = 20; 
+     float stepX = len / gridSize;  
+     float stepY = hig / gridSize;  
 
-     float waveTime = glutGet(GLUT_ELAPSED_TIME) * 0.005f; // Time for wave animation
-     float frequency = 0.02f;   // Wave frequency
-     float amplitude = 20;  // Wave amplitude
+     float waveTime = glutGet(GLUT_ELAPSED_TIME) * 0.007f;  
+     float frequency = 0.02f;   
+     float amplitude = 20;   
 
      glBegin(GL_QUADS);
      for (int i = 0; i < gridSize; i++) {
          for (int j = 0; j < gridSize; j++) {
-             // Calculate the positions of the four vertices of each quad
-             float x1 = i * stepX;
+              float x1 = i * stepX;
              float y1 = j * stepY;
              float x2 = x1 + stepX;
              float y2 = y1 + stepY;
 
-             // Calculate dynamic wave heights using sine functions
-             float z1 = amplitude * sin(frequency * (x1 + y1) + waveTime);
+              float z1 = amplitude * sin(frequency * (x1 + y1) + waveTime);
              float z2 = amplitude * sin(frequency * (x2 + y1) + waveTime);
              float z3 = amplitude * sin(frequency * (x2 + y2) + waveTime);
              float z4 = amplitude * sin(frequency * (x1 + y2) + waveTime);
 
-             // Map texture coordinates and draw the quad
-             glTexCoord2f((float)i / gridSize, (float)j / gridSize);
-             glVertex3f(x1, y1, z1); // Bottom-left
+              glTexCoord2f((float)i / gridSize, (float)j / gridSize);
+             glVertex3f(x1, y1, z1);  
 
              glTexCoord2f((float)(i + 1) / gridSize, (float)j / gridSize);
-             glVertex3f(x2, y1, z2); // Bottom-right
+             glVertex3f(x2, y1, z2);  
 
              glTexCoord2f((float)(i + 1) / gridSize, (float)(j + 1) / gridSize);
-             glVertex3f(x2, y2, z3); // Top-right
+             glVertex3f(x2, y2, z3);  
 
              glTexCoord2f((float)i / gridSize, (float)(j + 1) / gridSize);
-             glVertex3f(x1, y2, z4); // Top-left
+             glVertex3f(x1, y2, z4);  
          }
      }
      glEnd();
@@ -271,6 +277,7 @@ void OutSpace::drawParking(float x, float y, float z) {
 void OutSpace::drawBigTree(float x, float y, float z, float h,  float scale) {
    
     float width = 400;
+    glColor3f(1, 1, 1);
     for (float i = 0; i <= 360; i += 30) {
         glPushMatrix();  
 
@@ -562,7 +569,7 @@ void OutSpace::drawFantain(float cornerx, float cornery, float cornerz, float le
         glEnd();
         glDisable(GL_TEXTURE_2D);
         // black wall
-         glColor3f(0, 0, 0); // Set color to white
+         glColor3f(0, 0, 0);  
 
          glBegin(GL_QUADS);
          glVertex3d(len / 4, hig -50, -wid / 8);
@@ -610,7 +617,7 @@ void OutSpace::drawSmallFantain(float cornerx, float cornery, float cornerz, flo
         // Base texture
         glEnable(GL_TEXTURE_2D);
         glBindTexture(GL_TEXTURE_2D, fatainTex1);
-        glColor3f(1.0f, 1.0f, 1.0f); // Set color to white
+        glColor3f(1.0f, 1.0f, 1.0f); 
         glBegin(GL_QUADS);
         glTexCoord2f(0.0f, 0.0f);
         glVertex3d(0, 0, 0);
@@ -635,7 +642,7 @@ void OutSpace::drawSmallFantain(float cornerx, float cornery, float cornerz, flo
         // Additional texture
         glEnable(GL_TEXTURE_2D);
         glBindTexture(GL_TEXTURE_2D, fatainTex2);
-        glColor3f(1.0f, 1.0f, 1.0f); // Set color to white
+        glColor3f(1.0f, 1.0f, 1.0f);  
         glBegin(GL_QUADS);
         glTexCoord2f(0.0f, 0.0f);
         glVertex3d(len / 8, hig, -wid / 8);
@@ -651,7 +658,7 @@ void OutSpace::drawSmallFantain(float cornerx, float cornery, float cornerz, flo
         // Flower texture
         glEnable(GL_TEXTURE_2D);
         glBindTexture(GL_TEXTURE_2D, flower1Tex);
-        glColor3f(1.0f, 1.0f, 1.0f); // Set color to white
+        glColor3f(1.0f, 1.0f, 1.0f);  
         glBegin(GL_QUADS);
         glTexCoord2f(0.0f, 0.0f);
         glVertex3d(len / 8, hig - 50, -wid / 8);
@@ -665,7 +672,7 @@ void OutSpace::drawSmallFantain(float cornerx, float cornery, float cornerz, flo
         glDisable(GL_TEXTURE_2D);
 
         // black wall
-        glColor3f(0, 0, 0); // Set color to white
+        glColor3f(0, 0, 0);  
 
         glBegin(GL_QUADS);
         glVertex3d(len / 4, hig - 50, -wid / 8);
@@ -743,45 +750,8 @@ void OutSpace::drawWalkway(float x, float y, float z,float len,float wid ,float 
     drawSperatedGlass(x, y, z, len, 0.7);
 
 }
-
-void OutSpace::drawEntranceArch(float x, float y, float z, float width, float height, float archRadius) {
-    // Draw the pillars
-    float pillarWidth = width / 5.0f; // Adjust pillar width relative to total width
-
-    // Left Pillar
-    glPushMatrix();
-    glTranslatef(x - width / 2 + pillarWidth / 2, y + height / 2, z);
-    glScalef(pillarWidth, height, 1.0f);
-    glColor3f(0.5f, 0.3f, 0.1f); // Brown color for the pillar
-    glutSolidCube(1.0f);
-    glPopMatrix();
-
-    // Right Pillar
-    glPushMatrix();
-    glTranslatef(x + width / 2 - pillarWidth / 2, y + height / 2, z);
-    glScalef(pillarWidth, height, 1.0f);
-    glColor3f(0.5f, 0.3f, 0.1f); // Brown color for the pillar
-    glutSolidCube(1.0f);
-    glPopMatrix();
-
-    // Draw the arch (semi-circle)
-    glPushMatrix();
-    glTranslatef(x, y + height, z);
-    glColor3f(0.7f, 0.7f, 0.7f); // Light gray for the arch
-    glBegin(GL_TRIANGLE_FAN);
-    glVertex3f(0.0f, 0.0f, 0.0f); // Center of the arch
-    int numSegments = 50;         // Number of segments for the semi-circle
-    for (int i = 0; i <= numSegments; i++) {
-        float theta = M_PI * i / numSegments; // Angle in radians
-        float xPos = archRadius * cos(theta);
-        float yPos = archRadius * sin(theta);
-        glVertex3f(xPos, yPos, 0.0f);
-    }
-    glEnd();
-    glPopMatrix();
-
-}
-void OutSpace::drawSperatedGlass(int x, int y, int z, float len, float alpha) {
+ 
+void drawSperatedGlass(int x, int y, int z, float len, float alpha) {
     float hig =150;
     float oneWid = len/15-len/150;
     glDepthMask(GL_FALSE);
@@ -823,14 +793,14 @@ void OutSpace::drawSperatedGlass(int x, int y, int z, float len, float alpha) {
 }
 
 void  OutSpace::drawGrassSquare(float x , float y ,float z ,float len,float wid) {
-    int repX = 8;
-    int repY = 8;
+    int repX = 15;
+    int repY = 15;
 
     glPushMatrix();
     glTranslatef(x, y, z);
         
-    glEnable(GL_TEXTURE_2D);           // Enable 2D texturing
-    glBindTexture(GL_TEXTURE_2D, grassSpaceTex); // Bind the texture
+    glEnable(GL_TEXTURE_2D);           
+    glBindTexture(GL_TEXTURE_2D, grassSpaceTex);  
     glColor3f(1,1,1);
         glBegin(GL_QUADS);
         glTexCoord2f(repX , repY);
@@ -978,10 +948,180 @@ void OutSpace::drawSquareTree(float centerX, float centerY, float centerZ, float
     }
     glPopMatrix();
 }
-void OutSpace::draw() {
 
-     drawStreet(-8500, -7500, 15, 9000, -6000);
-    drawParking(-7500, 20, 7700);
+
+void OutSpace::drawFence(float x, float y, float z, float len, float hig) {
+    int repX = 1;  // Texture repetition in the horizontal direction
+    int repY = 1;  // Texture repetition in the vertical direction
+    int quantity = len / 40;
+    glPushMatrix();
+    glTranslatef(x, y, z);
+
+    for (float i = 0; i < len; i += quantity) {
+        glEnable(GL_TEXTURE_2D);
+        glBindTexture(GL_TEXTURE_2D, fence);
+
+        glColor3f(1.0f, 1.0f, 1.0f);  // Ensure the color doesn't affect texture rendering
+
+        glBegin(GL_QUADS);
+
+        // Bottom-left corner
+        glTexCoord2f(0, 0);
+        glVertex3f(0, 0, -i);
+
+        // Top-left corner
+        glTexCoord2f(0, repY);
+        glVertex3f(0, hig, -i);
+
+        // Top-right corner
+        glTexCoord2f(repX, repY);
+        glVertex3f(0, hig, -(i + quantity));
+
+        // Bottom-right corner
+        glTexCoord2f(repX, 0);
+        glVertex3f(0, 0, -(i + quantity));
+
+        glEnd();
+
+        glDisable(GL_TEXTURE_2D);
+    }
+
+    glPopMatrix();
+}
+
+void OutSpace::drawskybox() {
+
+        glEnable(GL_TEXTURE_2D);
+        glBindTexture(GL_TEXTURE_2D, skyrh);
+
+        glColor3f(1.0f, 1.0f, 1.0f);
+        glBegin(GL_QUADS);
+       glTexCoord2f(0, 0);
+        glVertex3f(-6000, 0, 6000);
+        glTexCoord2f(1, 0);
+        glVertex3f(-6000, 0, -6000);
+        glTexCoord2f(1, 1);
+        glVertex3f(-6000, 4000, -6000);
+       glTexCoord2f(0, 1);
+        glVertex3f(-6000, 4000, 6000);
+        glEnd();
+        glDisable(GL_TEXTURE_2D);
+    
+
+        // mid 
+        glEnable(GL_TEXTURE_2D);
+        glBindTexture(GL_TEXTURE_2D, skymid);
+
+        glColor3f(1.0f, 1.0f, 1.0f);
+        glBegin(GL_QUADS);
+        glTexCoord2f(0, 0);
+        glVertex3f(-6000, 0, -6000);
+        glTexCoord2f(1, 0);
+        glVertex3f(6000, 0, -6000);
+        glTexCoord2f(1, 1);
+        glVertex3f(6000, 4000, -6000);
+        glTexCoord2f(0, 1);
+        glVertex3f(-6000, 4000, -6000);
+        glEnd();
+        glDisable(GL_TEXTURE_2D);
+
+        //left
+        glEnable(GL_TEXTURE_2D);
+        glBindTexture(GL_TEXTURE_2D, skyleft);
+
+        glColor3f(1.0f, 1.0f, 1.0f);
+        glBegin(GL_QUADS);
+        glTexCoord2f(0, 0);
+        glVertex3f(6000, 0, -6000);
+        glTexCoord2f(1, 0);
+        glVertex3f(6000, 0, 6000);
+        glTexCoord2f(1, 1);
+        glVertex3f(6000, 4000, 6000);
+        glTexCoord2f(0, 1);
+        glVertex3f(6000, 4000, -6000);
+        glEnd();
+        glDisable(GL_TEXTURE_2D);
+
+        //le left
+        glEnable(GL_TEXTURE_2D);
+        glBindTexture(GL_TEXTURE_2D, skyleftleft);
+
+        glColor3f(1.0f, 1.0f, 1.0f);
+        glBegin(GL_QUADS);
+        glTexCoord2f(1, 0);
+        glVertex3f(-6000, 0, 6000);
+        glTexCoord2f(0, 0);
+        glVertex3f(6000, 0, 6000);
+        glTexCoord2f(0, 1);
+        glVertex3f(6000, 4000, 6000);
+        glTexCoord2f(1, 1);
+        glVertex3f(-6000, 4000, 6000);
+        glEnd();
+        glDisable(GL_TEXTURE_2D);
+        // up 
+
+
+        glEnable(GL_TEXTURE_2D);
+        glBindTexture(GL_TEXTURE_2D, skyup);
+
+        glColor3f(1.0f, 1.0f, 1.0f);
+        glBegin(GL_QUADS);
+        glTexCoord2f(0, 0);
+        glVertex3f(-6000, 4000, -6000);
+        glTexCoord2f(1, 0);
+        glVertex3f(6000, 4000, -6000);
+        glTexCoord2f(1, 1);
+        glVertex3f(6000, 4000, 6000);
+        glTexCoord2f(0, 1);
+        glVertex3f(-6000, 4000, 6000);
+        glEnd();
+        glDisable(GL_TEXTURE_2D);
+
+
+ 
+}
+void setMaterialProperties() {
+    GLfloat matAmbient[] = { 0, 0, 0, 0 };  // Ambient reflection
+    GLfloat matDiffuse[] = { 0, 0, 0, 0 };  // Diffuse reflection
+    GLfloat matSpecular[] = { 0, 0, 0, 0 }; // Specular reflection
+    GLfloat matShininess[] = { 50 };                 // Shininess factor
+
+    glMaterialfv(GL_FRONT, GL_AMBIENT, matAmbient);
+    glMaterialfv(GL_FRONT, GL_DIFFUSE, matDiffuse);
+    glMaterialfv(GL_FRONT, GL_SPECULAR, matSpecular);
+    glMaterialfv(GL_FRONT, GL_SHININESS, matShininess);
+}
+
+// Function to compute the shadow matrix
+void generateShadowMatrix(GLfloat shadowMatrix[16], GLfloat groundPlane[4], GLfloat lightPos[4]) {
+    GLfloat dot = groundPlane[0] * lightPos[0] +
+        groundPlane[1] * lightPos[1] +
+        groundPlane[2] * lightPos[2] +
+        groundPlane[3] * lightPos[3];
+
+    shadowMatrix[0] = dot - lightPos[0] * groundPlane[0];
+    shadowMatrix[4] = 0.0f - lightPos[0] * groundPlane[1];
+    shadowMatrix[8] = 0.0f - lightPos[0] * groundPlane[2];
+    shadowMatrix[12] = 0.0f - lightPos[0] * groundPlane[3];
+
+    shadowMatrix[1] = 0.0f - lightPos[1] * groundPlane[0];
+    shadowMatrix[5] = dot - lightPos[1] * groundPlane[1];
+    shadowMatrix[9] = 0.0f - lightPos[1] * groundPlane[2];
+    shadowMatrix[13] = 0.0f - lightPos[1] * groundPlane[3];
+
+    shadowMatrix[2] = 0.0f - lightPos[2] * groundPlane[0];
+    shadowMatrix[6] = 0.0f - lightPos[2] * groundPlane[1];
+    shadowMatrix[10] = dot - lightPos[2] * groundPlane[2];
+    shadowMatrix[14] = 0.0f - lightPos[2] * groundPlane[3];
+
+    shadowMatrix[3] = 0.0f - lightPos[3] * groundPlane[0];
+    shadowMatrix[7] = 0.0f - lightPos[3] * groundPlane[1];
+    shadowMatrix[11] = 0.0f - lightPos[3] * groundPlane[2];
+    shadowMatrix[15] = dot - lightPos[3] * groundPlane[3];
+}
+void OutSpace::draw() {
+    
+    setMaterialProperties();
     for (float i = -3000; i < 0; i+=600)
     {
         drawBigTree(-7250, 0, i, 1300, 1.2);
@@ -990,32 +1130,157 @@ void OutSpace::draw() {
     {
         drawBigTree(-7250, 0, i, 1300, 1.2);
     }
-
  
-    drawFantain(-5500,0,5500, 2600, 2600, 100);
-    drawSmallFantain(-4850,0,4850, 1300, 1300, 100);
-    drawGrass(-7500,-7000,10,8000,1500,3,200,grassTex);
-    drawGrass(-7500,-7000,10,300,-6000,3,200,grassTex);
-    drawGrass(-7000,-1500,10,300,0,15,1,flowerLand);
-    drawGrass(-300,0,10,8000,1500,1,15,flowerLand);
-    //drawEntranceArch(0, 0, 0, 1000, 1000, 500);
+    
+     
     drawConicalStick(-4200,150,4200,50,20,3000,250,250);
     drawFlag(-4200,2500,4200,1000,600);
-    drawGrassSquare(-1500,8,1500,5500,6000);
-    drawEnterance(0,10,0,1500,1500);
-    drawEnterance(-7000,10,300,500,1200);
-    
-        drawSquareTree(-7250 , 200, 150, 200, 2000, 0.6);
-        drawSquareTree(-7250 , 200, 1650, 200, 2000, 0.6);
-      
-    drawWalkway(-7000,10,1500,5500,1200,10,2);
+   
+    drawFence(-7500,0,6500,5000,100);
+    drawFence(-7500,0,300,5000,100);
+
+   
+   
+
+}
+
+void render3DModel(float x, float y, float z, float scale, Model_3DS* model, float rotationAngle,float r,float g,float b,bool rx,bool ry,bool rz) {
+    if (!model) return;
+
     glPushMatrix();
-    glRotatef(90,0,1,0);
+    glColor3ub(255, 255, 255);
+    glTranslatef(x, y, z);
+    glRotatef(rotationAngle, rx, ry, rz);
+    glScalef(scale, scale, scale);
+    glEnable(GL_TEXTURE_2D);
+    glEnable(GL_DEPTH_TEST);
+     
+        glColor3ub(r,g,  b);
+    model->Draw();
+    glPopMatrix();
+}
+
+void OutSpace::drawshadow() {
+
+    draw();
+    GLfloat lightPosition[] = { -9000.0f, 4000, 6000.0f, 1.0f }; // Position of the "sun"
+    GLfloat shadowMatrix[16];
+    GLfloat groundPlanes[2][4] = {
+           { 0.0f, 1.0f, 0.0f, -30 },   // Ground plane for floor 1
+           { 0.0f, 1.0f, 0.0f, 890.0f }, // Ground plane for floor 2
+    };
+
+    generateShadowMatrix(shadowMatrix, groundPlanes[0], lightPosition);  // Compute shadow matrix
+
+    // Disable lighting and material settings for the shadow
+    glPushMatrix();
+    glMultMatrixf(shadowMatrix);   
+
+    //glDisable(GL_LIGHT0);
+    //glDisable(GL_LIGHTING);
+    //glDisable(GL_COLOR_MATERIAL);
+    //glEnable(GL_BLEND);
+
+     draw();  // Draw the shadow of the object (for the current object being rendered)
+
+     glEnable(GL_LIGHT0);
+     glEnable(GL_LIGHTING);
+     glEnable(GL_COLOR_MATERIAL);
+     glEnable(GL_BLEND);
+    glPopMatrix();
+
+    drawFantain(-5500, 0, 5500, 2600, 2600, 100);
+    drawSmallFantain(-4850, 0, 4850, 1300, 1300, 100);
+
+    drawStreet(-8500, -7500, 15, 9000, -6000);
+    drawParking(-7500, 20, 7700);
+    drawGrass(-7500, -7000, 10, 8000, 1500, 3, 200, grassTex);
+    drawGrass(-7500, -7000, 10, 300, -6000, 3, 200, grassTex);
+    drawGrass(-7000, -1500, 10, 300, 0, 15, 1, flowerLand);
+    drawGrass(-300, 0, 10, 8000, 1500, 1, 15, flowerLand);
+    //drawEntranceArch(0, 0, 0, 1000, 1000, 500);
+
+    drawGrassSquare(-1500, 8, 1500, 5500, 6000);
+    drawEnterance(0, 10, 0, 1500, 1500);
+    drawEnterance(-7000, 10, 300, 500, 1200);
+
+    drawSquareTree(-7250, 200, 150, 200, 2000, 0.6);
+    drawSquareTree(-7250, 200, 1650, 200, 2000, 0.6);
+
+    drawWalkway(-7000, 10, 1500, 5500, 1200, 10, 2);
+    glPushMatrix();
+    glRotatef(90, 0, 1, 0);
     drawWalkway(-6750, 10, -300, 5250, 1200, 10, 2);
     glPopMatrix();
+
+    drawSperatedGlass(-4000, 880, -20, 4000, 0.4);
+    drawSperatedGlass(-4000, 880, -4000, 3000, 0.4);
+    glPushMatrix();
+    glTranslatef(-7900, 30, 2000);
+    glRotatef(90,0,1,0);
+    render3DModel(-0, 50, 0, 2, car, 90, 250, 0, 0, 1, 0, 0);
+    render3DModel(-2000, 50, 0, 0.1, motor, -90, 100, 150, 130, 1, 0, 0);
+    glPopMatrix();
+
+
+    glPushMatrix();
     
+    glRotatef(90, 1, 0, 0);
+    render3DModel(-2000, 7350, -150, 0.2, jeep, 30, 70, 70, 90,0, 0, 1);
+    render3DModel(-5000, 7350, -150, 0.2, jeep, 30, 70, 70, 90,0, 0, 1);
+   
+    glPopMatrix();
+    render3DModel(-2000, 10, 1250, 0.2, man, 0, 220, 150, 30,0, 0, 0);
+    render3DModel(-3000, 10, 1100, 0.2, man, 0, 220, 150, 30,0, 0, 0);
+    render3DModel(-5000, 10, 700, 0.2, man, 180, 220, 150, 30, 0, 1, 0);
+    
+    render3DModel(-500, 100, 200, 6, pop, 90, 200, 180, 90, 1, 0, 0);
+    render3DModel(-700, 100, 3000, 6, pop, 90, 200, 180, 90, 1, 0, 0);
+    render3DModel(-1000, 100, 5500, 6, pop, 90, 200, 180, 90, 1, 0, 0);
+    render3DModel(-800, 100, 1500, 6, pop, 90, 200, 180, 90, 1, 0, 0);
+
+    for (float i = 2000; i < 6500; i+=700)
+    {
+        render3DModel(-150, 10, i, 5, plant1, 0, 0, 255, 50, 0, 0, 0);
+        render3DModel(-1650, 10, i, 5, plant1, 0, 0, 255, 50, 0, 0, 0);
+        render3DModel(-i, 10, 150, 5, plant1, 0, 0, 255, 50, 0, 0, 0);
+        render3DModel(-i, 10, 1650, 5, plant1, 0, 0, 255, 50, 0, 0, 0);
+
+    }
+    for (float i = -6000; i < 7500; i += 1500)
+    {
+        
+        render3DModel(-8050, 150, i, 3.5, pole, 90, 200, 200, 200, 0, 1, 0);
+        render3DModel(-7970, 150, i, 3.5, pole, -90, 200, 200, 200, 0, 1, 0);
+        
+ 
+    }
+
+    render3DModel(-8120, 0, 900, 68, arch, 0, 130, 140, 160, 0, 0, 0);
+
 }
+
+
 void OutSpace::init(){
+
+    car = new Model_3DS();
+    motor = new Model_3DS();
+   plant1 = new Model_3DS();
+    pole = new Model_3DS();
+    smalplant1 = new Model_3DS();
+    jeep = new Model_3DS();
+    pop = new Model_3DS();
+    man = new Model_3DS();
+    arch = new Model_3DS();
+ car->Load((char*)"model/car1.3ds");
+ motor->Load((char*)"model/motor.3ds");
+ plant1->Load((char*)"model/plant1.3ds");
+ pole->Load((char*)"model/pole.3ds");
+ smalplant1->Load((char*)"model/smallplanet1.3ds");
+ jeep->Load((char*)"model/Jeep.3ds");
+ pop->Load((char*)"model/BOB.3ds");
+ man->Load((char*)"model/Man.3ds");
+ arch->Load((char*)"model/arch.3ds");
     fatainTex1 = LoadTexture((char*)"images/fatain.bmp", 255.0f);
     fatainTex2 = LoadTexture((char*)"images/fatain1.bmp", 255.0f);
     grassTex = LoadTexture((char*)"images/grass.bmp", 255.0f);
@@ -1028,6 +1293,14 @@ void OutSpace::init(){
     himilayan = LoadTexture((char*)"images/himalayan.bmp", 255.0f);
     enteranc = LoadTexture((char*)"images/enterance.bmp", 255.0f);
     flowerLand = LoadTexture((char*)"images/flowerlandspace.bmp", 255.0f);
+    fence = LoadTexture((char*)"images/fence.bmp", 255.0f);
+
+    skyrh = LoadTexture((char*)"images/skyrh.bmp", 255.0f);
+    skymid = LoadTexture((char*)"images/skymid.bmp", 255.0f);
+    skyleft = LoadTexture((char*)"images/skyleft.bmp", 255.0f);
+    skyleftleft = LoadTexture((char*)"images/skyleftleft.bmp", 255.0f);
+    skyup = LoadTexture((char*)"images/skyup.bmp", 255.0f);
+
 
     if (fatainTex1 < 0 || fatainTex2<0 || grassTex<0|| grassSpaceTex<0 || flowerTex<0 || flower1Tex<0 || flagTex<0 || WalkwayTex<0 || whiteStone<0) {
         std::cerr << "Failed to load texture." << std::endl;
