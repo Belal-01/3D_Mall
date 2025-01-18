@@ -26,6 +26,7 @@
     <ClCompile Include="cameraConfiguration.cpp" />
     <ClCompile Include="Door.cpp" />
     <ClCompile Include="ElectronicDeviceDrawer.cpp" />
+    <ClCompile Include="elevator.cpp" />
     <ClCompile Include="FurnitureStore.cpp" />
     <ClCompile Include="Glass.cpp" />
     <ClCompile Include="KeyboardConfiguration.cpp" />
@@ -44,6 +45,7 @@
     <ClInclude Include="cameraConfiguration.h" />
     <ClInclude Include="Door.h" />
     <ClInclude Include="ElectronicDeviceDrawer.h" />
+    <ClInclude Include="elevator.h" />
     <ClInclude Include="FurnitureStore.h" />
     <ClInclude Include="Glass.h" />
     <ClInclude Include="keyboardConfiguration.h" />
@@ -66,6 +68,8 @@
     <Image Include="images\ChairFabric2.bmp" />
     <Image Include="images\CircularFabric1.bmp" />
     <Image Include="images\CircularFabric2.bmp" />
+    <Image Include="images\elevator Wall.bmp" />
+    <Image Include="images\elevatorFloor.bmp" />
     <Image Include="images\enterance.bmp" />
     <Image Include="images\externalWall.bmp" />
     <Image Include="images\FabricChair1.bmp" />

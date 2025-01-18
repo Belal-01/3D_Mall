@@ -7,13 +7,16 @@
 #include <GL/glut.h>
 #include "restorant.h"
 #include "Stairs.h"
+#include "elevator.h"
 
  Wall wall;
  Glass glass;
  Stairs stairs;
  Resturant resturant;
+ Elevator elevator;
  int widthofWall = 80;
  int widthofRoof = 80;
+
 
 void BilalMain::leftBuilding() {
     
@@ -47,9 +50,13 @@ void BilalMain::leftBuilding() {
 
     wall.sideWall(-1000, 800, 2480, -2500, -5000, widthofWall,exteriorWall,4,4, interiorWall, 4, 2);
 
-    wall.sideWall(0, 0, 1680, -3000, -5000, widthofWall, interiorWall, 1, 1, exteriorWall, 2, 4);
     wall.sideWall(0, 0, 1680, -2500, -3000, widthofWall, interiorWall, 1, 1, interiorWall, 1, 1);
-    wall.sideWall(0, 1680, 2480, -3000, -5000, widthofWall, interiorWall, 1, 1, exteriorWall, 2, 2);
+    wall.sideWall(0, 0, 1680, -3000, -3800, widthofWall, interiorWall, 1, 1, interiorWall, 1, 1);
+    wall.sideWall(0, 0, 1680, -3800, -5000, widthofWall, interiorWall, 1, 1, exteriorWall, 2, 4);
+
+    wall.sideWall(0, 1680, 2480, -3000, -3800, widthofWall, interiorWall, 1, 1, interiorWall, 1, 1);
+    wall.sideWall(0, 1680, 2480, -3800, -5000, widthofWall, interiorWall, 1, 1, exteriorWall, 2, 2);
+
     glass.drawfrontWall(-1000, 0, 0, 2480, -4980, 0.7f);
     glass.drawfrontWall(-1000, 0, 1600, 2480, -2520, 0.7f);
     glass.drawfrontWall(-600, 0, 880, 1600, -2520, 0.7f);
@@ -74,9 +81,11 @@ void BilalMain::leftBuilding() {
 }
 
 void BilalMain::rightBuilding() {
-    wall.floor(0, 4080, 10, 5000, -3000, RoofFloorTexture, 2, 4);
+    wall.floor(0, 4080, 10, 5000, -3080, RoofFloorTexture, 2, 4);
 
-    wall.frontWall(60, 4000, 0, 1680, -3000, widthofWall,interiorWall,2,1,exteriorWall,8,4);
+    wall.frontWall(60, 120, 0, 1680, -3000, widthofWall,interiorWall,1,1,exteriorWall,1,1);
+    wall.frontWall(650, 4000, 0, 1680, -3000, widthofWall, interiorWall, 2, 1, exteriorWall, 8, 4);
+
     wall.sideWall(4000, 0, 800, 5000, -3000, widthofWall, interiorWall, 8, 1, exteriorWall, 16, 2);
     wall.sideWall(4000, 880, 1680, 5000, -3000, widthofWall, interiorWall, 8, 1, exteriorWall, 16, 2);
 
@@ -105,6 +114,24 @@ void BilalMain::rightBuilding() {
     glass.drawWall(800, 800, 0, 1680, 5000, 3500, 0.7);
     glass.drawWall(800, 800, 0, 1680, 2500, 1000, 0.7);
 
+    // elevator of the second building
+    wall.sideWall(800,0,2480,-3080,-3800,80,interiorWall,1,4,exteriorWall,1,4);
+
+    glass.drawfrontWall(0, 800, 0, 2480, -3800, 0.8);
+    wall.Roof(0, 880, 2480, -3000, -3800, 80, RoofFloorTexture, 1, 1);
+    glPushMatrix();
+    glTranslated(400, 0, -3400);
+    elevator.elevatorRoom();
+    
+    glPopMatrix();
+    glPushMatrix();
+    glTranslated(400, 0, -3040);
+    elevator.elevatorDoors();
+
+    glPopMatrix();
+
+
+
 
 }
 
@@ -125,6 +152,7 @@ void BilalMain::init(){
 
     resturant.resturantInit();
     stairs.stairsInit();
+    elevator.init();
 
     }
 

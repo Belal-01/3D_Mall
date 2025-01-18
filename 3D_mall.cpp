@@ -12,6 +12,7 @@
 #include "OutSpace.h"
 #include "abd.h"
 #include "FurnitureStore.h"
+#include "elevator.h"
 double angle = 0.0;
 bool keys[255];
 
@@ -20,17 +21,23 @@ BilalMain bilal;
 OutSpace outspace;
 Abd abd;
 FurnitureStore furniturStore;
+extern Elevator elevator;
+
 
 int windowWidth = 1920, windowHeight = 1080;
 
 void keyPressed(unsigned char key, int x, int y) {
     camera.processKeyboardInput(key, true);
+    elevator.moveElevator(key, true);
+    
    
     
 }
 
 void keyReleased(unsigned char key, int x, int y) {
     camera.processKeyboardInput(key, false);
+    elevator.moveElevator(key, false);
+
 }
 
 
@@ -51,10 +58,12 @@ void display() {
     // set the camera confiuration
     camera.updateMovement();
     camera.setupCamera();
+    elevator.updateMovment();
     
     //here put ur display
      outspace.draw();
      abd.AbdDraw(camera.cameraX, camera.cameraY, camera.cameraZ);
+     elevator.upateDoorsMovments(camera.cameraX, camera.cameraY, camera.cameraZ);
      furniturStore.display();
      bilal.display();
    
