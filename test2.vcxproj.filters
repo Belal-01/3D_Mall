@@ -63,6 +63,12 @@
     <ClCompile Include="wall.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FurnitureStore.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="elevator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="abd.h">
@@ -108,6 +114,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Wall.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FurnitureStore.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="elevator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -290,6 +302,96 @@
       <Filter>Source Files\images</Filter>
     </Image>
     <Image Include="images\xboxf.bmp">
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="images\CabinetLeftDoor1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="images\CabinetLeftDoor2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="images\CabinetRightDoor1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="images\CabinetRightDoor2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="images\ChairFabric1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="images\ChairFabric2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="images\CircularFabric1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="images\CircularFabric2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="images\FabricChair1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="images\FabricChairWood1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="images\FabricChairWood2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="images\FabricChairWood3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="images\LeatherSofa1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="images\Legs3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="images\PlasticTable1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="images\PlasticTable2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="images\tmp1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="images\tmp2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="images\tmp3.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="images\tmp4.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="images\tmp7.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="images\tmp8.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="images\WoodCabinet1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="images\Woodcolumn1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="images\WoodForTable1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="images\WoodTable.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="images\WoodTable2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="images\WoodTable3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="images\elevator Wall.bmp">
+      <Filter>Source Files\images</Filter>
+    </Image>
+    <Image Include="images\elevatorFloor.bmp">
       <Filter>Source Files\images</Filter>
     </Image>
   </ItemGroup>
