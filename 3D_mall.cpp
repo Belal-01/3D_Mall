@@ -11,7 +11,7 @@
 #include "BilalMain.h"
 #include "OutSpace.h"
 #include "abd.h"
-
+#include "FurnitureStore.h"
 double angle = 0.0;
 bool keys[255];
 
@@ -19,6 +19,7 @@ CameraConfiguration camera;
 BilalMain bilal;
 OutSpace outspace;
 Abd abd;
+FurnitureStore furniturStore;
 
 int windowWidth = 1920, windowHeight = 1080;
 
@@ -52,9 +53,10 @@ void display() {
     camera.setupCamera();
     
     //here put ur display
-     bilal.display();
      outspace.draw();
      abd.AbdDraw(camera.cameraX, camera.cameraY, camera.cameraZ);
+     furniturStore.display();
+     bilal.display();
    
     glFlush(); // Render the line
     glutSwapBuffers();
@@ -86,8 +88,8 @@ void init() {
     bilal.init();
     outspace.init();
     abd.init();
-    
-   
+    furniturStore.init();
+
     
 }
 
