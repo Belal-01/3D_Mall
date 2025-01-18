@@ -18,6 +18,113 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="3D_mall.cpp" />
+    <ClCompile Include="abd.cpp" />
+    <ClCompile Include="abdMain.cpp" />
+    <ClCompile Include="BilalMain.cpp" />
+    <ClCompile Include="cameraConfiguration.cpp" />
+    <ClCompile Include="Door.cpp" />
+    <ClCompile Include="ElectronicDeviceDrawer.cpp" />
+    <ClCompile Include="Glass.cpp" />
+    <ClCompile Include="KeyboardConfiguration.cpp" />
+    <ClCompile Include="OutSpace.cpp" />
+    <ClCompile Include="restorant.cpp" />
+    <ClCompile Include="Stairs.cpp" />
+    <ClCompile Include="TechnicalDivecesDrawer.cpp" />
+    <ClCompile Include="texture.cpp" />
+    <ClCompile Include="wall.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="abd.h" />
+    <ClInclude Include="abdMain.h" />
+    <ClInclude Include="BilalMain.h" />
+    <ClInclude Include="camera.h" />
+    <ClInclude Include="cameraConfiguration.h" />
+    <ClInclude Include="Door.h" />
+    <ClInclude Include="ElectronicDeviceDrawer.h" />
+    <ClInclude Include="Glass.h" />
+    <ClInclude Include="keyboardConfiguration.h" />
+    <ClInclude Include="OutSpace.h" />
+    <ClInclude Include="restorant.h" />
+    <ClInclude Include="Stairs.h" />
+    <ClInclude Include="TechnicalDivecesDrawer.h" />
+    <ClInclude Include="texture.h" />
+    <ClInclude Include="Wall.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="images\ardia.bmp" />
+    <Image Include="images\brada1.bmp" />
+    <Image Include="images\brada2.bmp" />
+    <Image Include="images\brada3.bmp" />
+    <Image Include="images\cod.jpg" />
+    <Image Include="images\enterance.bmp" />
+    <Image Include="images\externalWall.bmp" />
+    <Image Include="images\fatain.bmp" />
+    <Image Include="images\fatain1.bmp" />
+    <Image Include="images\flag.bmp" />
+    <Image Include="images\floorImg.bmp" />
+    <Image Include="images\floorImg.png" />
+    <Image Include="images\floorInsidStore.bmp" />
+    <Image Include="images\floortexture.bmp" />
+    <Image Include="images\flower.bmp" />
+    <Image Include="images\flower1.bmp" />
+    <Image Include="images\flowerlandspace.bmp" />
+    <Image Include="images\fridge.bmp" />
+    <Image Include="images\fridge1.bmp" />
+    <Image Include="images\fridge2.bmp" />
+    <Image Include="images\fridge3.bmp" />
+    <Image Include="images\fridge4.bmp" />
+    <Image Include="images\game1.bmp" />
+    <Image Include="images\gameground.bmp" />
+    <Image Include="images\games.bmp" />
+    <Image Include="images\gamingroof.bmp" />
+    <Image Include="images\grass.bmp" />
+    <Image Include="images\grassSpace.bmp" />
+    <Image Include="images\gta.bmp" />
+    <Image Include="images\himalayan.bmp" />
+    <Image Include="images\insidMallFloorTexture.bmp" />
+    <Image Include="images\interiorWall.bmp" />
+    <Image Include="images\kitchenFloorWoodTexture.bmp" />
+    <Image Include="images\kitchenFloorWoodTexture2.bmp" />
+    <Image Include="images\kitchenLogo.bmp" />
+    <Image Include="images\kitchenWallTexture.bmp" />
+    <Image Include="images\kitchenWallTexture2.bmp" />
+    <Image Include="images\kitchenWallWood.bmp" />
+    <Image Include="images\pcb.bmp" />
+    <Image Include="images\pcb.jpg" />
+    <Image Include="images\pcf.bmp" />
+    <Image Include="images\pcf.jpg" />
+    <Image Include="images\pcs.bmp" />
+    <Image Include="images\pcs.jpg" />
+    <Image Include="images\phreza2Front.bmp" />
+    <Image Include="images\phrezaFront.bmp" />
+    <Image Include="images\phrezaside.bmp" />
+    <Image Include="images\s7ana.bmp" />
+    <Image Include="images\shaurma.bmp" />
+    <Image Include="images\shaurmaTable.bmp" />
+    <Image Include="images\shaurmaTable2.bmp" />
+    <Image Include="images\sideshaurmaTable.bmp" />
+    <Image Include="images\sky.bmp" />
+    <Image Include="images\speaker.bmp" />
+    <Image Include="images\speaker.png" />
+    <Image Include="images\stairimg.bmp" />
+    <Image Include="images\TableWoodTexture.bmp" />
+    <Image Include="images\Walkway.bmp" />
+    <Image Include="images\wash.bmp" />
+    <Image Include="images\wash2.bmp" />
+    <Image Include="images\washb.bmp" />
+    <Image Include="images\washr.bmp" />
+    <Image Include="images\washw.bmp" />
+    <Image Include="images\whiteStone.bmp" />
+    <Image Include="images\woodWallTexture.bmp" />
+    <Image Include="images\xboxb.bmp" />
+    <Image Include="images\xboxf.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\pcb.webp" />
+    <None Include="images\pcback.webp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
@@ -76,6 +183,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -126,49 +234,6 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\3D_Mall\BilalMain.cpp" />
-    <ClCompile Include="..\..\Downloads\Telegram Desktop\stb_image.c" />
-    <ClCompile Include="abd.cpp" />
-    <ClCompile Include="cameraConfiguration.cpp" />
-    <ClCompile Include="ElectronicDeviceDrawer.cpp" />
-    <ClCompile Include="Glass.cpp" />
-    <ClCompile Include="KeyboardConfiguration.cpp" />
-    <ClCompile Include="3D_mall.cpp" />
-    <ClCompile Include="restorant.cpp" />
-    <ClCompile Include="TechnicalDivecesDrawer.cpp" />
-    <ClCompile Include="test2.cpp" />
-    <ClCompile Include="texture.cpp" />
-    <ClCompile Include="wall.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="abd.h" />
-    <ClInclude Include="abdMain.h" />
-    <ClInclude Include="camera.h" />
-    <ClInclude Include="cameraConfiguration.h" />
-    <ClInclude Include="ElectronicDeviceDrawer.h" />
-    <ClInclude Include="Glass.h" />
-    <ClInclude Include="keyboardConfiguration.h" />
-
-    <ClInclude Include="restorant.h" />
-
-    <ClInclude Include="TechnicalDivecesDrawer.h" />
-
-    <ClInclude Include="texture.h" />
-    <ClInclude Include="Wall.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="floorImg.bmp" />
-    <Image Include="floortexture.bmp" />
-    <Image Include="insidMallFloorTexture.bmp" />
-    <Image Include="pcb.bmp" />
-    <Image Include="pcf.bmp" />
-    <Image Include="pcs.bmp" />
-    <Image Include="speaker.bmp" />
-    <Image Include="wash.bmp" />
-    <Image Include="xboxb.bmp" />
-    <Image Include="xboxf.bmp" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

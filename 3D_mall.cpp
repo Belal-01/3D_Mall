@@ -9,14 +9,16 @@
 #include <iostream>
 #include "cameraConfiguration.h"
 #include "BilalMain.h"
-
+#include "OutSpace.h"
+#include "abd.h"
 
 double angle = 0.0;
 bool keys[255];
 
 CameraConfiguration camera;
 BilalMain bilal;
-
+OutSpace outspace;
+Abd abd;
 
 int windowWidth = 1920, windowHeight = 1080;
 
@@ -51,7 +53,8 @@ void display() {
     
     //here put ur display
      bilal.display();
-   
+     outspace.draw();
+     abd.AbdDraw(camera.cameraX, camera.cameraY, camera.cameraZ);
    
     glFlush(); // Render the line
     glutSwapBuffers();
@@ -62,7 +65,7 @@ void reshape(int w, int h) {
     glViewport(0, 0, w, h);
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
-    gluPerspective(60.0, (double)w / (double)h, 0.1, 12000.0);
+    gluPerspective(60.0, (double)w / (double)h, 0.1, 50000.0);
     glMatrixMode(GL_MODELVIEW);
 }
 
@@ -71,17 +74,18 @@ void init() {
     glEnable(GL_DEPTH_TEST);
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
-    gluPerspective(60.0, (double)windowWidth / (double)windowHeight, 0.1, 12000.0);
-
+    gluPerspective(60.0, (double)windowWidth / (double)windowHeight, 0.1, 50000.0);
+    glMatrixMode(GL_MODELVIEW);
  //   
-    glEnable(GL_TEXTURE_2D);
+    /*glEnable(GL_TEXTURE_2D);*/
 
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
 
     // here put your inits 
     bilal.init();
- 
+    outspace.init();
+    abd.init();
     
    
     

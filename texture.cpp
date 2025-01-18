@@ -10,7 +10,7 @@
 #include "texture.h"
 using namespace std;
 int num_texture = -1;
-int LoadTexture( char* filename, int alphaOverride) {
+int LoadTexture(char* filename, int alphaOverride) {
     int i, j = 0;
     FILE* l_file;
     unsigned char* l_texture;
@@ -40,7 +40,7 @@ int LoadTexture( char* filename, int alphaOverride) {
     }
 
     // Allocate memory for texture
-    l_texture = (byte*)malloc(infoheader.biWidth * infoheader.biHeight * 4);
+    l_texture = (BYTE*)malloc(infoheader.biWidth * infoheader.biHeight * 4);
     if (!l_texture) {
         printf("Error: Memory allocation failed.\n");
         fclose(l_file);

@@ -1,48 +1,48 @@
-#pragma once
+Ôªø#pragma once
 #include <GL/glut.h>
 #include <iostream>
-#include <cstdlib> // · ÷„Ì‰ rand Ê srand
-#include <ctime>   // · ÷„Ì‰ time
+#include <cstdlib> 
+#include <ctime>   
 #include <random>
 
 class TechnicalDivecesDrawer
 {
-public :
+public:
     void drawComputerMonitor(float x, float y, float z, float angleX, float angleY, float angleZ) {
-        // «·√»⁄«œ «·À«» … ··‘«‘… Ê«·ﬁ«⁄œ…
-        float width = 50.0f;
-        float height = 30.0f;
-        float screenThickness = 1.0f; // ”„ﬂ «·‘«‘…
-        float baseWidth = 40.0f; //  ’€Ì— «·ﬁ«⁄œ…
-        float baseDepth = 15.0f; //  ’€Ì— ⁄„ﬁ «·ﬁ«⁄œ…
-        float connectorHeight = 1.5f; //  ﬁ·Ì’ ”„ﬂ «·Ê’·… ·ÌﬂÊ‰ √ﬁ· „‰ ”„ﬂ «·‘«‘…
-        float buttonWidth = 3.0f; // ⁄—÷ «·“—
-        float buttonHeight = 1.0f; // «— ›«⁄ «·“—
+
+        float width = 50.0f * 4;
+        float height = 30.0f * 4;
+        float screenThickness = 1.0f * 4;
+        float baseWidth = 40.0f * 4;
+        float baseDepth = 15.0f * 4;
+        float connectorHeight = 4 * 1.5f;
+        float buttonWidth = 3.0f * 4;
+        float buttonHeight = 1.0f * 4;
 
         glPushMatrix();
         glTranslatef(x, y, z);
 
-        //  ÿ»Ìﬁ «·œÊ—«‰
-        glRotatef(angleX, 1.0f, 0.0f, 0.0f); // œÊ—«‰ ÕÊ· «·„ÕÊ— X
-        glRotatef(angleY, 0.0f, 1.0f, 0.0f); // œÊ—«‰ ÕÊ· «·„ÕÊ— Y
-        glRotatef(angleZ, 0.0f, 0.0f, 1.0f); // œÊ—«‰ ÕÊ· «·„ÕÊ— Z
 
-        // —”„ «·‘«‘… „⁄ «·”„ﬂ «·ÃœÌœ
-        glColor3f(0.0f, 0.0f, 0.0f); // ·Ê‰ «·‘«‘…
+        glRotatef(angleX, 1.0f, 0.0f, 0.0f);
+        glRotatef(angleY, 0.0f, 1.0f, 0.0f);
+        glRotatef(angleZ, 0.0f, 0.0f, 1.0f);
+
+
+        glColor3f(0.0f, 0.0f, 0.0f);
         glBegin(GL_QUADS);
-        // Ê«ÃÂ… «·‘«‘…
+
         glVertex3f(-width / 2, height, 0);
         glVertex3f(width / 2, height, 0);
         glVertex3f(width / 2, 0, 0);
         glVertex3f(-width / 2, 0, 0);
 
-        // «·”„ﬂ «·Œ·›Ì ··‘«‘…
+
         glVertex3f(-width / 2, height, screenThickness);
         glVertex3f(width / 2, height, screenThickness);
         glVertex3f(width / 2, 0, screenThickness);
         glVertex3f(-width / 2, 0, screenThickness);
 
-        // ÃÊ«‰» «·‘«‘…
+
         glVertex3f(-width / 2, height, 0);
         glVertex3f(-width / 2, height, screenThickness);
         glVertex3f(-width / 2, 0, screenThickness);
@@ -64,8 +64,8 @@ public :
         glVertex3f(-width / 2, 0, 0);
         glEnd();
 
-        // —”„ «·ﬁ«⁄œ…
-        glColor3f(0.2f, 0.2f, 0.2f); // ·Ê‰ «·ﬁ«⁄œ…
+
+        glColor3f(0.2f, 0.2f, 0.2f);
         glBegin(GL_QUADS);
         glVertex3f(-baseWidth / 2, -connectorHeight, -baseDepth / 2);
         glVertex3f(baseWidth / 2, -connectorHeight, -baseDepth / 2);
@@ -73,163 +73,80 @@ public :
         glVertex3f(-baseWidth / 2, -connectorHeight, baseDepth / 2);
         glEnd();
 
-        // —”„ «·„Ê’· («·„” ÿÌ· «·⁄„ÊœÌ) „⁄ ”„ﬂ √ﬁ·
-        glColor3f(0.4f, 0.4f, 0.4f); // ·Ê‰ «·„Ê’·
+
+        glColor3f(0.4f, 0.4f, 0.4f);
         glBegin(GL_QUADS);
-        // ÊÃÂ √„«„Ì
+
         glVertex3f(-baseWidth / 12, 0, -baseDepth / 12);
         glVertex3f(baseWidth / 12, 0, -baseDepth / 12);
         glVertex3f(baseWidth / 12, -connectorHeight, -baseDepth / 12);
         glVertex3f(-baseWidth / 12, -connectorHeight, -baseDepth / 12);
 
-        // ÊÃÂ Œ·›Ì
+        // √¶√å√• √é√°√ù√≠
         glVertex3f(-baseWidth / 12, 0, baseDepth / 12);
         glVertex3f(baseWidth / 12, 0, baseDepth / 12);
         glVertex3f(baseWidth / 12, -connectorHeight, baseDepth / 12);
         glVertex3f(-baseWidth / 12, -connectorHeight, baseDepth / 12);
 
-        // ÊÃÂ Ã«‰»Ì (Ì”«—)
+
         glVertex3f(-baseWidth / 12, 0, -baseDepth / 12);
         glVertex3f(-baseWidth / 12, 0, baseDepth / 12);
         glVertex3f(-baseWidth / 12, -connectorHeight, baseDepth / 12);
         glVertex3f(-baseWidth / 12, -connectorHeight, -baseDepth / 12);
 
-        // ÊÃÂ Ã«‰»Ì (Ì„Ì‰)
+
         glVertex3f(baseWidth / 12, 0, -baseDepth / 12);
         glVertex3f(baseWidth / 12, 0, baseDepth / 12);
         glVertex3f(baseWidth / 12, -connectorHeight, baseDepth / 12);
         glVertex3f(baseWidth / 12, -connectorHeight, -baseDepth / 12);
         glEnd();
 
-        // —”„ “— «· ‘€Ì· (—›⁄ «·“— Ê €ÌÌ— ·Ê‰Â ≈·Ï «·√Õ„—)
-        glColor3f(1.0f, 0.0f, 0.0f); // ·Ê‰ «·“— √Õ„—
+
+        glColor3f(1.0f, 0.0f, 0.0f);
         glBegin(GL_QUADS);
-        // —›⁄ «·“— ﬁ·Ì·« ÊÃ⁄·Â √Õ„—
-        glVertex3f(22, -connectorHeight + 2.0f, -0.1); //  ⁄œÌ· «— ›«⁄ «·“—
-        glVertex3f(25, -connectorHeight + 2.0f, -0.1); //  ⁄œÌ· «— ›«⁄ «·“—
-        glVertex3f(25, -connectorHeight + buttonHeight + 2.0f, -0.1); //  ⁄œÌ· «— ›«⁄ «·“—
-        glVertex3f(22, -connectorHeight + buttonHeight + 2.0f, -0.1); //  ⁄œÌ· «— ›«⁄ «·“—
+
+        glVertex3f(22, -connectorHeight + 10.0f, -0.1);
+        glVertex3f(25, -connectorHeight + 10.0f, -0.1);
+        glVertex3f(25, -connectorHeight + buttonHeight + 10.0f, -0.1);
+        glVertex3f(22, -connectorHeight + buttonHeight + 10.0f, -0.1);
         glEnd();
 
         glPopMatrix();
 
     }
     static void drawScreen(float x, float y, float z, float angleX, float angleY, float angleZ) {
+        float width = 60 * 6;
+        float hight = 40 * 6;
         glPushMatrix();
         glTranslatef(x, y, z);
-        glRotatef(angleX, 10.0f, 0.0f, 0.0f); // œÊ—«‰ ÕÊ· «·„ÕÊ— X
-        glRotatef(angleY, 0.0f, 10.0f, 0.0f); // œÊ—«‰ ÕÊ· «·„ÕÊ— Y
-        glRotatef(angleZ, 0.0f, 0.0f, 10.0f); // œÊ—«‰ ÕÊ· «·„ÕÊ— Z
+        glRotatef(angleX, 10.0f, 0.0f, 0.0f);
+        glRotatef(angleY, 0.0f, 10.0f, 0.0f);
+        glRotatef(angleZ, 0.0f, 0.0f, 10.0f);
 
-        glColor3f(0.0f, 0.0f, 0.0f); // ·Ê‰ «·‘«‘…
+        glColor3f(0.0f, 0.0f, 0.0f);
         glBegin(GL_QUADS);
 
-        // «·‘«‘…
+        // √á√°√î√á√î√â
         glVertex3f(0, 0, 0);
-        glVertex3f(60.0f, 0, 0);
-        glVertex3f(60.0f, 40.0f, 0);
-        glVertex3f(0, 40.0f, 0);
+        glVertex3f(width, 0, 0);
+        glVertex3f(width, hight, 0);
+        glVertex3f(0, hight, 0);
 
         glEnd();
 
-        // «·ÕÊ«›
-        glColor3f(0.2f, 0.2f, 0.2f);
-        glBegin(GL_LINE_LOOP);
 
-        glVertex3f(0, 0, 0);
-        glVertex3f(60.0f, 0, 0);
-        glVertex3f(60.0f, 40.0f, 0);
-        glVertex3f(0, 40.0f, 0);
-
-        glEnd();
         glPopMatrix();
     }
     void drawPS5(float x, float y, float z, float angleX, float angleY, float angleZ) {
-        // √»⁄«œ PS5
-        float bodyWidth = 10.0f;
-        float bodyHeight = 30.0f;
-        float bodyDepth = 5.0f;
-        float wingWidth = 12.0f;
-        float wingHeight = 30.0f;
-        float wingDepth = 0.5f;
-        float wingOffset = 2.0f; // «·„”«›… »Ì‰ «·Ã”„ Ê«·√Ã‰Õ…
 
-        glPushMatrix();
-        glTranslatef(x, y, z);
+        float bodyWidth = 30.0f;   // 10 * 3
+        float bodyHeight = 90.0f;  // 30 * 3
+        float bodyDepth = 15.0f;   // 5 * 3
+        float wingWidth = 36.0f;   // 12 * 3
+        float wingHeight = 90.0f;  // 30 * 3
+        float wingDepth = 1.5f;    // 0.5 * 3
+        float wingOffset = 6.0f;   // 2 * 3
 
-        //  ÿ»Ìﬁ «·œÊ—«‰
-        glRotatef(angleX, 1.0f, 0.0f, 0.0f); // œÊ—«‰ ÕÊ· «·„ÕÊ— X
-        glRotatef(angleY, 0.0f, 1.0f, 0.0f); // œÊ—«‰ ÕÊ· «·„ÕÊ— Y
-        glRotatef(angleZ, 0.0f, 0.0f, 1.0f); // œÊ—«‰ ÕÊ· «·„ÕÊ— Z
-
-        // —”„ «·Ã”„ «·—∆Ì”Ì
-        glColor3f(0.1f, 0.1f, 0.1f); // ·Ê‰ «·Ã”„ «·—∆Ì”Ì (√”Êœ)
-        glBegin(GL_QUADS);
-        // ÊÃÂ √„«„Ì
-        glVertex3f(-bodyWidth / 2, 0, -bodyDepth / 2);
-        glVertex3f(bodyWidth / 2, 0, -bodyDepth / 2);
-        glVertex3f(bodyWidth / 2, bodyHeight, -bodyDepth / 2);
-        glVertex3f(-bodyWidth / 2, bodyHeight, -bodyDepth / 2);
-
-        // ÊÃÂ Œ·›Ì
-        glVertex3f(-bodyWidth / 2, 0, bodyDepth / 2);
-        glVertex3f(bodyWidth / 2, 0, bodyDepth / 2);
-        glVertex3f(bodyWidth / 2, bodyHeight, bodyDepth / 2);
-        glVertex3f(-bodyWidth / 2, bodyHeight, bodyDepth / 2);
-
-        // «·ÃÊ«‰»
-        glVertex3f(-bodyWidth / 2, 0, -bodyDepth / 2);
-        glVertex3f(-bodyWidth / 2, 0, bodyDepth / 2);
-        glVertex3f(-bodyWidth / 2, bodyHeight, bodyDepth / 2);
-        glVertex3f(-bodyWidth / 2, bodyHeight, -bodyDepth / 2);
-
-        glVertex3f(bodyWidth / 2, 0, -bodyDepth / 2);
-        glVertex3f(bodyWidth / 2, 0, bodyDepth / 2);
-        glVertex3f(bodyWidth / 2, bodyHeight, bodyDepth / 2);
-        glVertex3f(bodyWidth / 2, bodyHeight, -bodyDepth / 2);
-
-        // «·ﬁ«⁄œ… Ê«·”ﬁ›
-        glVertex3f(-bodyWidth / 2, 0, -bodyDepth / 2);
-        glVertex3f(bodyWidth / 2, 0, -bodyDepth / 2);
-        glVertex3f(bodyWidth / 2, 0, bodyDepth / 2);
-        glVertex3f(-bodyWidth / 2, 0, bodyDepth / 2);
-
-        glVertex3f(-bodyWidth / 2, bodyHeight, -bodyDepth / 2);
-        glVertex3f(bodyWidth / 2, bodyHeight, -bodyDepth / 2);
-        glVertex3f(bodyWidth / 2, bodyHeight, bodyDepth / 2);
-        glVertex3f(-bodyWidth / 2, bodyHeight, bodyDepth / 2);
-        glEnd();
-
-        // —”„ «·√Ã‰Õ… «·Ã«‰»Ì…
-        glColor3f(1.0f, 1.0f, 1.0f); // ·Ê‰ «·√Ã‰Õ… (√»Ì÷)
-        glBegin(GL_QUADS);
-        // «·Ã‰«Õ «·√Ì”—
-        glVertex3f(5.1, 0, -bodyDepth / 2 - wingDepth / 2);
-        glVertex3f(5.1, 0, 5);
-        glVertex3f(5.1, wingHeight, 5);
-        glVertex3f(5.1, wingHeight, -bodyDepth / 2 + wingDepth / 2);
-
-        // «·Ã‰«Õ «·√Ì„‰
-        glVertex3f(-5.1, 0, -bodyDepth / 2 - wingDepth / 2);
-        glVertex3f(-5.1, 0, 5);
-        glVertex3f(-5.1, wingHeight, 5);
-        glVertex3f(-5.1, wingHeight, -bodyDepth / 2 - wingDepth / 2);
-        glEnd();
-        glColor3f(0, 0, 0);
-        glBegin(GL_LINES);
-        glVertex3f(5.1, wingHeight / 2, -bodyDepth / 2 - wingDepth / 2);
-        glVertex3f(5.1, wingHeight * 3 / 4, 5);
-        glVertex3f(-5.1, wingHeight / 2, -bodyDepth / 2 - wingDepth / 2);
-        glVertex3f(-5.1, wingHeight * 3 / 4, 5);
-        glEnd();
-        glPopMatrix();
-    }
-    void drawXbox(float x, float y, float z, float angleX, float angleY, float angleZ, int xboxf, int xboxb) {
-        float bodyWidth = 24.0f;
-        float bodyHeight = 12.0f;
-        float bodyDepth = 20.0f;
-        float buttonRadius = 2.0f; // ÕÃ„ «·‘⁄«—
-        float logoRadius = 4.5f;
         glPushMatrix();
         glTranslatef(x, y, z);
 
@@ -237,11 +154,86 @@ public :
         glRotatef(angleY, 0.0f, 1.0f, 0.0f);
         glRotatef(angleZ, 0.0f, 0.0f, 1.0f);
 
-        // —”„ Ã”„ Xbox
-        glColor3f(0.5, 0.5, 0.5); // ·Ê‰ «·Ã”„ (—„«œÌ €«„ﬁ)
+        glColor3f(0.1f, 0.1f, 0.1f);
+        glBegin(GL_QUADS);
+
+        // √¶√å√• √É√£√á√£√≠
+        glVertex3f(-bodyWidth / 2, 0, -bodyDepth / 2);
+        glVertex3f(bodyWidth / 2, 0, -bodyDepth / 2);
+        glVertex3f(bodyWidth / 2, bodyHeight, -bodyDepth / 2);
+        glVertex3f(-bodyWidth / 2, bodyHeight, -bodyDepth / 2);
+
+        // √¶√å√• √é√°√ù√≠
+        glVertex3f(-bodyWidth / 2, 0, bodyDepth / 2);
+        glVertex3f(bodyWidth / 2, 0, bodyDepth / 2);
+        glVertex3f(bodyWidth / 2, bodyHeight, bodyDepth / 2);
+        glVertex3f(-bodyWidth / 2, bodyHeight, bodyDepth / 2);
+
+        // √á√°√å√¶√á√§√à
+        glVertex3f(-bodyWidth / 2, 0, -bodyDepth / 2);
+        glVertex3f(-bodyWidth / 2, 0, bodyDepth / 2);
+        glVertex3f(-bodyWidth / 2, bodyHeight, bodyDepth / 2);
+        glVertex3f(-bodyWidth / 2, bodyHeight, -bodyDepth / 2);
+
+        glVertex3f(bodyWidth / 2, 0, -bodyDepth / 2);
+        glVertex3f(bodyWidth / 2, 0, bodyDepth / 2);
+        glVertex3f(bodyWidth / 2, bodyHeight, bodyDepth / 2);
+        glVertex3f(bodyWidth / 2, bodyHeight, -bodyDepth / 2);
+
+        // √á√°√û√á√ö√è√â √¶√á√°√ì√û√ù
+        glVertex3f(-bodyWidth / 2, 0, -bodyDepth / 2);
+        glVertex3f(bodyWidth / 2, 0, -bodyDepth / 2);
+        glVertex3f(bodyWidth / 2, 0, bodyDepth / 2);
+        glVertex3f(-bodyWidth / 2, 0, bodyDepth / 2);
+
+        glVertex3f(-bodyWidth / 2, bodyHeight, -bodyDepth / 2);
+        glVertex3f(bodyWidth / 2, bodyHeight, -bodyDepth / 2);
+        glVertex3f(bodyWidth / 2, bodyHeight, bodyDepth / 2);
+        glVertex3f(-bodyWidth / 2, bodyHeight, bodyDepth / 2);
+        glEnd();
+
+        glColor3f(1.0f, 1.0f, 1.0f);
+        glBegin(GL_QUADS);
+        // √á√°√å√§√á√ç √á√°√É√≠√ì√ë
+        glVertex3f(15.3, 0, -bodyDepth / 2 - wingDepth / 2);
+        glVertex3f(15.3, 0, 15);
+        glVertex3f(15.3, wingHeight, 15);
+        glVertex3f(15.3, wingHeight, -bodyDepth / 2 + wingDepth / 2);
+
+        // √á√°√å√§√á√ç √á√°√É√≠√£√§
+        glVertex3f(-15.3, 0, -bodyDepth / 2 - wingDepth / 2);
+        glVertex3f(-15.3, 0, 15);
+        glVertex3f(-15.3, wingHeight, 15);
+        glVertex3f(-15.3, wingHeight, -bodyDepth / 2 - wingDepth / 2);
+        glEnd();
+
+        glColor3f(0, 0, 0);
+        glBegin(GL_LINES);
+        glVertex3f(15.3, wingHeight / 2, -bodyDepth / 2 - wingDepth / 2);
+        glVertex3f(15.3, wingHeight * 3 / 4, 15);
+        glVertex3f(-15.3, wingHeight / 2, -bodyDepth / 2 - wingDepth / 2);
+        glVertex3f(-15.3, wingHeight * 3 / 4, 15);
+        glEnd();
+        glPopMatrix();
+    }
+    void drawXbox(float x, float y, float z, float angleX, float angleY, float angleZ, int xboxf, int xboxb) {
+        float bodyWidth = 24.0f * 3;
+        float bodyHeight = 12.0f * 3;
+        float bodyDepth = 20.0f * 3;
+        float buttonRadius = 2.0f * 3;
+        float logoRadius = 4.5f * 3;
+        glPushMatrix();
+        glTranslatef(x, y, z);
+
+        glRotatef(angleX, 1.0f, 0.0f, 0.0f);
+        glRotatef(angleY, 0.0f, 1.0f, 0.0f);
+        glRotatef(angleZ, 0.0f, 0.0f, 1.0f);
+
+        glEnable(GL_TEXTURE_2D);
+        glColor3f(0.5, 0.5, 0.5);
         glBindTexture(GL_TEXTURE_2D, xboxf);
         glBegin(GL_QUADS);
-        // ÊÃÂ √„«„Ì
+        // √¶√å√• √É√£√á√£√≠
         glTexCoord2f(0, 0);
         glVertex3f(-bodyWidth / 2, 0, -bodyDepth / 2);
         glTexCoord2f(1, 0);
@@ -256,7 +248,7 @@ public :
         glBindTexture(GL_TEXTURE_2D, xboxb);
         glBegin(GL_QUADS);
 
-        // ÊÃÂ Œ·›Ì
+        // √¶√å√• √é√°√ù√≠
         glTexCoord2f(0, 0);
         glVertex3f(-bodyWidth / 2, 0, bodyDepth / 2);
         glTexCoord2f(1, 0);
@@ -266,7 +258,7 @@ public :
         glTexCoord2f(0, 1);
         glVertex3f(-bodyWidth / 2, bodyHeight, bodyDepth / 2);
 
-        // «·ÃÊ«‰»
+        // √á√°√å√¶√á√§√à
         glVertex3f(-bodyWidth / 2, 0, -bodyDepth / 2);
         glVertex3f(-bodyWidth / 2, 0, bodyDepth / 2);
         glVertex3f(-bodyWidth / 2, bodyHeight, bodyDepth / 2);
@@ -277,7 +269,7 @@ public :
         glVertex3f(bodyWidth / 2, bodyHeight, bodyDepth / 2);
         glVertex3f(bodyWidth / 2, bodyHeight, -bodyDepth / 2);
 
-        // «·ﬁ«⁄œ… Ê«·”ﬁ›
+        // √á√°√û√á√ö√è√â √¶√á√°√ì√û√ù
         glVertex3f(-bodyWidth / 2, 0, -bodyDepth / 2);
         glVertex3f(bodyWidth / 2, 0, -bodyDepth / 2);
         glVertex3f(bodyWidth / 2, 0, bodyDepth / 2);
@@ -289,34 +281,34 @@ public :
         glVertex3f(-bodyWidth / 2, bodyHeight, bodyDepth / 2);
         glEnd();
 
-
+        glDisable(GL_TEXTURE_2D);
 
         glPopMatrix();
     }
     static void drawLaptop(float x, float y, float z, float angleX, float angleY, float angleZ) {
         glPushMatrix();
         glTranslatef(x, y, z);
-        glRotatef(angleX, 1.0f, 0.0f, 0.0f); // œÊ—«‰ ÕÊ· «·„ÕÊ— X
-        glRotatef(angleY, 0.0f, 1.0f, 0.0f); // œÊ—«‰ ÕÊ· «·„ÕÊ— Y
-        glRotatef(angleZ, 0.0f, 0.0f, 1.0f); // œÊ—«‰ ÕÊ· «·„ÕÊ— Z
+        glRotatef(angleX, 1.0f, 0.0f, 0.0f);
+        glRotatef(angleY, 0.0f, 1.0f, 0.0f);
+        glRotatef(angleZ, 0.0f, 0.0f, 1.0f);
 
-        glColor3f(0.3f, 0.3f, 0.3f); // ·Ê‰ «··«» Ê»
+        glColor3f(0.3f, 0.3f, 0.3f);
         glBegin(GL_QUADS);
 
-        // ﬁ«⁄œ… «··«» Ê»
+        // √û√á√ö√è√â √á√°√°√á√à√ä√¶√à
         glVertex3f(0, 0, 0);
         glVertex3f(50.0f, 0, 0);
         glVertex3f(50.0f, 30.0f, 0);
         glVertex3f(0, 30.0f, 0);
 
-        // «·‘«‘…
+        // √á√°√î√á√î√â
         glVertex3f(0, 30.0f, 0);
         glVertex3f(50.0f, 30.0f, 0);
         glVertex3f(50.0f, 60.0f, -10.0f);
         glVertex3f(0, 60.0f, -10.0f);
 
         glEnd();
-        glColor3f(1.0f, 1.0f, 1.0f); // ·Ê‰ «·ÕÊ«› √»Ì÷
+        glColor3f(1.0f, 1.0f, 1.0f);
         glBegin(GL_LINE_LOOP);
 
         glVertex3f(0.0f, 30.0f, 0.0f);
@@ -332,20 +324,20 @@ public :
 
         glEnd();
 
-        // —”„ «·ﬂÌ»Ê—œ
-       // —”„ «·ﬂÌ»Ê—œ
+
+        // √ë√ì√£ √á√°√ü√≠√à√¶√ë√è
         glColor3f(static_cast<float>(rand()) / RAND_MAX,
             static_cast<float>(rand()) / RAND_MAX,
             static_cast<float>(rand()) / RAND_MAX);
         glBegin(GL_QUADS);
 
-        // «·ﬂÌ»Ê—œ
+
         for (int y = 0; y < 25; y += 5) {
             for (int x = 0; x < 50; x += 5) {
-                glVertex3f(x + 2, y + 2, -0.1f);             // «·“«ÊÌ… «·”›·Ì… «·Ì”—Ï
-                glVertex3f(x + 4, y + 2, -0.1f);         // «·“«ÊÌ… «·”›·Ì… «·Ì„‰Ï
-                glVertex3f(x + 4, y + 4, -0.1f);     // «·“«ÊÌ… «·⁄·Ì« «·Ì„‰Ï
-                glVertex3f(x + 2, y + 4, -0.1f);         // «·“«ÊÌ… «·⁄·Ì« «·Ì”—Ï
+                glVertex3f(x + 2, y + 2, -0.1f);
+                glVertex3f(x + 4, y + 2, -0.1f);
+                glVertex3f(x + 4, y + 4, -0.1f);
+                glVertex3f(x + 2, y + 4, -0.1f);
             }
         }
 
@@ -362,32 +354,31 @@ public :
         glPopMatrix();
     }
     void drawKeyboard(float x, float y, float z, float angleX, float angleY, float angleZ) {
-        // √»⁄«œ «·ﬂÌ»Ê—œ
-        float keyboardWidth = 60.0f;
-        float keyboardHeight = 15.0f;
-        float keyboardDepth = 2.0f; // ”„ﬂ «·ﬂÌ»Ê—œ
-        float keyHeight = 1.0f; // «— ›«⁄ «·√“—«—
-        float cableThickness = 0.5f;
-        float cableLength = 20.0f;
+
+        float keyboardWidth = 3 * 60.0f;
+        float keyboardHeight = 3 * 15.0f;
+        float keyboardDepth = 3 * 2.0f;
+        float keyHeight = 1.0f * 3;
+        float cableThickness = 3 * 0.5f;
+        float cableLength = 15.0f * 3;
 
         glPushMatrix();
         glTranslatef(x, y, z);
 
-        //  ÿ»Ìﬁ «·œÊ—«‰
-        glRotatef(angleX, 1.0f, 0.0f, 0.0f); // œÊ—«‰ ÕÊ· «·„ÕÊ— X
-        glRotatef(angleY, 0.0f, 1.0f, 0.0f); // œÊ—«‰ ÕÊ· «·„ÕÊ— Y
-        glRotatef(angleZ, 0.0f, 0.0f, 1.0f); // œÊ—«‰ ÕÊ· «·„ÕÊ— Z
+        glRotatef(angleX, 1.0f, 0.0f, 0.0f);
+        glRotatef(angleY, 0.0f, 1.0f, 0.0f);
+        glRotatef(angleZ, 0.0f, 0.0f, 1.0f);
 
-        // —”„ «·ﬂÌ»Ê—œ
-        glColor3f(0.2f, 0.2f, 0.2f); // ·Ê‰ «·ﬂÌ»Ê—œ
+        // √ë√ì√£ √á√°√ü√≠√à√¶√ë√è
+        glColor3f(0.5f, 0.5f, 0.5f);
         glBegin(GL_QUADS);
-        // ÊÃÂ «·ﬂÌ»Ê—œ «·⁄·ÊÌ
+
         glVertex3f(-keyboardWidth / 2, 0, -keyboardHeight / 2);
         glVertex3f(keyboardWidth / 2, 0, -keyboardHeight / 2);
         glVertex3f(keyboardWidth / 2, 0, keyboardHeight / 2);
         glVertex3f(-keyboardWidth / 2, 0, keyboardHeight / 2);
 
-        // «·ÃÊ«‰» Ê«·Ã“¡ «·Œ·›Ì
+
         glVertex3f(-keyboardWidth / 2, -keyboardDepth, -keyboardHeight / 2);
         glVertex3f(keyboardWidth / 2, -keyboardDepth, -keyboardHeight / 2);
         glVertex3f(keyboardWidth / 2, 0, -keyboardHeight / 2);
@@ -409,11 +400,11 @@ public :
         glVertex3f(keyboardWidth / 2, 0, -keyboardHeight / 2);
         glEnd();
 
-        // —”„ «·√“—«—
-        glColor3f(0.8f, 0.8f, 0.8f); // ·Ê‰ «·√“—«—
-        float keyWidth = 4.0f;
-        float keyDepth = 4.0f;
-        float spacing = 1.0f; // «·„”«›… »Ì‰ «·√“—«—
+        // √ë√ì√£ √á√°√É√í√ë√á√ë
+        glColor3f(0.9f, 0.9f, 0.9f);
+        float keyWidth = 4 * 3.0f;
+        float keyDepth = 4 * 3.0f;
+        float spacing = 1.0f * 3;
 
         for (float row = -keyboardHeight / 2 + spacing; row < keyboardHeight / 2 - spacing; row += keyDepth + spacing) {
             for (float col = -keyboardWidth / 2 + spacing; col < keyboardWidth / 2 - spacing; col += keyWidth + spacing) {
@@ -446,8 +437,8 @@ public :
             }
         }
 
-        // —”„ «·ﬂ«»·
-        glColor3f(0.0f, 0.0f, 0.0f); // ·Ê‰ «·ﬂ«»·
+        // √ë√ì√£ √á√°√ü√à√°
+        glColor3f(0.0f, 0.0f, 0.0f);
         glBegin(GL_QUADS);
         glVertex3f(-cableThickness / 2, 0, keyboardHeight / 2);
         glVertex3f(cableThickness / 2, 0, keyboardHeight / 2);
@@ -458,31 +449,31 @@ public :
         glPopMatrix();
     }
     static void drawPhone(float x, float y, float z, float angleX, float angleY, float angleZ, float r, float g, float b) {
-        float thickness = 1.0f; // ”„ﬂ «·ÃÊ«·
+        float thickness = 1.0f;
 
         glPushMatrix();
         glTranslatef(x, y, z);
-        glRotatef(angleX, 1.0f, 0.0f, 0.0f); // œÊ—«‰ ÕÊ· «·„ÕÊ— X
-        glRotatef(angleY, 0.0f, 1.0f, 0.0f); // œÊ—«‰ ÕÊ· «·„ÕÊ— Y
-        glRotatef(angleZ, 0.0f, 0.0f, 1.0f); // œÊ—«‰ ÕÊ· «·„ÕÊ— Z
+        glRotatef(angleX, 1.0f, 0.0f, 0.0f);
+        glRotatef(angleY, 0.0f, 1.0f, 0.0f);
+        glRotatef(angleZ, 0.0f, 0.0f, 1.0f);
 
-        // —”„ «·ÂÌﬂ· «·Œ«—ÃÌ ··ÃÊ«·
-        glColor3f(r, g, b); // ·Ê‰ «·ÃÊ«·
+
+        glColor3f(r, g, b);
         glBegin(GL_QUADS);
 
-        // ÊÃÂ √„«„Ì
+        // √¶√å√• √É√£√á√£√≠
         glVertex3f(0, 0, 0);
         glVertex3f(20.0f, 0, 0);
         glVertex3f(20.0f, 40.0f, 0);
         glVertex3f(0, 40.0f, 0);
 
-        // ÊÃÂ Œ·›Ì
+        // √¶√å√• √é√°√ù√≠
         glVertex3f(0, 0, -thickness);
         glVertex3f(20.0f, 0, -thickness);
         glVertex3f(20.0f, 40.0f, -thickness);
         glVertex3f(0, 40.0f, -thickness);
 
-        // «·ÕÊ«› «·Ã«‰»Ì…
+        // √á√°√ç√¶√á√ù √á√°√å√á√§√à√≠√â
         glVertex3f(0, 0, 0);
         glVertex3f(0, 40.0f, 0);
         glVertex3f(0, 40.0f, -thickness);
@@ -505,8 +496,8 @@ public :
 
         glEnd();
 
-        // —”„ «·‘«‘…
-        glColor3f(0.0f, 0.0f, 0.0f); // ·Ê‰ «·‘«‘…
+        // √ë√ì√£ √á√°√î√á√î√â
+        glColor3f(0.0f, 0.0f, 0.0f);
         glBegin(GL_QUADS);
 
         glVertex3f(2.0f, 2.0f, 0.01f);
@@ -516,8 +507,8 @@ public :
 
         glEnd();
 
-        // —”„ «·“— «·—∆Ì”Ì
-        glColor3f(0.5f, 0.5f, 0.5f); // ·Ê‰ «·“—
+        // √ë√ì√£ √á√°√í√ë √á√°√ë√Ü√≠√ì√≠
+        glColor3f(0.5f, 0.5f, 0.5f);
         glBegin(GL_QUADS);
 
         glVertex3f(8.0f, 0.5f, 0.02f);
@@ -527,18 +518,18 @@ public :
 
         glEnd();
 
-        // —”„ «·√“—«— «·Ã«‰»Ì…
-        glColor3f(0.4f, 0.4f, 0.4f); // ·Ê‰ «·√“—«— «·Ã«‰»Ì…
+        // √ë√ì√£ √á√°√É√í√ë√á√ë √á√°√å√á√§√à√≠√â
+        glColor3f(0.4f, 0.4f, 0.4f);
         glBegin(GL_QUADS);
 
-        // “— «·ÿ«ﬁ… ⁄·Ï «·Ã«‰» «·√Ì„‰
-        glVertex3f(20.0f, 30.0f, -0.2f);  // »—Ê“ »”Ìÿ ··Œ«—Ã
+        // √í√ë √á√°√ò√á√û√â √ö√°√¨ √á√°√å√á√§√à √á√°√É√≠√£√§
+        glVertex3f(20.0f, 30.0f, -0.2f);
         glVertex3f(20.5f, 30.0f, -0.2f);
         glVertex3f(20.5f, 32.0f, -0.2f);
         glVertex3f(20.0f, 32.0f, -0.2f);
 
-        // √“—«— «·’Ê  ⁄·Ï «·Ã«‰» «·√Ì”—
-        glVertex3f(-0.5f, 30.0f, -0.2f);  // »—Ê“ »”Ìÿ ··Œ«—Ã
+        // √É√í√ë√á√ë √á√°√ï√¶√ä √ö√°√¨ √á√°√å√á√§√à √á√°√É√≠√ì√ë
+        glVertex3f(-0.5f, 30.0f, -0.2f);
         glVertex3f(-0.0f, 30.0f, -0.2f);
         glVertex3f(-0.0f, 32.0f, -0.2f);
         glVertex3f(-0.5f, 32.0f, -0.2f);
@@ -553,31 +544,31 @@ public :
         glPopMatrix();
     }
     static void drawTablet(float x, float y, float z, float angleX, float angleY, float angleZ, float r, float g, float b) {
-        float thickness = 1.0f; // ”„ﬂ «·ÃÊ«·
+        float thickness = 1.0f;
 
         glPushMatrix();
         glTranslatef(x, y, z);
-        glRotatef(angleX, 1.0f, 0.0f, 0.0f); // œÊ—«‰ ÕÊ· «·„ÕÊ— X
-        glRotatef(angleY, 0.0f, 1.0f, 0.0f); // œÊ—«‰ ÕÊ· «·„ÕÊ— Y
-        glRotatef(angleZ, 0.0f, 0.0f, 1.0f); // œÊ—«‰ ÕÊ· «·„ÕÊ— Z
+        glRotatef(angleX, 1.0f, 0.0f, 0.0f);
+        glRotatef(angleY, 0.0f, 1.0f, 0.0f);
+        glRotatef(angleZ, 0.0f, 0.0f, 1.0f);
 
-        // —”„ «·ÂÌﬂ· «·Œ«—ÃÌ ··ÃÊ«·
-        glColor3f(r, g, b); // ·Ê‰ «·ÃÊ«·
+
+        glColor3f(r, g, b);
         glBegin(GL_QUADS);
 
-        // ÊÃÂ √„«„Ì
+
         glVertex3f(0, 0, 0);
         glVertex3f(30.0f, 0, 0);
         glVertex3f(30.0f, 40.0f, 0);
         glVertex3f(0, 40.0f, 0);
 
-        // ÊÃÂ Œ·›Ì
+
         glVertex3f(0, 0, -thickness);
         glVertex3f(30.0f, 0, -thickness);
         glVertex3f(30.0f, 40.0f, -thickness);
         glVertex3f(0, 40.0f, -thickness);
 
-        // «·ÕÊ«› «·Ã«‰»Ì…
+
         glVertex3f(0, 0, 0);
         glVertex3f(0, 40.0f, 0);
         glVertex3f(0, 40.0f, -thickness);
@@ -600,8 +591,8 @@ public :
 
         glEnd();
 
-        // —”„ «·‘«‘…
-        glColor3f(0.0f, 0.0f, 0.0f); // ·Ê‰ «·‘«‘…
+        // √ë√ì√£ √á√°√î√á√î√â
+        glColor3f(0.0f, 0.0f, 0.0f);
         glBegin(GL_QUADS);
 
         glVertex3f(2.0f, 2.0f, 0.01f);
@@ -611,8 +602,8 @@ public :
 
         glEnd();
 
-        // —”„ «·“— «·—∆Ì”Ì
-        glColor3f(0.5f, 0.5f, 0.5f); // ·Ê‰ «·“—
+
+        glColor3f(0.5f, 0.5f, 0.5f);
         glBegin(GL_QUADS);
 
         glVertex3f(13.0f, 0.5f, 0.02f);
@@ -622,18 +613,18 @@ public :
 
         glEnd();
 
-        // —”„ «·√“—«— «·Ã«‰»Ì…
-        glColor3f(0.4f, 0.4f, 0.4f); // ·Ê‰ «·√“—«— «·Ã«‰»Ì…
+        // √ë√ì√£ √á√°√É√í√ë√á√ë √á√°√å√á√§√à√≠√â
+        glColor3f(0.4f, 0.4f, 0.4f);
         glBegin(GL_QUADS);
 
-        // “— «·ÿ«ﬁ… ⁄·Ï «·Ã«‰» «·√Ì„‰
-        glVertex3f(30.0f, 30.0f, -0.2f);  // »—Ê“ »”Ìÿ ··Œ«—Ã
+        // √í√ë √á√°√ò√á√û√â 
+        glVertex3f(30.0f, 30.0f, -0.2f);
         glVertex3f(30.5f, 30.0f, -0.2f);
         glVertex3f(30.5f, 32.0f, -0.2f);
         glVertex3f(30.0f, 32.0f, -0.2f);
 
-        // √“—«— «·’Ê  ⁄·Ï «·Ã«‰» «·√Ì”—
-        glVertex3f(-0.5f, 30.0f, -0.2f);  // »—Ê“ »”Ìÿ ··Œ«—Ã
+        // √É√í√ë√á√ë √á√°√ï√¶√ä 
+        glVertex3f(-0.5f, 30.0f, -0.2f);
         glVertex3f(-0.0f, 30.0f, -0.2f);
         glVertex3f(-0.0f, 32.0f, -0.2f);
         glVertex3f(-0.5f, 32.0f, -0.2f);
@@ -648,9 +639,9 @@ public :
         glPopMatrix();
     }
     static void drawSpeakerFrame(float x, float y, float z, float angleX, float angleY, float angleZ, int  speaker) {
-        float speakerWidth = 20.0f;   // ⁄—÷ «·”»Ìﬂ—
-        float speakerHeight = 60.0f;  // «— ›«⁄ «·”»Ìﬂ—
-        float speakerDepth = 20.0f;   // ⁄„ﬁ «·”»Ìﬂ—
+        float speakerWidth = 1.5 * 20.0f;
+        float speakerHeight = 1.5 * 60.0f;
+        float speakerDepth = 1.5 * 20.0f;
 
         glPushMatrix();
         glTranslatef(x, y, z);
@@ -658,17 +649,19 @@ public :
         glRotatef(angleY, 0.0f, 1.0f, 0.0f);
         glRotatef(angleZ, 0.0f, 0.0f, 1.0f);
 
-        // —»ÿ «· ﬂ” ‘—
+
+        glEnable(GL_TEXTURE_2D);
+
         glBindTexture(GL_TEXTURE_2D, speaker);
 
-        //  ›⁄Ì· Œ«’Ì… «· ﬂ” ‘—
-     
 
-        // —”„ «·√ÊÃÂ «·√—»⁄ ·Ã”„ «·”»Ìﬂ— („ Ê«“Ì „” ÿÌ·« )
+
+
+
         glColor3f(0.5, 0.5, 0.5);
         glBegin(GL_QUADS);
 
-        // «·ÃÂ… «·√„«„Ì…
+
         glTexCoord2f(0.0f, 0.0f); glVertex3f(-speakerWidth / 2, -speakerHeight / 2, speakerDepth / 2);
         glTexCoord2f(1.0f, 0.0f); glVertex3f(speakerWidth / 2, -speakerHeight / 2, speakerDepth / 2);
         glTexCoord2f(1.0f, 1.0f); glVertex3f(speakerWidth / 2, speakerHeight / 2, speakerDepth / 2);
@@ -676,129 +669,292 @@ public :
         glEnd();
         glColor3f(0.2, 0.2, 0.2);
         glBegin(GL_QUADS);
-        // «·ÃÂ… «·Œ·›Ì…
-        glVertex3f(-speakerWidth / 2, -speakerHeight / 2, -speakerDepth / 2);
-    glVertex3f(speakerWidth / 2, -speakerHeight / 2, -speakerDepth / 2);
-         glVertex3f(speakerWidth / 2, speakerHeight / 2, -speakerDepth / 2);
-         glVertex3f(-speakerWidth / 2, speakerHeight / 2, -speakerDepth / 2);
 
-        // «·ÃÂ… «·⁄·Ì«
+        glVertex3f(-speakerWidth / 2, -speakerHeight / 2, -speakerDepth / 2);
+        glVertex3f(speakerWidth / 2, -speakerHeight / 2, -speakerDepth / 2);
+        glVertex3f(speakerWidth / 2, speakerHeight / 2, -speakerDepth / 2);
+        glVertex3f(-speakerWidth / 2, speakerHeight / 2, -speakerDepth / 2);
+
+
         glVertex3f(-speakerWidth / 2, speakerHeight / 2, -speakerDepth / 2);
         glVertex3f(speakerWidth / 2, speakerHeight / 2, -speakerDepth / 2);
-       glVertex3f(speakerWidth / 2, speakerHeight / 2, speakerDepth / 2);
-         glVertex3f(-speakerWidth / 2, speakerHeight / 2, speakerDepth / 2);
+        glVertex3f(speakerWidth / 2, speakerHeight / 2, speakerDepth / 2);
+        glVertex3f(-speakerWidth / 2, speakerHeight / 2, speakerDepth / 2);
 
-        // «·ÃÂ… «·”›·Ï
-         glVertex3f(-speakerWidth / 2, -speakerHeight / 2, -speakerDepth / 2);
-         glVertex3f(speakerWidth / 2, -speakerHeight / 2, -speakerDepth / 2);
+
+        glVertex3f(-speakerWidth / 2, -speakerHeight / 2, -speakerDepth / 2);
+        glVertex3f(speakerWidth / 2, -speakerHeight / 2, -speakerDepth / 2);
         glVertex3f(speakerWidth / 2, -speakerHeight / 2, speakerDepth / 2);
-         glVertex3f(-speakerWidth / 2, -speakerHeight / 2, speakerDepth / 2);
+        glVertex3f(-speakerWidth / 2, -speakerHeight / 2, speakerDepth / 2);
 
-        // «·ÃÂ… «·Ì„‰Ï
-     glVertex3f(speakerWidth / 2, -speakerHeight / 2, -speakerDepth / 2);
-         glVertex3f(speakerWidth / 2, -speakerHeight / 2, speakerDepth / 2);
-       glVertex3f(speakerWidth / 2, speakerHeight / 2, speakerDepth / 2);
+
+        glVertex3f(speakerWidth / 2, -speakerHeight / 2, -speakerDepth / 2);
+        glVertex3f(speakerWidth / 2, -speakerHeight / 2, speakerDepth / 2);
+        glVertex3f(speakerWidth / 2, speakerHeight / 2, speakerDepth / 2);
         glVertex3f(speakerWidth / 2, speakerHeight / 2, -speakerDepth / 2);
 
-        // «·ÃÂ… «·Ì”—Ï
-         glVertex3f(-speakerWidth / 2, -speakerHeight / 2, -speakerDepth / 2);
+
+        glVertex3f(-speakerWidth / 2, -speakerHeight / 2, -speakerDepth / 2);
         glVertex3f(-speakerWidth / 2, -speakerHeight / 2, speakerDepth / 2);
         glVertex3f(-speakerWidth / 2, speakerHeight / 2, speakerDepth / 2);
-         glVertex3f(-speakerWidth / 2, speakerHeight / 2, -speakerDepth / 2);
+        glVertex3f(-speakerWidth / 2, speakerHeight / 2, -speakerDepth / 2);
+
+        glEnd();
+        glDisable(GL_TEXTURE_2D);
+        glPopMatrix();
+
+
+    }
+    static void drawMouse(float x, float y, float z, float angleX, float angleY, float angleZ) {
+        float mouseWidth = 20.0f;
+        float mouseHeight = 5.0f;
+        float mouseDepth = 25.0f;
+
+        glPushMatrix();
+        glTranslatef(x, y, z);
+        glRotatef(angleX, 1.0f, 0.0f, 0.0f);
+        glRotatef(angleY, 0.0f, 1.0f, 0.0f);
+        glRotatef(angleZ, 0.0f, 0.0f, 1.0f);
+
+
+        glColor3f(0.7f, 0.7f, 0.7f);
+        glBegin(GL_QUADS);
+
+
+        glVertex3f(0, 0, 0);
+        glVertex3f(mouseWidth, 0, 0);
+        glVertex3f(mouseWidth, mouseHeight, 0);
+        glVertex3f(0, mouseHeight, 0);
+
+
+        glVertex3f(0, 0, -mouseDepth);
+        glVertex3f(mouseWidth, 0, -mouseDepth);
+        glVertex3f(mouseWidth, mouseHeight, -mouseDepth);
+        glVertex3f(0, mouseHeight, -mouseDepth);
+
+
+        glVertex3f(0, mouseHeight, -mouseDepth);
+        glVertex3f(mouseWidth, mouseHeight, -mouseDepth);
+        glVertex3f(mouseWidth, mouseHeight, 0);
+        glVertex3f(0, mouseHeight, 0);
+
+
+        glVertex3f(0, 0, -mouseDepth);
+        glVertex3f(mouseWidth, 0, -mouseDepth);
+        glVertex3f(mouseWidth, 0, 0);
+        glVertex3f(0, 0, 0);
+
+
+        glVertex3f(mouseWidth, 0, -mouseDepth);
+        glVertex3f(mouseWidth, mouseHeight, -mouseDepth);
+        glVertex3f(mouseWidth, mouseHeight, 0);
+        glVertex3f(mouseWidth, 0, 0);
+
+
+        glVertex3f(0, 0, -mouseDepth);
+        glVertex3f(0, mouseHeight, -mouseDepth);
+        glVertex3f(0, mouseHeight, 0);
+        glVertex3f(0, 0, 0);
+
+        glEnd();
+
+
+        float buttonWidth = mouseWidth / 2;
+        float buttonHeight = mouseHeight / 5;
+
+        glColor3f(0.2f, 0.2f, 0.2f);
+        glBegin(GL_QUADS);
+
+
+        glVertex3f(0, mouseHeight + 1, 0.01f);
+        glVertex3f(buttonWidth, mouseHeight + 1, 0.01f);
+        glVertex3f(buttonWidth, mouseHeight + 1, -mouseDepth / 4);
+        glVertex3f(0, mouseHeight + 1, -mouseDepth / 4);
+
+
+        glVertex3f(buttonWidth + 1, mouseHeight + 1, 0.01f);
+        glVertex3f(buttonWidth * 2, mouseHeight + 1, 0.01f);
+        glVertex3f(buttonWidth * 2, mouseHeight + 1, -mouseDepth / 4);
+        glVertex3f(buttonWidth + 1, mouseHeight + 1, -mouseDepth / 4);
 
         glEnd();
 
         glPopMatrix();
-
-       
     }
-    static void drawComputerCase(float x, float y, float z, float angleX, float angleY, float angleZ,int pcf,int pcb,int pcs) {
-        float caseWidth = 60.0f;   // ⁄—÷ «·ﬂÌ” (√ﬂ»— ⁄—÷)
-        float caseHeight = 40; // «— ›«⁄ «·ﬂÌ”
-        float caseDepth = 20.0f;   // ⁄„ﬁ «·ﬂÌ” (√’€— „‰ «·⁄—÷)
+
+    static void drawComputerCase(float x, float y, float z, float angleX, float angleY, float angleZ, int pcf, int pcb, int pcs) {
+        float caseWidth = 60 * 3.0f;
+        float caseHeight = 40 * 3;
+        float caseDepth = 20.0f * 3;
 
         glPushMatrix();
-        glTranslatef(x, y+ caseHeight / 2, z);
+        glTranslatef(x, y + caseHeight / 2, z);
         glRotatef(angleX, 1.0f, 0.0f, 0.0f);
         glRotatef(angleY, 0.0f, 1.0f, 0.0f);
         glRotatef(angleZ, 0.0f, 0.0f, 1.0f);
         glColor3f(0, 0, 0);
-        // —”„ «·√ÊÃÂ «·” … ··ﬂÌ” („ Ê«“Ì „” ÿÌ·« )
+
         glBegin(GL_QUADS);
 
-        // «·ÃÂ… «·√„«„Ì… (⁄—÷ √ﬂ»— „‰ «·⁄„ﬁ)
-        glVertex3f(-caseWidth / 2, -caseHeight / 2, caseDepth / 2);   // √”›· «·Ì”«—
-        glVertex3f(caseWidth / 2, -caseHeight / 2, caseDepth / 2);    // √”›· «·Ì„Ì‰
-        glVertex3f(caseWidth / 2, caseHeight / 2, caseDepth / 2);     // √⁄·Ï «·Ì„Ì‰
-        glVertex3f(-caseWidth / 2, caseHeight / 2, caseDepth / 2);    // √⁄·Ï «·Ì”«—
 
-      
-        // «·ÃÂ… «·⁄·Ì«
-        glVertex3f(-caseWidth / 2, caseHeight / 2, -caseDepth / 2);   // √”›· «·Ì”«—
-        glVertex3f(caseWidth / 2, caseHeight / 2, -caseDepth / 2);    // √”›· «·Ì„Ì‰
-        glVertex3f(caseWidth / 2, caseHeight / 2, caseDepth / 2);     // √⁄·Ï «·Ì„Ì‰
-        glVertex3f(-caseWidth / 2, caseHeight / 2, caseDepth / 2);    // √⁄·Ï «·Ì”«—
+        glVertex3f(-caseWidth / 2, -caseHeight / 2, caseDepth / 2);
+        glVertex3f(caseWidth / 2, -caseHeight / 2, caseDepth / 2);
+        glVertex3f(caseWidth / 2, caseHeight / 2, caseDepth / 2);
+        glVertex3f(-caseWidth / 2, caseHeight / 2, caseDepth / 2);
 
-        // «·ÃÂ… «·”›·Ï
-        glVertex3f(-caseWidth / 2, -caseHeight / 2, -caseDepth / 2);  // √”›· «·Ì”«—
-        glVertex3f(caseWidth / 2, -caseHeight / 2, -caseDepth / 2);   // √”›· «·Ì„Ì‰
-        glVertex3f(caseWidth / 2, -caseHeight / 2, caseDepth / 2);    // √⁄·Ï «·Ì„Ì‰
-        glVertex3f(-caseWidth / 2, -caseHeight / 2, caseDepth / 2);   // √⁄·Ï «·Ì”«—
+
+
+        glVertex3f(-caseWidth / 2, caseHeight / 2, -caseDepth / 2);
+        glVertex3f(caseWidth / 2, caseHeight / 2, -caseDepth / 2);
+        glVertex3f(caseWidth / 2, caseHeight / 2, caseDepth / 2);
+        glVertex3f(-caseWidth / 2, caseHeight / 2, caseDepth / 2);
+
+
+        glVertex3f(-caseWidth / 2, -caseHeight / 2, -caseDepth / 2);
+        glVertex3f(caseWidth / 2, -caseHeight / 2, -caseDepth / 2);
+        glVertex3f(caseWidth / 2, -caseHeight / 2, caseDepth / 2);
+        glVertex3f(-caseWidth / 2, -caseHeight / 2, caseDepth / 2);
         glEnd();
 
-      
-        glColor3f(0.5, 0.5, 0.5);
 
+        glColor3f(0.5, 0.5, 0.5);
+        glEnable(GL_TEXTURE_2D);
         glBindTexture(GL_TEXTURE_2D, pcs);
         glBegin(GL_QUADS);
-        // «·ÃÂ… «·Œ·›Ì… (‰›” «·√»⁄«œ „À· «·√„«„Ì… Ê·ﬂ‰ ›Ì «·« Ã«Â «·„⁄«ﬂ”)
+
         glTexCoord2f(1, 0);
-        glVertex3f(-caseWidth / 2, -caseHeight / 2, caseDepth / 2 -5);  // √”›· «·Ì”«—
+        glVertex3f(-caseWidth / 2, -caseHeight / 2, caseDepth / 2 - 5);
         glTexCoord2f(0, 0);
-        glVertex3f(caseWidth / 2, -caseHeight / 2, caseDepth / 2-5);   // √”›· «·Ì„Ì‰
+        glVertex3f(caseWidth / 2, -caseHeight / 2, caseDepth / 2 - 5);
         glTexCoord2f(0, 1);
-        glVertex3f(caseWidth / 2, caseHeight / 2, caseDepth / 2-5);    // √⁄·Ï «·Ì„Ì‰
+        glVertex3f(caseWidth / 2, caseHeight / 2, caseDepth / 2 - 5);
         glTexCoord2f(1, 1);
-        glVertex3f(-caseWidth / 2, caseHeight / 2, caseDepth / 2-5);   // √⁄·Ï «·Ì”«—
+        glVertex3f(-caseWidth / 2, caseHeight / 2, caseDepth / 2 - 5);
         glEnd();
         glColor3f(0.5, 0.5, 0.5);
 
         glBindTexture(GL_TEXTURE_2D, pcb);
         glBegin(GL_QUADS);
-        // «·ÃÂ… «·Ì„‰Ï
+
         glTexCoord2f(1, 0);
-        glVertex3f(caseWidth / 2, -caseHeight / 2, -caseDepth / 2);   // √”›· «·Ì”«—
+        glVertex3f(caseWidth / 2, -caseHeight / 2, -caseDepth / 2);
         glTexCoord2f(0, 0);
-        glVertex3f(caseWidth / 2, -caseHeight / 2, caseDepth / 2);    // √”›· «·Ì„Ì‰
+        glVertex3f(caseWidth / 2, -caseHeight / 2, caseDepth / 2);
 
         glTexCoord2f(0, 1);
-        glVertex3f(caseWidth / 2, caseHeight / 2, caseDepth / 2);     // √⁄·Ï «·Ì„Ì‰
+        glVertex3f(caseWidth / 2, caseHeight / 2, caseDepth / 2);
         glTexCoord2f(1, 1);
-        glVertex3f(caseWidth / 2, caseHeight / 2, -caseDepth / 2);    // √⁄·Ï «·Ì”«—
+        glVertex3f(caseWidth / 2, caseHeight / 2, -caseDepth / 2);
         glEnd();
         glColor3f(0.5, 0.5, 0.5);
 
         glBindTexture(GL_TEXTURE_2D, pcf);
         glBegin(GL_QUADS);
-        // «·ÃÂ… «·Ì”—Ï
-        
-        glTexCoord2f(1, 0);
-        glVertex3f(-caseWidth / 2, -caseHeight / 2, -caseDepth / 2);  // √”›· «·Ì”«—
-        glTexCoord2f(0, 0);
-       
-        glVertex3f(-caseWidth / 2, -caseHeight / 2, caseDepth / 2);   // √”›· «·Ì„Ì‰
-        glTexCoord2f(0, 1);
-       
 
-        glVertex3f(-caseWidth / 2, caseHeight / 2, caseDepth / 2);    // √⁄·Ï «·Ì„Ì‰
-         glTexCoord2f(1, 1);
-      
-        glVertex3f(-caseWidth / 2, caseHeight / 2, -caseDepth / 2);   // √⁄·Ï «·Ì”«—
+        glTexCoord2f(1, 0);
+        glVertex3f(-caseWidth / 2, -caseHeight / 2, -caseDepth / 2);
+        glTexCoord2f(0, 0);
+
+        glVertex3f(-caseWidth / 2, -caseHeight / 2, caseDepth / 2);
+        glTexCoord2f(0, 1);
+
+
+        glVertex3f(-caseWidth / 2, caseHeight / 2, caseDepth / 2);
+        glTexCoord2f(1, 1);
+
+        glVertex3f(-caseWidth / 2, caseHeight / 2, -caseDepth / 2);
 
         glEnd();
+        glDisable(GL_TEXTURE_2D);
+        glPopMatrix();
+    }
+    static void drawGamingTable(float width, float depth, float height, float x, float y, float z, float rotation) {
+        glPushMatrix();
+        glTranslatef(x, y, z);
+        glRotatef(rotation, 0.0f, 1.0f, 0.0f);
+        glLineWidth(10.0f);
+        glColor3f(0.5, 0.5, 0.5);
+        glBegin(GL_LINES);
+        glVertex3f(5, 0, 0);
+        glVertex3f(5, height, depth);
+        glVertex3f(5, 0, 0);
+        glVertex3f(5, 0, depth);
+        glVertex3f(5, height, 0);
+        glVertex3f(5, 0, depth);
+
+        glVertex3f(width - 5, 0, -10);
+        glVertex3f(width - 5, height, depth);
+        glVertex3f(width - 5, 0, -10);
+        glVertex3f(width - 5, 0, depth);
+        glVertex3f(width - 5, height, 0);
+        glVertex3f(width - 5, 0, depth);
+
+        glEnd();
+        glBegin(GL_QUADS);
+        glVertex3f(0, height, 0);
+        glVertex3f(width, height, 0);
+        glVertex3f(width, height, depth + 2);
+        glVertex3f(0, height, depth + 2);
+        glEnd();
+        glPopMatrix();
+    }
+    void drawGamingChair(float x, float y, float z, float rotationAngle) {
+        glPushMatrix();
+
+
+        glTranslatef(x, y, z);
+        glRotatef(rotationAngle, 0.0f, 1.0f, 0.0f);
+
+        glPushMatrix();
+        glRotatef(90, 1.0f, 0.0f, 0);
+        glColor3f(0.5f, 0.5f, 0.5f);
+        glTranslatef(0.0f, 0.0f, 0.0f);
+        GLUquadric* quadric = gluNewQuadric();
+        gluCylinder(quadric, 5.0f, 5.0f, 150, 200, 32);
+        gluDeleteQuadric(quadric);
+        glPopMatrix();
+        glLineWidth(15);
+        glPointSize(100);
+
+        glBegin(GL_LINES);
+        glVertex3f(-5, -150, 0);
+        glVertex3f(-50, -180, 0);
+        glVertex3f(-5, -150, 0);
+        glVertex3f(50, -180, 0);
+        glVertex3f(-5, -150, 0);
+        glVertex3f(0, -180, 50);
+        glVertex3f(-5, -150, 0);
+        glVertex3f(0, -180, -50);
+        glEnd();
+        //
+        glPushMatrix();
+        glColor3f(0.7f, 0.7f, 0.7f);
+        glBegin(GL_POLYGON);
+        for (int i = 0; i < 320; ++i) {
+            float angle = 2.0f * 3.14 * float(i) / float(320);
+            float px = 70 * cosf(angle);
+            float py = 70 * sinf(angle);
+            glVertex3f(px, 0, py);
+        }
+        glEnd();
+        glPopMatrix();
+
+        glPushMatrix();
+        glTranslatef(0.0f, 0.0f, 40.0f);
+        glColor3f(0.7f, 0.7f, 0.7f);
+        glBegin(GL_QUADS);
+        glVertex3f(-60, 0.0f, 0);
+        glVertex3f(-60, 0.0f, -75);
+        glVertex3f(-90, 150, -75);
+        glVertex3f(-90, 150, 0);
+        glEnd();
+        glPopMatrix();
+
+
 
         glPopMatrix();
     }
 
-};
 
+    
+};
