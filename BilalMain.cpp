@@ -33,15 +33,7 @@ void BilalMain::leftBuilding() {
     wall.Roof(-4080, -1000, 800, 60, -4080, widthofRoof, RoofFloorTexture, 3, 3);
     wall.Roof(-1000, 0, 800, 60, -2500, widthofRoof, RoofFloorTexture, 1, 2);
     /* wall.frontWall(-4000, -800, 0, 800, 0, 20);*/
-    glass.drawfrontWall(-4000, -920, 0, 800, 0, 0.7f);
-
-
-
-
-    glass.drawWall(-4000, -5000, 0, 1200, -1000, -2000, 0.7f);
-    glass.drawTriangle(-4000, -3800, -5000, 0, 800, 1200, -1000, 0.7f);
-    glass.drawTriangle(-4000, -3800, -5000, 0, 800, 1200, -2000, 0.7f);
-    glass.drawRoof(-5000, -3800, 1200, -1000, -2000, 0.7f);
+  
 
     // 
     // elevatore in the first building
@@ -57,9 +49,6 @@ void BilalMain::leftBuilding() {
     wall.sideWall(0, 1680, 2480, -3000, -3800, widthofWall, interiorWall, 1, 1, interiorWall, 1, 1);
     wall.sideWall(0, 1680, 2480, -3800, -5000, widthofWall, interiorWall, 1, 1, exteriorWall, 2, 2);
 
-    glass.drawfrontWall(-1000, 0, 0, 2480, -4980, 0.7f);
-    glass.drawfrontWall(-1000, 0, 1600, 2480, -2520, 0.7f);
-    glass.drawfrontWall(-600, 0, 880, 1600, -2520, 0.7f);
 
     wall.Roof(-1000, 80, 2480, -2500, -5000, widthofRoof, RoofFloorTexture, 10, 15);
 
@@ -105,19 +94,12 @@ void BilalMain::rightBuilding() {
     wall.frontWall(760, 4000, 0, 800, 1000, widthofWall,interiorWall,2,1,interiorWall,2,1);
     wall.frontWall(760, 4000, 880, 1680, 1000, widthofWall, interiorWall, 2, 1, interiorWall, 2, 1);
 
-    glass.drawWall(800, 800, 0, 1680, -1500, -3000, 0.7);
-    glass.drawWall(800, 800, 0, 1680, 1000, -500, 0.7);
-
-    glass.drawWall(0, 0, 0, 1680, 5000, 0, 0.8f);
-
-    
-    glass.drawWall(800, 800, 0, 1680, 5000, 3500, 0.7);
-    glass.drawWall(800, 800, 0, 1680, 2500, 1000, 0.7);
+   
 
     // elevator of the second building
     wall.sideWall(800,0,2480,-3080,-3800,80,interiorWall,1,4,exteriorWall,1,4);
 
-    glass.drawfrontWall(0, 800, 0, 2480, -3800, 0.8);
+    
     wall.Roof(0, 880, 2480, -3000, -3800, 80, RoofFloorTexture, 1, 1);
     glPushMatrix();
     glTranslated(400, 0, -3400);
@@ -136,7 +118,35 @@ void BilalMain::rightBuilding() {
 }
 
 
+void BilalMain::glasses() {
 
+    //left building 
+    glass.drawfrontWall(-1000, 0, 0, 2480, -4980, 0.7f);
+    glass.drawfrontWall(-1000, 0, 1600, 2480, -2520, 0.7f);
+    glass.drawfrontWall(-600, 0, 880, 1600, -2520, 0.7f);
+
+    glass.drawfrontWall(-4000, -920, 0, 800, 0, 0.7f);
+
+
+
+
+    glass.drawWall(-4000, -5000, 0, 1200, -1000, -2000, 0.7f);
+    glass.drawTriangle(-4000, -3800, -5000, 0, 800, 1200, -1000, 0.7f);
+    glass.drawTriangle(-4000, -3800, -5000, 0, 800, 1200, -2000, 0.7f);
+    glass.drawRoof(-5000, -3800, 1200, -1000, -2000, 0.7f);
+    //right building 
+
+    glass.drawWall(800, 800, 0, 1680, -1500, -3000, 0.7);
+    glass.drawWall(800, 800, 0, 1680, 1000, -500, 0.7);
+
+    glass.drawWall(0, 0, 0, 1680, 5000, 0, 0.8f);
+
+
+    glass.drawWall(800, 800, 0, 1680, 5000, 3500, 0.7);
+    glass.drawWall(800, 800, 0, 1680, 2500, 1000, 0.7);
+    glass.drawfrontWall(0, 800, 0, 2480, -3800, 0.8);
+
+}
 
 
 void BilalMain::init(){
@@ -159,7 +169,7 @@ void BilalMain::init(){
 void BilalMain::display() {
     glPushMatrix();
 
-    wall.floor(-9000, 6000, 0, 9000, -6000, textureID, 50,50);
+    wall.floor(-9000, 6000, -20, 9000, -6000, textureID, 50,50);
     resturant.resturantRoom();
     leftBuilding();
     rightBuilding();

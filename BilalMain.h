@@ -7,6 +7,7 @@ public:
 	void rightBuilding();
 	void leftBuilding();
 	void init();
+	void glasses();
 	/*void stairs(int x, int y, int z, int Q);*/
 	
 private:
